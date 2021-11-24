@@ -1,0 +1,797 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC4EBE664D3BE521E2731C82 /* Pods_BaseCamping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422CE5CAE14A381643372CF5 /* Pods_BaseCamping.framework */; };
+		F4665140274B338200227259 /* goCampingData.json in Resources */ = {isa = PBXBuildFile; fileRef = F466513F274B338200227259 /* goCampingData.json */; };
+		F4665143274B545200227259 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F4665142274B545200227259 /* Realm */; };
+		F4665145274B545200227259 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4665144274B545200227259 /* RealmSwift */; };
+		F4665148274B564900227259 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4665147274B564900227259 /* RealmModel.swift */; };
+		F466514A274CA17600227259 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4665149274CA17600227259 /* UIImage + Extension.swift */; };
+		F4A3A83B2744FCC800EC5C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */; };
+		F4A3A83D2744FCC800EC5C7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A83C2744FCC800EC5C7E /* SceneDelegate.swift */; };
+		F4A3A8422744FCC800EC5C7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8402744FCC800EC5C7E /* Main.storyboard */; };
+		F4A3A8442744FCC900EC5C7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8432744FCC900EC5C7E /* Assets.xcassets */; };
+		F4A3A8472744FCC900EC5C7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8452744FCC900EC5C7E /* LaunchScreen.storyboard */; };
+		F4A3A84F2744FE4200EC5C7E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A84E2744FE4200EC5C7E /* Home.storyboard */; };
+		F4A3A8512744FE5300EC5C7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A8502744FE5200EC5C7E /* HomeViewController.swift */; };
+		F4A3A8532744FF0900EC5C7E /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8522744FF0900EC5C7E /* Detail.storyboard */; };
+		F4A3A8552744FF1F00EC5C7E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A8542744FF1F00EC5C7E /* DetailViewController.swift */; };
+		F4A3A8572744FFB800EC5C7E /* ByRegion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8562744FFB800EC5C7E /* ByRegion.storyboard */; };
+		F4A3A8592744FFD000EC5C7E /* ByRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A8582744FFD000EC5C7E /* ByRegionViewController.swift */; };
+		F4B705D32747321D0008A54A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705D22747321D0008A54A /* Constant.swift */; };
+		F4B705D62747594B0008A54A /* GyeonggiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705D42747594B0008A54A /* GyeonggiViewController.swift */; };
+		F4B705D72747594B0008A54A /* GyeonggiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B705D52747594B0008A54A /* GyeonggiViewController.xib */; };
+		F4B705DA274778E10008A54A /* SeoulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705D8274778E10008A54A /* SeoulViewController.swift */; };
+		F4B705DB274778E10008A54A /* SeoulViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B705D9274778E10008A54A /* SeoulViewController.xib */; };
+		F4B705DE274782EB0008A54A /* IncheonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705DC274782EA0008A54A /* IncheonViewController.swift */; };
+		F4B705DF274782EB0008A54A /* IncheonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B705DD274782EB0008A54A /* IncheonViewController.xib */; };
+		F4B705E6274787DA0008A54A /* HomeViewSubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705E4274787DA0008A54A /* HomeViewSubCollectionViewCell.swift */; };
+		F4B705E7274787DA0008A54A /* HomeViewSubCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B705E5274787DA0008A54A /* HomeViewSubCollectionViewCell.xib */; };
+		F4C2695F27450A8B00DA5935 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2695E27450A8B00DA5935 /* UIView + Extension.swift */; };
+		F4C269822745469100DA5935 /* HomeViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C269812745469100DA5935 /* HomeViewCollectionViewCell.swift */; };
+		F4C269872745590000DA5935 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C269862745590000DA5935 /* UIColor + Extension.swift */; };
+		F4C28C3A2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C382747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift */; };
+		F4C28C3B2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C392747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.xib */; };
+		F4C28C3E2747D5670014F0CC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F4C28C3D2747D5670014F0CC /* Kingfisher */; };
+		F4C28C412747D5950014F0CC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F4C28C402747D5950014F0CC /* Alamofire */; };
+		F4C28C442747D5B70014F0CC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F4C28C432747D5B70014F0CC /* SwiftyJSON */; };
+		F4C28C462747D8FF0014F0CC /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C452747D8FF0014F0CC /* InfoModel.swift */; };
+		F4C28C492747EB690014F0CC /* GangwonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C472747EB690014F0CC /* GangwonViewController.swift */; };
+		F4C28C4A2747EB690014F0CC /* GangwonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C482747EB690014F0CC /* GangwonViewController.xib */; };
+		F4C28C4D2747EB9C0014F0CC /* DaejeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C4B2747EB9C0014F0CC /* DaejeonViewController.swift */; };
+		F4C28C4E2747EB9C0014F0CC /* DaejeonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C4C2747EB9C0014F0CC /* DaejeonViewController.xib */; };
+		F4C28C512747EBC70014F0CC /* GwanjuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C4F2747EBC70014F0CC /* GwanjuViewController.swift */; };
+		F4C28C522747EBC70014F0CC /* GwanjuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C502747EBC70014F0CC /* GwanjuViewController.xib */; };
+		F4C28C572747EBEC0014F0CC /* DaeguViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C552747EBEC0014F0CC /* DaeguViewController.swift */; };
+		F4C28C582747EBEC0014F0CC /* DaeguViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C562747EBEC0014F0CC /* DaeguViewController.xib */; };
+		F4C28C5B2747EC050014F0CC /* BusanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C592747EC050014F0CC /* BusanViewController.swift */; };
+		F4C28C5C2747EC050014F0CC /* BusanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C5A2747EC050014F0CC /* BusanViewController.xib */; };
+		F4C28C5F2747EC1B0014F0CC /* UlsanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C5D2747EC1B0014F0CC /* UlsanViewController.swift */; };
+		F4C28C602747EC1B0014F0CC /* UlsanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C5E2747EC1B0014F0CC /* UlsanViewController.xib */; };
+		F4C28C632747EC320014F0CC /* JejuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C612747EC320014F0CC /* JejuViewController.swift */; };
+		F4C28C642747EC320014F0CC /* JejuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C622747EC320014F0CC /* JejuViewController.xib */; };
+		F4C28C672747EC460014F0CC /* SeJongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C652747EC460014F0CC /* SeJongViewController.swift */; };
+		F4C28C682747EC460014F0CC /* SeJongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C662747EC460014F0CC /* SeJongViewController.xib */; };
+		F4C28C6B2747EC6F0014F0CC /* ChungcheongbukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C692747EC6F0014F0CC /* ChungcheongbukViewController.swift */; };
+		F4C28C6C2747EC6F0014F0CC /* ChungcheongbukViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C6A2747EC6F0014F0CC /* ChungcheongbukViewController.xib */; };
+		F4C28C6F2747EC820014F0CC /* ChungcheongnamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C6D2747EC820014F0CC /* ChungcheongnamViewController.swift */; };
+		F4C28C702747EC820014F0CC /* ChungcheongnamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C6E2747EC820014F0CC /* ChungcheongnamViewController.xib */; };
+		F4C28C732747EC960014F0CC /* GyeongsangbukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C712747EC960014F0CC /* GyeongsangbukViewController.swift */; };
+		F4C28C742747EC960014F0CC /* GyeongsangbukViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C722747EC960014F0CC /* GyeongsangbukViewController.xib */; };
+		F4C28C772747ECAB0014F0CC /* GyeongsangnamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C752747ECAB0014F0CC /* GyeongsangnamViewController.swift */; };
+		F4C28C782747ECAB0014F0CC /* GyeongsangnamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C762747ECAB0014F0CC /* GyeongsangnamViewController.xib */; };
+		F4C28C7B2747ECBE0014F0CC /* JeollabukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C792747ECBE0014F0CC /* JeollabukViewController.swift */; };
+		F4C28C7C2747ECBE0014F0CC /* JeollabukViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C7A2747ECBE0014F0CC /* JeollabukViewController.xib */; };
+		F4C28C7F2747ECD00014F0CC /* JeollanamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C7D2747ECD00014F0CC /* JeollanamViewController.swift */; };
+		F4C28C802747ECD00014F0CC /* JeollanamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C7E2747ECD00014F0CC /* JeollanamViewController.xib */; };
+		F4FC2832274E5B6900106EB2 /* UIScrollView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		422CE5CAE14A381643372CF5 /* Pods_BaseCamping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCamping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		433195586D8A8584C270F82F /* Pods-BaseCamping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCamping.debug.xcconfig"; path = "Target Support Files/Pods-BaseCamping/Pods-BaseCamping.debug.xcconfig"; sourceTree = "<group>"; };
+		F466513F274B338200227259 /* goCampingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goCampingData.json; sourceTree = "<group>"; };
+		F4665147274B564900227259 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		F4665149274CA17600227259 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
+		F4A3A8372744FCC800EC5C7E /* BaseCamping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseCamping.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4A3A83C2744FCC800EC5C7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F4A3A8412744FCC800EC5C7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4A3A8432744FCC900EC5C7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4A3A8462744FCC900EC5C7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4A3A8482744FCC900EC5C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4A3A84E2744FE4200EC5C7E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		F4A3A8502744FE5200EC5C7E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F4A3A8522744FF0900EC5C7E /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		F4A3A8542744FF1F00EC5C7E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F4A3A8562744FFB800EC5C7E /* ByRegion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ByRegion.storyboard; sourceTree = "<group>"; };
+		F4A3A8582744FFD000EC5C7E /* ByRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByRegionViewController.swift; sourceTree = "<group>"; };
+		F4B705D22747321D0008A54A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F4B705D42747594B0008A54A /* GyeonggiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyeonggiViewController.swift; sourceTree = "<group>"; };
+		F4B705D52747594B0008A54A /* GyeonggiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GyeonggiViewController.xib; sourceTree = "<group>"; };
+		F4B705D8274778E10008A54A /* SeoulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulViewController.swift; sourceTree = "<group>"; };
+		F4B705D9274778E10008A54A /* SeoulViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeoulViewController.xib; sourceTree = "<group>"; };
+		F4B705DC274782EA0008A54A /* IncheonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncheonViewController.swift; sourceTree = "<group>"; };
+		F4B705DD274782EB0008A54A /* IncheonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncheonViewController.xib; sourceTree = "<group>"; };
+		F4B705E4274787DA0008A54A /* HomeViewSubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSubCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4B705E5274787DA0008A54A /* HomeViewSubCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewSubCollectionViewCell.xib; sourceTree = "<group>"; };
+		F4C2695E27450A8B00DA5935 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		F4C269812745469100DA5935 /* HomeViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4C269862745590000DA5935 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		F4C28C382747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewWeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4C28C392747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewWeatherCollectionViewCell.xib; sourceTree = "<group>"; };
+		F4C28C452747D8FF0014F0CC /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		F4C28C472747EB690014F0CC /* GangwonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GangwonViewController.swift; sourceTree = "<group>"; };
+		F4C28C482747EB690014F0CC /* GangwonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GangwonViewController.xib; sourceTree = "<group>"; };
+		F4C28C4B2747EB9C0014F0CC /* DaejeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaejeonViewController.swift; sourceTree = "<group>"; };
+		F4C28C4C2747EB9C0014F0CC /* DaejeonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaejeonViewController.xib; sourceTree = "<group>"; };
+		F4C28C4F2747EBC70014F0CC /* GwanjuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GwanjuViewController.swift; sourceTree = "<group>"; };
+		F4C28C502747EBC70014F0CC /* GwanjuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GwanjuViewController.xib; sourceTree = "<group>"; };
+		F4C28C552747EBEC0014F0CC /* DaeguViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaeguViewController.swift; sourceTree = "<group>"; };
+		F4C28C562747EBEC0014F0CC /* DaeguViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaeguViewController.xib; sourceTree = "<group>"; };
+		F4C28C592747EC050014F0CC /* BusanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusanViewController.swift; sourceTree = "<group>"; };
+		F4C28C5A2747EC050014F0CC /* BusanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusanViewController.xib; sourceTree = "<group>"; };
+		F4C28C5D2747EC1B0014F0CC /* UlsanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UlsanViewController.swift; sourceTree = "<group>"; };
+		F4C28C5E2747EC1B0014F0CC /* UlsanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UlsanViewController.xib; sourceTree = "<group>"; };
+		F4C28C612747EC320014F0CC /* JejuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JejuViewController.swift; sourceTree = "<group>"; };
+		F4C28C622747EC320014F0CC /* JejuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JejuViewController.xib; sourceTree = "<group>"; };
+		F4C28C652747EC460014F0CC /* SeJongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeJongViewController.swift; sourceTree = "<group>"; };
+		F4C28C662747EC460014F0CC /* SeJongViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeJongViewController.xib; sourceTree = "<group>"; };
+		F4C28C692747EC6F0014F0CC /* ChungcheongbukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChungcheongbukViewController.swift; sourceTree = "<group>"; };
+		F4C28C6A2747EC6F0014F0CC /* ChungcheongbukViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChungcheongbukViewController.xib; sourceTree = "<group>"; };
+		F4C28C6D2747EC820014F0CC /* ChungcheongnamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChungcheongnamViewController.swift; sourceTree = "<group>"; };
+		F4C28C6E2747EC820014F0CC /* ChungcheongnamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChungcheongnamViewController.xib; sourceTree = "<group>"; };
+		F4C28C712747EC960014F0CC /* GyeongsangbukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyeongsangbukViewController.swift; sourceTree = "<group>"; };
+		F4C28C722747EC960014F0CC /* GyeongsangbukViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GyeongsangbukViewController.xib; sourceTree = "<group>"; };
+		F4C28C752747ECAB0014F0CC /* GyeongsangnamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyeongsangnamViewController.swift; sourceTree = "<group>"; };
+		F4C28C762747ECAB0014F0CC /* GyeongsangnamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GyeongsangnamViewController.xib; sourceTree = "<group>"; };
+		F4C28C792747ECBE0014F0CC /* JeollabukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeollabukViewController.swift; sourceTree = "<group>"; };
+		F4C28C7A2747ECBE0014F0CC /* JeollabukViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JeollabukViewController.xib; sourceTree = "<group>"; };
+		F4C28C7D2747ECD00014F0CC /* JeollanamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeollanamViewController.swift; sourceTree = "<group>"; };
+		F4C28C7E2747ECD00014F0CC /* JeollanamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JeollanamViewController.xib; sourceTree = "<group>"; };
+		F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView + Extension.swift"; sourceTree = "<group>"; };
+		F7A43F3D23BFDAA6A26C855F /* Pods-BaseCamping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCamping.release.xcconfig"; path = "Target Support Files/Pods-BaseCamping/Pods-BaseCamping.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4A3A8342744FCC800EC5C7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4665145274B545200227259 /* RealmSwift in Frameworks */,
+				F4C28C412747D5950014F0CC /* Alamofire in Frameworks */,
+				F4C28C3E2747D5670014F0CC /* Kingfisher in Frameworks */,
+				F4C28C442747D5B70014F0CC /* SwiftyJSON in Frameworks */,
+				CC4EBE664D3BE521E2731C82 /* Pods_BaseCamping.framework in Frameworks */,
+				F4665143274B545200227259 /* Realm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7485E4D4071A40B77D4DE080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				422CE5CAE14A381643372CF5 /* Pods_BaseCamping.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F466513D274B330F00227259 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F4A3A8522744FF0900EC5C7E /* Detail.storyboard */,
+				F4A3A8542744FF1F00EC5C7E /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F466513E274B335A00227259 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F466513F274B338200227259 /* goCampingData.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F4665146274B561000227259 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				F4665147274B564900227259 /* RealmModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		F4A3A82E2744FCC800EC5C7E = {
+			isa = PBXGroup;
+			children = (
+				F4A3A8392744FCC800EC5C7E /* BaseCamping */,
+				F4A3A8382744FCC800EC5C7E /* Products */,
+				F6714C583BBA20B335DD37DA /* Pods */,
+				7485E4D4071A40B77D4DE080 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F4A3A8382744FCC800EC5C7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4A3A8372744FCC800EC5C7E /* BaseCamping.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4A3A8392744FCC800EC5C7E /* BaseCamping */ = {
+			isa = PBXGroup;
+			children = (
+				F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */,
+				F4A3A83C2744FCC800EC5C7E /* SceneDelegate.swift */,
+				F4A3A8402744FCC800EC5C7E /* Main.storyboard */,
+				F4C26955274508B300DA5935 /* Home */,
+				F466513D274B330F00227259 /* Detail */,
+				F4B705D127472DA20008A54A /* ByRegion */,
+				F4C2695D27450A5900DA5935 /* Extension */,
+				F466513E274B335A00227259 /* Resource */,
+				F4665146274B561000227259 /* Realm */,
+				F4C28C452747D8FF0014F0CC /* InfoModel.swift */,
+				F4B705D22747321D0008A54A /* Constant.swift */,
+				F4A3A8432744FCC900EC5C7E /* Assets.xcassets */,
+				F4A3A8452744FCC900EC5C7E /* LaunchScreen.storyboard */,
+				F4A3A8482744FCC900EC5C7E /* Info.plist */,
+			);
+			path = BaseCamping;
+			sourceTree = "<group>";
+		};
+		F4B705D127472DA20008A54A /* ByRegion */ = {
+			isa = PBXGroup;
+			children = (
+				F4A3A8562744FFB800EC5C7E /* ByRegion.storyboard */,
+				F4A3A8582744FFD000EC5C7E /* ByRegionViewController.swift */,
+			);
+			path = ByRegion;
+			sourceTree = "<group>";
+		};
+		F4C26955274508B300DA5935 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F4C26956274508C500DA5935 /* SubVC */,
+				F4C26980274540AD00DA5935 /* CellView */,
+				F4A3A84E2744FE4200EC5C7E /* Home.storyboard */,
+				F4A3A8502744FE5200EC5C7E /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F4C26956274508C500DA5935 /* SubVC */ = {
+			isa = PBXGroup;
+			children = (
+				F4B705D8274778E10008A54A /* SeoulViewController.swift */,
+				F4B705D9274778E10008A54A /* SeoulViewController.xib */,
+				F4B705D42747594B0008A54A /* GyeonggiViewController.swift */,
+				F4B705D52747594B0008A54A /* GyeonggiViewController.xib */,
+				F4B705DC274782EA0008A54A /* IncheonViewController.swift */,
+				F4B705DD274782EB0008A54A /* IncheonViewController.xib */,
+				F4C28C472747EB690014F0CC /* GangwonViewController.swift */,
+				F4C28C482747EB690014F0CC /* GangwonViewController.xib */,
+				F4C28C4B2747EB9C0014F0CC /* DaejeonViewController.swift */,
+				F4C28C4C2747EB9C0014F0CC /* DaejeonViewController.xib */,
+				F4C28C4F2747EBC70014F0CC /* GwanjuViewController.swift */,
+				F4C28C502747EBC70014F0CC /* GwanjuViewController.xib */,
+				F4C28C552747EBEC0014F0CC /* DaeguViewController.swift */,
+				F4C28C562747EBEC0014F0CC /* DaeguViewController.xib */,
+				F4C28C592747EC050014F0CC /* BusanViewController.swift */,
+				F4C28C5A2747EC050014F0CC /* BusanViewController.xib */,
+				F4C28C5D2747EC1B0014F0CC /* UlsanViewController.swift */,
+				F4C28C5E2747EC1B0014F0CC /* UlsanViewController.xib */,
+				F4C28C612747EC320014F0CC /* JejuViewController.swift */,
+				F4C28C622747EC320014F0CC /* JejuViewController.xib */,
+				F4C28C652747EC460014F0CC /* SeJongViewController.swift */,
+				F4C28C662747EC460014F0CC /* SeJongViewController.xib */,
+				F4C28C692747EC6F0014F0CC /* ChungcheongbukViewController.swift */,
+				F4C28C6A2747EC6F0014F0CC /* ChungcheongbukViewController.xib */,
+				F4C28C6D2747EC820014F0CC /* ChungcheongnamViewController.swift */,
+				F4C28C6E2747EC820014F0CC /* ChungcheongnamViewController.xib */,
+				F4C28C712747EC960014F0CC /* GyeongsangbukViewController.swift */,
+				F4C28C722747EC960014F0CC /* GyeongsangbukViewController.xib */,
+				F4C28C752747ECAB0014F0CC /* GyeongsangnamViewController.swift */,
+				F4C28C762747ECAB0014F0CC /* GyeongsangnamViewController.xib */,
+				F4C28C792747ECBE0014F0CC /* JeollabukViewController.swift */,
+				F4C28C7A2747ECBE0014F0CC /* JeollabukViewController.xib */,
+				F4C28C7D2747ECD00014F0CC /* JeollanamViewController.swift */,
+				F4C28C7E2747ECD00014F0CC /* JeollanamViewController.xib */,
+			);
+			path = SubVC;
+			sourceTree = "<group>";
+		};
+		F4C2695D27450A5900DA5935 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F4C2695E27450A8B00DA5935 /* UIView + Extension.swift */,
+				F4C269862745590000DA5935 /* UIColor + Extension.swift */,
+				F4665149274CA17600227259 /* UIImage + Extension.swift */,
+				F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F4C26980274540AD00DA5935 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				F4C269812745469100DA5935 /* HomeViewCollectionViewCell.swift */,
+				F4B705E4274787DA0008A54A /* HomeViewSubCollectionViewCell.swift */,
+				F4B705E5274787DA0008A54A /* HomeViewSubCollectionViewCell.xib */,
+				F4C28C382747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift */,
+				F4C28C392747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.xib */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		F6714C583BBA20B335DD37DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				433195586D8A8584C270F82F /* Pods-BaseCamping.debug.xcconfig */,
+				F7A43F3D23BFDAA6A26C855F /* Pods-BaseCamping.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4A3A8362744FCC800EC5C7E /* BaseCamping */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4A3A84B2744FCC900EC5C7E /* Build configuration list for PBXNativeTarget "BaseCamping" */;
+			buildPhases = (
+				CD6BDA9B1B59214EEE428234 /* [CP] Check Pods Manifest.lock */,
+				F4A3A8332744FCC800EC5C7E /* Sources */,
+				F4A3A8342744FCC800EC5C7E /* Frameworks */,
+				F4A3A8352744FCC800EC5C7E /* Resources */,
+				87CFB0EEE12F7B5B16803B8D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BaseCamping;
+			packageProductDependencies = (
+				F4C28C3D2747D5670014F0CC /* Kingfisher */,
+				F4C28C402747D5950014F0CC /* Alamofire */,
+				F4C28C432747D5B70014F0CC /* SwiftyJSON */,
+				F4665142274B545200227259 /* Realm */,
+				F4665144274B545200227259 /* RealmSwift */,
+			);
+			productName = BaseCamping;
+			productReference = F4A3A8372744FCC800EC5C7E /* BaseCamping.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4A3A82F2744FCC800EC5C7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					F4A3A8362744FCC800EC5C7E = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = F4A3A8322744FCC800EC5C7E /* Build configuration list for PBXProject "BaseCamping" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4A3A82E2744FCC800EC5C7E;
+			packageReferences = (
+				F4C28C3C2747D5670014F0CC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F4C28C3F2747D5950014F0CC /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F4C28C422747D5B70014F0CC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				F4665141274B545200227259 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
+			productRefGroup = F4A3A8382744FCC800EC5C7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4A3A8362744FCC800EC5C7E /* BaseCamping */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4A3A8352744FCC800EC5C7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4C28C5C2747EC050014F0CC /* BusanViewController.xib in Resources */,
+				F4C28C742747EC960014F0CC /* GyeongsangbukViewController.xib in Resources */,
+				F4C28C522747EBC70014F0CC /* GwanjuViewController.xib in Resources */,
+				F4665140274B338200227259 /* goCampingData.json in Resources */,
+				F4C28C6C2747EC6F0014F0CC /* ChungcheongbukViewController.xib in Resources */,
+				F4A3A8472744FCC900EC5C7E /* LaunchScreen.storyboard in Resources */,
+				F4A3A8442744FCC900EC5C7E /* Assets.xcassets in Resources */,
+				F4C28C642747EC320014F0CC /* JejuViewController.xib in Resources */,
+				F4C28C4A2747EB690014F0CC /* GangwonViewController.xib in Resources */,
+				F4C28C602747EC1B0014F0CC /* UlsanViewController.xib in Resources */,
+				F4B705D72747594B0008A54A /* GyeonggiViewController.xib in Resources */,
+				F4A3A8422744FCC800EC5C7E /* Main.storyboard in Resources */,
+				F4B705DF274782EB0008A54A /* IncheonViewController.xib in Resources */,
+				F4C28C682747EC460014F0CC /* SeJongViewController.xib in Resources */,
+				F4C28C782747ECAB0014F0CC /* GyeongsangnamViewController.xib in Resources */,
+				F4A3A8572744FFB800EC5C7E /* ByRegion.storyboard in Resources */,
+				F4C28C4E2747EB9C0014F0CC /* DaejeonViewController.xib in Resources */,
+				F4A3A8532744FF0900EC5C7E /* Detail.storyboard in Resources */,
+				F4C28C582747EBEC0014F0CC /* DaeguViewController.xib in Resources */,
+				F4C28C802747ECD00014F0CC /* JeollanamViewController.xib in Resources */,
+				F4C28C3B2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.xib in Resources */,
+				F4A3A84F2744FE4200EC5C7E /* Home.storyboard in Resources */,
+				F4C28C7C2747ECBE0014F0CC /* JeollabukViewController.xib in Resources */,
+				F4C28C702747EC820014F0CC /* ChungcheongnamViewController.xib in Resources */,
+				F4B705DB274778E10008A54A /* SeoulViewController.xib in Resources */,
+				F4B705E7274787DA0008A54A /* HomeViewSubCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87CFB0EEE12F7B5B16803B8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaseCamping/Pods-BaseCamping-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaseCamping/Pods-BaseCamping-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseCamping/Pods-BaseCamping-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD6BDA9B1B59214EEE428234 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaseCamping-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4A3A8332744FCC800EC5C7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4C28C512747EBC70014F0CC /* GwanjuViewController.swift in Sources */,
+				F4C28C572747EBEC0014F0CC /* DaeguViewController.swift in Sources */,
+				F4A3A83B2744FCC800EC5C7E /* AppDelegate.swift in Sources */,
+				F4C28C4D2747EB9C0014F0CC /* DaejeonViewController.swift in Sources */,
+				F4C28C772747ECAB0014F0CC /* GyeongsangnamViewController.swift in Sources */,
+				F4B705E6274787DA0008A54A /* HomeViewSubCollectionViewCell.swift in Sources */,
+				F4C28C3A2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift in Sources */,
+				F4C28C7B2747ECBE0014F0CC /* JeollabukViewController.swift in Sources */,
+				F4C269872745590000DA5935 /* UIColor + Extension.swift in Sources */,
+				F4FC2832274E5B6900106EB2 /* UIScrollView + Extension.swift in Sources */,
+				F4C28C462747D8FF0014F0CC /* InfoModel.swift in Sources */,
+				F4C28C672747EC460014F0CC /* SeJongViewController.swift in Sources */,
+				F4C28C5F2747EC1B0014F0CC /* UlsanViewController.swift in Sources */,
+				F4B705D32747321D0008A54A /* Constant.swift in Sources */,
+				F4665148274B564900227259 /* RealmModel.swift in Sources */,
+				F4B705D62747594B0008A54A /* GyeonggiViewController.swift in Sources */,
+				F4A3A8552744FF1F00EC5C7E /* DetailViewController.swift in Sources */,
+				F4A3A83D2744FCC800EC5C7E /* SceneDelegate.swift in Sources */,
+				F4B705DA274778E10008A54A /* SeoulViewController.swift in Sources */,
+				F4C28C5B2747EC050014F0CC /* BusanViewController.swift in Sources */,
+				F4C269822745469100DA5935 /* HomeViewCollectionViewCell.swift in Sources */,
+				F4C28C632747EC320014F0CC /* JejuViewController.swift in Sources */,
+				F4C28C6F2747EC820014F0CC /* ChungcheongnamViewController.swift in Sources */,
+				F4A3A8512744FE5300EC5C7E /* HomeViewController.swift in Sources */,
+				F4A3A8592744FFD000EC5C7E /* ByRegionViewController.swift in Sources */,
+				F4B705DE274782EB0008A54A /* IncheonViewController.swift in Sources */,
+				F466514A274CA17600227259 /* UIImage + Extension.swift in Sources */,
+				F4C28C732747EC960014F0CC /* GyeongsangbukViewController.swift in Sources */,
+				F4C28C492747EB690014F0CC /* GangwonViewController.swift in Sources */,
+				F4C2695F27450A8B00DA5935 /* UIView + Extension.swift in Sources */,
+				F4C28C7F2747ECD00014F0CC /* JeollanamViewController.swift in Sources */,
+				F4C28C6B2747EC6F0014F0CC /* ChungcheongbukViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F4A3A8402744FCC800EC5C7E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4A3A8412744FCC800EC5C7E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F4A3A8452744FCC900EC5C7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4A3A8462744FCC900EC5C7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4A3A8492744FCC900EC5C7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4A3A84A2744FCC900EC5C7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4A3A84C2744FCC900EC5C7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 433195586D8A8584C270F82F /* Pods-BaseCamping.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AT2N75TMZD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BaseCamping/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simon.BaseCamping;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F4A3A84D2744FCC900EC5C7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7A43F3D23BFDAA6A26C855F /* Pods-BaseCamping.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AT2N75TMZD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BaseCamping/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simon.BaseCamping;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4A3A8322744FCC800EC5C7E /* Build configuration list for PBXProject "BaseCamping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A3A8492744FCC900EC5C7E /* Debug */,
+				F4A3A84A2744FCC900EC5C7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4A3A84B2744FCC900EC5C7E /* Build configuration list for PBXNativeTarget "BaseCamping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A3A84C2744FCC900EC5C7E /* Debug */,
+				F4A3A84D2744FCC900EC5C7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4665141274B545200227259 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.18.0;
+			};
+		};
+		F4C28C3C2747D5670014F0CC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F4C28C3F2747D5950014F0CC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+		F4C28C422747D5B70014F0CC /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4665142274B545200227259 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4665141274B545200227259 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		F4665144274B545200227259 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4665141274B545200227259 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		F4C28C3D2747D5670014F0CC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4C28C3C2747D5670014F0CC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		F4C28C402747D5950014F0CC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4C28C3F2747D5950014F0CC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F4C28C432747D5B70014F0CC /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4C28C422747D5B70014F0CC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F4A3A82F2744FCC800EC5C7E /* Project object */;
+}
