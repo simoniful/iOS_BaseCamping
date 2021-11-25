@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
         scrollView.contentSize.width = self.view.frame.width * 16
         
         self.addChild(seoulVC)
-        seoulVC.placeDataList = randomPlaces(list: localRealm.objects(PlaceInfo.self).filter("doName == '서울시' AND imageURL != ''" ), num: 7)
+        seoulVC.placeDataList = randomPlaces(list: localRealm.objects(PlaceInfo.self).filter("doName == '서울특별시' AND imageURL != ''"), num: 7)
         guard let seoulView = seoulVC.view else { return }
         seoulView.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
         

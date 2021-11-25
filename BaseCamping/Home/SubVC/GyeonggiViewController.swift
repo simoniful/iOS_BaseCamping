@@ -44,8 +44,12 @@ class GyeonggiViewController: UIViewController {
         collectionView.dataSource = self
         weatherCollectionView.delegate = self
         weatherCollectionView.dataSource = self
-        let height = 185 * (round(Double(placeDataList!.count / 2))) + 10
-        collectionView.heightAnchor.constraint(equalToConstant: CGFloat(height)).isActive = true
+        if let placeDataList = placeDataList {
+            let evenCal = 195 * (floor(Double(placeDataList.count / 2))) + 10
+            let oddCal = 195 * (floor(Double(placeDataList.count / 2)) + 1) + 10
+            let height = placeDataList.count % 2 == 0 ? evenCal : oddCal
+            collectionView.heightAnchor.constraint(equalToConstant: CGFloat(height)).isActive = true
+        }
         let nibName = UINib(nibName: HomeViewSubCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: HomeViewSubCollectionViewCell.identifier)
         let weatherNibName = UINib(nibName: HomeViewWeatherCollectionViewCell.identifier, bundle: nil)
@@ -140,7 +144,7 @@ extension GyeonggiViewController: UICollectionViewDelegate, UICollectionViewData
             let itemsPerRow: CGFloat = 2
             let widthPadding = sectionInsets.left * (itemsPerRow + 1)
             let cellWidth = (width - widthPadding) / itemsPerRow
-            let cellHeight: CGFloat = 175
+            let cellHeight: CGFloat = 185
             return CGSize(width: cellWidth, height: cellHeight)
     }
     

@@ -62,7 +62,7 @@
                                         </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PKJ-SA-DVd">
                                             <rect key="frame" x="0.0" y="233" width="414" height="110"/>
-                                            <color key="backgroundColor" red="0.92518939393939392" green="0.55351418178546397" blue="0.10497483723077483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.63391329786868678" green="0.60809354228230983" blue="0.413674133643881" alpha="0.8628673427152318" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="110" id="mP3-dU-3H5"/>
                                             </constraints>

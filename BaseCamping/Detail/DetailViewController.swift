@@ -12,6 +12,7 @@ import Kingfisher
 import FSPagerView
 import RealmSwift
 import MapKit
+import simd
 
 class DetailViewController: UIViewController {
     var placeInfo: PlaceInfo?
@@ -20,8 +21,11 @@ class DetailViewController: UIViewController {
             pagerView.reloadData()
         }
     }
+    var socialMediaDataList: [SocialMediaInfo] = []
     let locationManager = CLLocationManager()
     var isInfoOpened: Bool = true
+    var infoContainerViewHeightAnchor:NSLayoutConstraint!
+    var socialTableHeightAnchor:NSLayoutConstraint!
 
     @IBOutlet weak var pageControl: FSPageControl!
     @IBOutlet weak var pagerView: FSPagerView! {
@@ -36,8 +40,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var telLabel: UILabel!
-    @IBOutlet weak var homepageLabel: UILabel!
+    @IBOutlet weak var telTextView: UITextView!
+    @IBOutlet weak var homepageTextView: UITextView!
     @IBOutlet weak var infoContainerView: UIView!
     @IBOutlet weak var toggleBtn: UIButton!
     @IBOutlet weak var informationStack: UIStackView!
@@ -69,8 +73,13 @@ class DetailViewController: UIViewController {
         nameLabel.text = placeInfo?.name
         addressLabel.text = placeInfo?.address
         typeLabel.text = placeInfo?.inDuty
-        telLabel.text = placeInfo?.tel
-        homepageLabel.text = placeInfo?.homepage
+        telTextView.centerVerticalText()
+        telTextView.text = placeInfo?.tel
+        homepageTextView.centerVerticalText()
+        homepageTextView.text = placeInfo?.homepage
+        
+        infoContainerViewHeightAnchor = infoContainerView.heightAnchor.constraint(equalToConstant: 510)
+        infoContainerViewHeightAnchor.isActive = true
         
         insuranceLabel.text = placeInfo?.insurance == "Y" ? "가입" : "미가입"
         petLabel.text = placeInfo?.petAccess
@@ -94,11 +103,22 @@ class DetailViewController: UIViewController {
         
         fetchNaverBlogData()
         fetchYoutubeData()
+
+        socialTableView.delegate = self
+        socialTableView.dataSource = self
         
-        scrollView.updateContentSize()
+        socialTableHeightAnchor = socialTableView.heightAnchor.constraint(equalToConstant: 352)
+        socialTableHeightAnchor.isActive = true
         
-//        socialTableView.delegate = self
-//        socialTableView.dataSource = self
+        let nibName = UINib(nibName: DetailSocialTableViewCell.identifier, bundle: nil)
+        socialTableView.register(nibName, forCellReuseIdentifier: DetailSocialTableViewCell.identifier)
+        
+        let headerNibName = UINib(nibName: DetailSocialTableViewHeader.identifier, bundle: nil)
+        socialTableView.register(headerNibName, forHeaderFooterViewReuseIdentifier: DetailSocialTableViewHeader.identifier)
+        
+        if #available(iOS 15.0, *) {
+            socialTableView.sectionHeaderTopPadding = 0
+        }
     }
     
     @objc func closeBtnClicked () {
@@ -110,14 +130,11 @@ class DetailViewController: UIViewController {
         if isInfoOpened == true {
             toggleBtn.setImage(UIImage(systemName: "arrowtriangle.down.fill"), for: .normal)
             informationStack.isHidden = false
-            infoContainerView.heightAnchor.constraint(equalToConstant: 510).isActive = true
-            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 1863)
-            
+            infoContainerViewHeightAnchor.constant = 510
         } else {
             toggleBtn.setImage(UIImage(systemName: "arrowtriangle.up.fill"), for: .normal)
             informationStack.isHidden = true
-            infoContainerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 1433)
+            infoContainerViewHeightAnchor.constant = 80
         }
     }
     
@@ -153,6 +170,11 @@ class DetailViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 print(json)
+                let data = json["items"].arrayValue.map({
+                    SocialMediaInfo(type: "naverBlog", title: self.changeHtmlTag(input: $0["title"].stringValue), link: $0["link"].stringValue, description: self.changeHtmlTag(input: $0["description"].stringValue))
+                })
+                
+                self.socialMediaDataList = self.socialMediaDataList + data
             case .failure(let error):
                 print(error)
             }
@@ -167,9 +189,20 @@ class DetailViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json, "youtube data")
+                print(json)
+                let data = json["items"].arrayValue.map({
+                    SocialMediaInfo(type: "youtube", title: $0["snippet"]["title"].stringValue, link: "https://www.youtube.com/watch?v=" + $0["id"]["videoId"].stringValue, description: $0["snippet"]["description"].stringValue)
+                })
+                self.socialMediaDataList = self.socialMediaDataList + data
+                self.socialTableView.reloadData()
             case .failure(let error):
-                print(error, "youtube data")
+                print(error)
+                let urlString = "https://www.youtube.com/results?search_query=\(self.placeInfo!.name)"
+                let encodedURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                let data = [SocialMediaInfo(type: "youtube", title: "\(self.placeInfo!.name)", link: encodedURL, description: "YouTube 검색 결과창으로 이동")]
+                self.socialMediaDataList = self.socialMediaDataList + data
+                self.socialTableHeightAnchor.constant = 264
+                self.socialTableView.reloadData()
             }
         }
     }
@@ -187,6 +220,20 @@ class DetailViewController: UIViewController {
         alert.addAction(cancel)
 
         present(alert, animated: true, completion: nil)
+    }
+    
+    func changeHtmlTag(input: String) -> String {
+        let convertStr = input
+            .replacingOccurrences(of: "<b>", with: "")
+            .replacingOccurrences(of: "</b>", with: "")
+            .replacingOccurrences(of: "&amp;", with: "&")
+            .replacingOccurrences(of: "&nbsp;", with: " ")
+            .replacingOccurrences(of: "&lt;", with: "<")
+            .replacingOccurrences(of: "&gt;", with: ">")
+            .replacingOccurrences(of: "&quot;", with: "\"")
+            .replacingOccurrences(of: "&#035;", with: "#")
+            .replacingOccurrences(of: "&#039;", with: "\'")
+        return convertStr
     }
     
 }
@@ -278,6 +325,59 @@ extension DetailViewController : CLLocationManagerDelegate {
 extension DetailViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         print("여기있어요!")
+    }
+}
+
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: DetailSocialTableViewHeader.identifier) as? DetailSocialTableViewHeader else { return UITableViewHeaderFooterView() }
+        header.titleLabel.text = section == 0 ? "네이버 블로그" : "YouTube"
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section == 0 ? socialMediaDataList.filter{$0.type == "naverBlog"}.count : socialMediaDataList.filter{$0.type == "youtube"}.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailSocialTableViewCell.identifier, for: indexPath) as? DetailSocialTableViewCell else {
+            return UITableViewCell()}
+        let blog = socialMediaDataList.filter{$0.type == "naverBlog"}[indexPath.row]
+        let youtube = socialMediaDataList.filter{$0.type == "youtube"}.count == 1 ? socialMediaDataList.filter{$0.type == "youtube"}[0] : socialMediaDataList.filter{$0.type == "youtube"}[indexPath.row]
+        
+        if indexPath.section == 0 {
+            cell.logoImage.image = UIImage(named: "blogLogo")
+            cell.titleLabel.text = blog.title
+            cell.descLabel.text = blog.description
+        } else if indexPath.section == 1 {
+            cell.logoImage.image = UIImage(named: "youtube")
+            cell.titleLabel.text = youtube.title
+            cell.descLabel.text = youtube.description
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let blog = socialMediaDataList.filter{$0.type == "naverBlog"}[indexPath.row]
+        let youtube = socialMediaDataList.filter{$0.type == "youtube"}[indexPath.row]
+        print("clicked Table row")
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        vc.mediaData = indexPath.section == 0 ? blog : youtube
+        self.navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 

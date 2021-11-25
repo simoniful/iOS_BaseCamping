@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 struct WeatherInfo {
@@ -14,6 +15,13 @@ struct WeatherInfo {
     let maxTemp: Double
     let weatherIcon: String
     let weather: String
+}
+
+struct SocialMediaInfo {
+    let type: String
+    let title: String
+    let link: String
+    let description: String
 }
 
 

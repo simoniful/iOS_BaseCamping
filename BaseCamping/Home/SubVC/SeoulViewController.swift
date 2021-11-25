@@ -43,8 +43,12 @@ class SeoulViewController: UIViewController {
         pageControl.hidesForSinglePage = true
         weatherCollectionView.delegate = self
         weatherCollectionView.dataSource = self
-        let height = 195 * (round(Double(placeDataList!.count / 2))) + 10
-        collectionView.heightAnchor.constraint(equalToConstant: CGFloat(height)).isActive = true
+        if let placeDataList = placeDataList {
+            let evenCal = 195 * (floor(Double(placeDataList.count / 2))) + 10
+            let oddCal = 195 * (floor(Double(placeDataList.count / 2)) + 1) + 10
+            let height = placeDataList.count % 2 == 0 ? evenCal : oddCal
+            collectionView.heightAnchor.constraint(equalToConstant: CGFloat(height)).isActive = true
+        }
         let nibName = UINib(nibName: HomeViewSubCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: HomeViewSubCollectionViewCell.identifier)
         let weatherNibName = UINib(nibName: HomeViewWeatherCollectionViewCell.identifier, bundle: nil)
@@ -146,6 +150,19 @@ extension SeoulViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.collectionView {
+            let item = placeDataList![indexPath.row]
+            let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+            vc.placeInfo = item
+            let nav =  UINavigationController(rootViewController: vc)
+            nav.modalTransitionStyle = .coverVertical
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == weatherCollectionView {
             let width = collectionView.frame.width
@@ -167,7 +184,7 @@ extension SeoulViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return sectionInsets
     }
         
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
 
