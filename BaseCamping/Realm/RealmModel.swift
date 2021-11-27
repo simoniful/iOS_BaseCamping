@@ -32,9 +32,10 @@ class PlaceInfo: Object {
     @Persisted var prmisnDe: String?
     @Persisted var insurance: String
     @Persisted var imageURL: String?
+    @Persisted var keyword: String?
     @Persisted var isLiked: Bool
 
-    convenience init(contentId: Int, name: String, address: String, doName: String, sigunguName: String, latitude: Double, longitude: Double, tel: String?, lineIntro: String?, intro: String?, homepage: String?, petAccess: String, operatingPeriod: String?, operatingDay: String?, toiletCount: Int, showerCount: Int, facility: String?, inDuty: String, prmisnDe: String?, insurance: String, imageURL: String?, isLiked: Bool) {
+    convenience init(contentId: Int, name: String, address: String, doName: String, sigunguName: String, latitude: Double, longitude: Double, tel: String?, lineIntro: String?, intro: String?, homepage: String?, petAccess: String, operatingPeriod: String?, operatingDay: String?, toiletCount: Int, showerCount: Int, facility: String?, inDuty: String, prmisnDe: String?, insurance: String, imageURL: String?, keyword: String? ,isLiked: Bool) {
         self.init()
         self.contentId = contentId
         self.name = name
@@ -57,6 +58,7 @@ class PlaceInfo: Object {
         self.prmisnDe = prmisnDe
         self.insurance = insurance
         self.imageURL = imageURL
+        self.keyword = keyword
         self.isLiked = isLiked
     }
 }

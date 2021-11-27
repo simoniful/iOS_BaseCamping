@@ -170,8 +170,8 @@
 		F471055A274F9AEB0063756F /* CellView */ = {
 			isa = PBXGroup;
 			children = (
-				F4710556274F9AE40063756F /* SearchResultTableViewCell.swift */,
 				F4710557274F9AE40063756F /* SearchResultTableViewCell.xib */,
+				F4710556274F9AE40063756F /* SearchResultTableViewCell.swift */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 		F4C26955274508B300DA5935 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F4C26956274508C500DA5935 /* SubVC */,
+				F4C26956274508C500DA5935 /* SubView */,
 				F4C26980274540AD00DA5935 /* CellView */,
 				F4A3A84E2744FE4200EC5C7E /* Home.storyboard */,
 				F4710563275090720063756F /* HomeTabmanViewController.swift */,
@@ -239,13 +239,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		F4C26956274508C500DA5935 /* SubVC */ = {
+		F4C26956274508C500DA5935 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				F4B705D8274778E10008A54A /* HomeSubViewController.swift */,
 				F4B705D9274778E10008A54A /* HomeSubViewController.xib */,
+				F4B705D8274778E10008A54A /* HomeSubViewController.swift */,
 			);
-			path = SubVC;
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		F4C2695D27450A5900DA5935 /* Extension */ = {
@@ -276,10 +276,10 @@
 		F4FC2833274E660200106EB2 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
-				F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */,
 				F4FC2835274E663400106EB2 /* DetailSocialTableViewCell.xib */,
-				F4FC2839274E69F700106EB2 /* DetailSocialTableViewHeader.swift */,
+				F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */,
 				F4FC283B274E6A2700106EB2 /* DetailSocialTableViewHeader.xib */,
+				F4FC2839274E69F700106EB2 /* DetailSocialTableViewHeader.swift */,
 			);
 			path = CellView;
 			sourceTree = "<group>";

@@ -66,7 +66,9 @@ class HomeTabmanViewController: TabmanViewController {
                                          prmisnDe: $0["prmisnDe"].stringValue,
                                          insurance: $0["insrncAt"].stringValue,
                                          imageURL: $0["firstImageUrl"].stringValue,
-                                         isLiked: false)
+                                         keyword: "\($0["exprnProgrm"].stringValue),\($0["themaEnvrnCl"].stringValue),\( $0["posblFcltyCl"].stringValue),\($0["sbrsCl"].stringValue)",
+                                         isLiked: false
+                    )
                 }
                 schemaData.forEach { place in
                     try! localRealm.write {

@@ -16,16 +16,67 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rLW-PH-fKx">
+                                <rect key="frame" x="20" y="44" width="374" height="798"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1u-wP-woW">
+                                <rect key="frame" x="50" y="291" width="314" height="314"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CampIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0Od-qv-pGm">
+                                        <rect key="frame" x="20" y="20" width="274" height="205.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0Od-qv-pGm" secondAttribute="height" multiplier="4:3" id="Wss-Re-9qq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 결과가 없습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-BL-dv3">
+                                        <rect key="frame" x="20" y="245.5" width="274" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="i7X-BL-dv3" firstAttribute="leading" secondItem="d1u-wP-woW" secondAttribute="leading" constant="20" id="2AJ-3O-iuP"/>
+                                    <constraint firstItem="i7X-BL-dv3" firstAttribute="top" secondItem="0Od-qv-pGm" secondAttribute="bottom" constant="20" id="6Ku-BI-wGn"/>
+                                    <constraint firstAttribute="trailing" secondItem="i7X-BL-dv3" secondAttribute="trailing" constant="20" id="9L5-wO-hqh"/>
+                                    <constraint firstItem="0Od-qv-pGm" firstAttribute="leading" secondItem="d1u-wP-woW" secondAttribute="leading" constant="20" id="Bg3-au-KXj"/>
+                                    <constraint firstItem="0Od-qv-pGm" firstAttribute="top" secondItem="d1u-wP-woW" secondAttribute="top" constant="20" id="EfF-Mg-PKj"/>
+                                    <constraint firstAttribute="width" secondItem="d1u-wP-woW" secondAttribute="height" multiplier="1:1" id="auI-yG-S6Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Od-qv-pGm" secondAttribute="trailing" constant="20" id="j1w-PN-sWL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.98039335009999995" green="0.94117587800000002" blue="0.86666828389999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rLW-PH-fKx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="81S-wT-swe"/>
+                            <constraint firstItem="d1u-wP-woW" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="KeM-Gm-7LJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rLW-PH-fKx" secondAttribute="trailing" constant="20" id="Vmm-fG-Vq3"/>
+                            <constraint firstItem="d1u-wP-woW" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.35" id="aZY-Ru-7uV"/>
+                            <constraint firstItem="rLW-PH-fKx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="dEP-lm-U3i"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rLW-PH-fKx" secondAttribute="bottom" constant="20" id="ig1-ck-bf2"/>
+                            <constraint firstItem="d1u-wP-woW" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xIU-Il-9t8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="noResultView" destination="d1u-wP-woW" id="cJM-FO-Ukj"/>
+                        <outlet property="searchResultTableView" destination="rLW-PH-fKx" id="w23-dU-me1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9" y="42"/>
+            <point key="canvasLocation" x="8.6956521739130448" y="41.517857142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CampIcon" width="2212" height="1602"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

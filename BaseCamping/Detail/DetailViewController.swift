@@ -12,7 +12,6 @@ import Kingfisher
 import FSPagerView
 import RealmSwift
 import MapKit
-import simd
 
 class DetailViewController: UIViewController {
     let localRealm = try! Realm()
@@ -67,7 +66,7 @@ class DetailViewController: UIViewController {
         guard let likeData = placeInfo?.isLiked else { return }
         isLiked = likeData
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeBtnClicked))
-        
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.black
         fetchDetailImages()
         
         pagerView.delegate = self

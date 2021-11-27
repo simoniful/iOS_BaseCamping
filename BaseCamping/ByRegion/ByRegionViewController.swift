@@ -13,8 +13,8 @@ class ByRegionViewController: UIViewController {
     @IBOutlet weak var doNameTextField: UITextField!
     @IBOutlet weak var sigunguTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
-
     @IBOutlet weak var resultTableView: UITableView!
+    @IBOutlet weak var noResultView: UIView!
     
     let localRealm = try! Realm()
     var searchResultList: Results<PlaceInfo>?
@@ -129,6 +129,12 @@ class ByRegionViewController: UIViewController {
     @IBAction func searchBtnClicked(_ sender: UIButton) {
         searchResultList = localRealm.objects(PlaceInfo.self).filter("\(doQuery) \(sigunguQuery) \(typeQuery)")
         self.resultTableView.reloadData()
+        guard let searchResultList = searchResultList else { return }
+        if searchResultList.count == 0 {
+            self.noResultView.isHidden = false
+        } else {
+            self.noResultView.isHidden = true
+        }
     }
 }
 
