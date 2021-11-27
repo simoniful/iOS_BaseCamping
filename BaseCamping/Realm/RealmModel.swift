@@ -36,8 +36,6 @@ class PlaceInfo: Object {
 
     convenience init(contentId: Int, name: String, address: String, doName: String, sigunguName: String, latitude: Double, longitude: Double, tel: String?, lineIntro: String?, intro: String?, homepage: String?, petAccess: String, operatingPeriod: String?, operatingDay: String?, toiletCount: Int, showerCount: Int, facility: String?, inDuty: String, prmisnDe: String?, insurance: String, imageURL: String?, isLiked: Bool) {
         self.init()
-        
-        
         self.contentId = contentId
         self.name = name
         self.address = address
@@ -63,3 +61,28 @@ class PlaceInfo: Object {
     }
 }
 
+class Review: Object {
+    // 재방문 의사, 시설 만족도, 접근성, 서비스 만족도
+    // 콘텐츠 제목, 내용
+    // (opt) 사진
+    
+    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted var facilitySatisfaction: Int
+    @Persisted var serviceSatisfaction: Int
+    @Persisted var accessibility: Int
+    @Persisted var revisitWill: Int
+    @Persisted var title: String
+    @Persisted var content: String
+    @Persisted var regDate: Date
+    
+    convenience init(facilitySatisfaction: Int, serviceSatisfaction: Int, accessibility: Int, revisitWill: Int, title: String, content: String, regDate: Date) {
+        self.init()
+        self.facilitySatisfaction = facilitySatisfaction
+        self.serviceSatisfaction = serviceSatisfaction
+        self.accessibility = accessibility
+        self.revisitWill = revisitWill
+        self.title = title
+        self.content = content
+        self.regDate = regDate
+    }
+}

@@ -169,7 +169,6 @@ class DetailViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json)
                 let data = json["items"].arrayValue.map({
                     SocialMediaInfo(type: "naverBlog", title: self.changeHtmlTag(input: $0["title"].stringValue), link: $0["link"].stringValue, description: self.changeHtmlTag(input: $0["description"].stringValue))
                 })
@@ -189,7 +188,6 @@ class DetailViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json)
                 let data = json["items"].arrayValue.map({
                     SocialMediaInfo(type: "youtube", title: $0["snippet"]["title"].stringValue, link: "https://www.youtube.com/watch?v=" + $0["id"]["videoId"].stringValue, description: $0["snippet"]["description"].stringValue)
                 })
@@ -220,6 +218,12 @@ class DetailViewController: UIViewController {
         alert.addAction(cancel)
 
         present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func reviewBtnClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CreateViewController") as! CreateViewController
+        
     }
     
     func changeHtmlTag(input: String) -> String {
@@ -372,7 +376,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let blog = socialMediaDataList.filter{$0.type == "naverBlog"}[indexPath.row]
         let youtube = socialMediaDataList.filter{$0.type == "youtube"}[indexPath.row]
-        print("clicked Table row")
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         vc.mediaData = indexPath.section == 0 ? blog : youtube

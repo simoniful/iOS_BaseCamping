@@ -10,19 +10,30 @@ import RealmSwift
 import Kingfisher
 
 class ByRegionViewController: UIViewController {
-    @IBOutlet weak var doNameBtn: UIButton!
-    @IBOutlet weak var sigunguBtn: UIButton!
-    @IBOutlet weak var typeBtn: UIButton!
+    @IBOutlet weak var doNameTextField: UITextField!
+    @IBOutlet weak var sigunguTextField: UITextField!
+    @IBOutlet weak var typeTextField: UITextField!
+
     @IBOutlet weak var resultTableView: UITableView!
     
     let localRealm = try! Realm()
     var searchResultList: Results<PlaceInfo>?
+    
     var selectedDo: String? = "서울특별시"
     var selectedSigungu: String? = "전체"
     var selectedType: String? = "일반야영장"
+    
     var doQuery: String = "doName == '서울시'"
     var sigunguQuery: String = ""
     var typeQuery: String = "AND inDuty CONTAINS '일반야영장'"
+    
+    let doNamePickerView = UIPickerView()
+    let sigunguPickerView = UIPickerView()
+    let typePickerView = UIPickerView()
+    
+    let doPickerList = Array(Region.regionDic.keys).sorted(by: <)
+    var sigunguPickerList: [String] = []
+    let typePickerList: [String] = ["일반야영장", "자동차야영장", "카라반", "글램핑"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,103 +41,91 @@ class ByRegionViewController: UIViewController {
         resultTableView.dataSource = self
         let nibName = UINib(nibName: SearchResultTableViewCell.identifier, bundle: nil)
         resultTableView.register(nibName, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
-        
-        searchResultList = localRealm.objects(PlaceInfo.self).filter("doName == '서울시'  AND inDuty CONTAINS '일반야영장'")
+        searchResultList = localRealm.objects(PlaceInfo.self).filter("doName == '서울특별시'  AND inDuty CONTAINS '일반야영장'")
+        configPickerView(textField: doNameTextField, pickerView: doNamePickerView, dataList: doPickerList)
+        configPickerView(textField: sigunguTextField, pickerView: sigunguPickerView, dataList: sigunguPickerList)
+        configPickerView(textField: typeTextField, pickerView: typePickerView, dataList: typePickerList)
     }
     
-    @IBAction func doNameBtnClicked(_ sender: UIButton) {
-        let alert = UIAlertController(title: "광역지방자치단체 선택", message: "도, 광역시, 특별자치시 단위 행정구역을 선택해주세요", preferredStyle: .alert)
-        
-        guard let contentView = self.storyboard?.instantiateViewController(withIdentifier: "PickerViewController") as? PickerViewController else {
-            print("PickerVC에 오류가 있음")
-            return
+    func configPickerView (textField: UITextField, pickerView: UIPickerView, dataList: [String]) {
+        pickerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 220)
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        textField.inputView = pickerView
+        textField.tintColor = .clear
+        configToolbar(textField: textField, pickerView: pickerView, dataList: dataList)
+    }
+    
+    func configToolbar(textField: UITextField, pickerView: UIPickerView, dataList: [String]) {
+        let toolBar: UIToolbar = {
+            let layoutedToolbar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: 44.0)))
+            return layoutedToolbar
+        }()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.black
+        toolBar.sizeToFit()
+
+        let doneBtn = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(self.donePicker(sender:)))
+        if textField == doNameTextField {
+            doneBtn.tag = 0
+        } else if textField == sigunguTextField {
+            doneBtn.tag = 1
+        } else {
+            doneBtn.tag = 2
         }
-        contentView.preferredContentSize.height = 120
-        contentView.pickerList = Array(Region.regionDic.keys)
-        
-        let ok = UIAlertAction(title: "확인", style: .default) { _ in
-            let value = contentView.selectedRow
-            self.selectedDo = value
-            self.doNameBtn.setTitle(value, for: .normal)
-            if let value = value {
-                self.doQuery = "doName == '\(value)'"
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelBtn = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(self.cancelPicker(sender:)))
+        if textField == doNameTextField {
+            cancelBtn.tag = 0
+        } else if textField == sigunguTextField {
+            cancelBtn.tag = 1
+        } else {
+            cancelBtn.tag = 2
+        }
+        toolBar.setItems([cancelBtn, flexibleSpace, doneBtn], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        textField.inputAccessoryView = toolBar
+    }
+    
+    @objc func donePicker(sender: AnyObject) {
+        if let tag = sender.tag {
+            if tag == 0 {
+                let row = doNamePickerView.selectedRow(inComponent: 0)
+                doNamePickerView.selectRow(row, inComponent: 0, animated: false)
+                doNameTextField.text = doPickerList[row]
+                doNameTextField.resignFirstResponder()
+            } else if tag ==  1 {
+                let row = sigunguPickerView.selectedRow(inComponent: 0)
+                sigunguPickerView.selectRow(row, inComponent: 0, animated: false)
+                sigunguTextField.text = sigunguPickerList[row]
+                sigunguTextField.resignFirstResponder()
+            } else {
+                let row = typePickerView.selectedRow(inComponent: 0)
+                typePickerView.selectRow(row, inComponent: 0, animated: false)
+                typeTextField.text = typePickerList[row]
+                typeTextField.resignFirstResponder()
             }
-            print(self.doQuery)
         }
-        
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler:nil)
-        
-        alert.setValue(contentView, forKey: "contentViewController")
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        
-        present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func sigunguBtnClicked(_ sender: UIButton) {
-        let alert = UIAlertController(title: "기초지방자치단체 선택", message: "시, 군, 구 단위 행정구역을 선택해주세요", preferredStyle: .alert)
-        
-        guard let contentView = self.storyboard?.instantiateViewController(withIdentifier: "PickerViewController") as? PickerViewController else {
-            print("PickerVC에 오류가 있음")
-            return
-        }
-        contentView.preferredContentSize.height = 120
-        contentView.pickerList = Region.regionDic[selectedDo!]
-        
-        let ok = UIAlertAction(title: "확인", style: .default) { _ in
-            let value = contentView.selectedRow
-            self.selectedSigungu = value
-            if let value = value {
-                if value == "전체" {
-                    self.sigunguQuery = ""
-                    self.sigunguBtn.setTitle(value, for: .normal)
-                } else {
-                    self.sigunguQuery = "AND sigunguName == '\(value)'"
-                    self.sigunguBtn.setTitle(value, for: .normal)
-                }
+    @objc func cancelPicker(sender: AnyObject) {
+        if let tag = sender.tag {
+            if tag == 0 {
+                doNameTextField.text = nil
+                sigunguPickerList = []
+                doNameTextField.resignFirstResponder()
+            } else if tag ==  1 {
+                sigunguTextField.text = nil
+                sigunguTextField.resignFirstResponder()
+            } else {
+                typeTextField.text = nil
+                typeTextField.resignFirstResponder()
             }
-            
-            print(self.sigunguQuery)
         }
         
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler:nil)
-        
-        alert.setValue(contentView, forKey: "contentViewController")
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        
-        present(alert, animated: true, completion: nil)
     }
-    
-    @IBAction func typeBtnClicked(_ sender: UIButton) {
-        let alert = UIAlertController(title: "캠핑장 종류 선택", message: "일반야영장, 자동차야영장, 카라반, 글램핑 중 선택해주세요", preferredStyle: .alert)
-        
-        guard let contentView = self.storyboard?.instantiateViewController(withIdentifier: "PickerViewController") as? PickerViewController else {
-            print("PickerVC에 오류가 있음")
-            return
-        }
-        contentView.preferredContentSize.height = 120
-        contentView.pickerList = ["일반야영장", "자동차야영장", "카라반", "글램핑"]
-        
-        let ok = UIAlertAction(title: "확인", style: .default) { _ in
-            let value = contentView.selectedRow
-            self.selectedType = value
-            self.typeBtn.setTitle(value, for: .normal)
-            if let value = value {
-                self.typeQuery = "AND inDuty CONTAINS '\(value)'"
-            }
-            print(self.typeQuery)
-        }
-        
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler:nil)
-        
-        alert.setValue(contentView, forKey: "contentViewController")
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
+
     @IBAction func searchBtnClicked(_ sender: UIButton) {
         searchResultList = localRealm.objects(PlaceInfo.self).filter("\(doQuery) \(sigunguQuery) \(typeQuery)")
         self.resultTableView.reloadData()
@@ -152,7 +151,69 @@ extension ByRegionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 105
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let searchResultList = self.searchResultList else { return }
+        let item = searchResultList[indexPath.row]
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        vc.placeInfo = item
+        let nav =  UINavigationController(rootViewController: vc)
+        nav.modalTransitionStyle = .coverVertical
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+extension ByRegionViewController: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == doNamePickerView {
+            return doPickerList.count
+        } else if pickerView == sigunguPickerView {
+            return sigunguPickerList.count
+        } else if pickerView == typePickerView {
+            return typePickerList.count
+        }
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == doNamePickerView {
+            return doPickerList[row]
+        } else if pickerView == sigunguPickerView {
+            return sigunguPickerList[row]
+        } else if pickerView == typePickerView {
+            return typePickerList[row]
+        }
+        return nil
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == doNamePickerView {
+            selectedDo = doPickerList[row]
+            doNameTextField.text = selectedDo
+            sigunguPickerList = Region.regionDic[selectedDo!]!
+            doQuery = "doName == '\(selectedDo!)'"
+        } else if pickerView == sigunguPickerView {
+            selectedSigungu = sigunguPickerList[row]
+            sigunguTextField.text = selectedSigungu
+            if selectedSigungu == "전체" {
+                self.sigunguQuery = ""
+            } else {
+                self.sigunguQuery = "AND sigunguName == '\(selectedSigungu!)'"
+            }
+        } else if pickerView == typePickerView {
+            selectedType = typePickerList[row]
+            typeTextField.text = selectedType
+            typeQuery =  "AND inDuty CONTAINS '\(selectedType!)'"
+        }
     }
 }
 

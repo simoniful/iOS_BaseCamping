@@ -14,9 +14,14 @@
 		F4665148274B564900227259 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4665147274B564900227259 /* RealmModel.swift */; };
 		F466514A274CA17600227259 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4665149274CA17600227259 /* UIImage + Extension.swift */; };
 		F471054E274F28D30063756F /* UITextView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471054D274F28D30063756F /* UITextView + Extension.swift */; };
-		F4710555274F70730063756F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4710554274F70730063756F /* PickerViewController.swift */; };
 		F4710558274F9AE40063756F /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4710556274F9AE40063756F /* SearchResultTableViewCell.swift */; };
 		F4710559274F9AE40063756F /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4710557274F9AE40063756F /* SearchResultTableViewCell.xib */; };
+		F471055C274FDF2C0063756F /* ByKeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471055B274FDF2C0063756F /* ByKeywordViewController.swift */; };
+		F471055E274FDF440063756F /* ByKeyword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F471055D274FDF440063756F /* ByKeyword.storyboard */; };
+		F4710560274FE3BF0063756F /* MyMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F471055F274FE3BF0063756F /* MyMenu.storyboard */; };
+		F4710562274FE3D30063756F /* MyMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4710561274FE3D30063756F /* MyMenuViewController.swift */; };
+		F4710564275090720063756F /* HomeTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4710563275090720063756F /* HomeTabmanViewController.swift */; };
+		F471056B2750C83C0063756F /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = F471056A2750C83C0063756F /* Cosmos */; };
 		F4A3A83B2744FCC800EC5C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */; };
 		F4A3A83D2744FCC800EC5C7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A83C2744FCC800EC5C7E /* SceneDelegate.swift */; };
 		F4A3A8422744FCC800EC5C7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8402744FCC800EC5C7E /* Main.storyboard */; };
@@ -29,12 +34,8 @@
 		F4A3A8572744FFB800EC5C7E /* ByRegion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8562744FFB800EC5C7E /* ByRegion.storyboard */; };
 		F4A3A8592744FFD000EC5C7E /* ByRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A8582744FFD000EC5C7E /* ByRegionViewController.swift */; };
 		F4B705D32747321D0008A54A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705D22747321D0008A54A /* Constant.swift */; };
-		F4B705D62747594B0008A54A /* GyeonggiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705D42747594B0008A54A /* GyeonggiViewController.swift */; };
-		F4B705D72747594B0008A54A /* GyeonggiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B705D52747594B0008A54A /* GyeonggiViewController.xib */; };
-		F4B705DA274778E10008A54A /* SeoulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705D8274778E10008A54A /* SeoulViewController.swift */; };
-		F4B705DB274778E10008A54A /* SeoulViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B705D9274778E10008A54A /* SeoulViewController.xib */; };
-		F4B705DE274782EB0008A54A /* IncheonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705DC274782EA0008A54A /* IncheonViewController.swift */; };
-		F4B705DF274782EB0008A54A /* IncheonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B705DD274782EB0008A54A /* IncheonViewController.xib */; };
+		F4B705DA274778E10008A54A /* HomeSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705D8274778E10008A54A /* HomeSubViewController.swift */; };
+		F4B705DB274778E10008A54A /* HomeSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B705D9274778E10008A54A /* HomeSubViewController.xib */; };
 		F4B705E6274787DA0008A54A /* HomeViewSubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705E4274787DA0008A54A /* HomeViewSubCollectionViewCell.swift */; };
 		F4B705E7274787DA0008A54A /* HomeViewSubCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B705E5274787DA0008A54A /* HomeViewSubCollectionViewCell.xib */; };
 		F4C2695F27450A8B00DA5935 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2695E27450A8B00DA5935 /* UIView + Extension.swift */; };
@@ -46,34 +47,6 @@
 		F4C28C412747D5950014F0CC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F4C28C402747D5950014F0CC /* Alamofire */; };
 		F4C28C442747D5B70014F0CC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F4C28C432747D5B70014F0CC /* SwiftyJSON */; };
 		F4C28C462747D8FF0014F0CC /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C452747D8FF0014F0CC /* InfoModel.swift */; };
-		F4C28C492747EB690014F0CC /* GangwonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C472747EB690014F0CC /* GangwonViewController.swift */; };
-		F4C28C4A2747EB690014F0CC /* GangwonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C482747EB690014F0CC /* GangwonViewController.xib */; };
-		F4C28C4D2747EB9C0014F0CC /* DaejeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C4B2747EB9C0014F0CC /* DaejeonViewController.swift */; };
-		F4C28C4E2747EB9C0014F0CC /* DaejeonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C4C2747EB9C0014F0CC /* DaejeonViewController.xib */; };
-		F4C28C512747EBC70014F0CC /* GwanjuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C4F2747EBC70014F0CC /* GwanjuViewController.swift */; };
-		F4C28C522747EBC70014F0CC /* GwanjuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C502747EBC70014F0CC /* GwanjuViewController.xib */; };
-		F4C28C572747EBEC0014F0CC /* DaeguViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C552747EBEC0014F0CC /* DaeguViewController.swift */; };
-		F4C28C582747EBEC0014F0CC /* DaeguViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C562747EBEC0014F0CC /* DaeguViewController.xib */; };
-		F4C28C5B2747EC050014F0CC /* BusanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C592747EC050014F0CC /* BusanViewController.swift */; };
-		F4C28C5C2747EC050014F0CC /* BusanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C5A2747EC050014F0CC /* BusanViewController.xib */; };
-		F4C28C5F2747EC1B0014F0CC /* UlsanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C5D2747EC1B0014F0CC /* UlsanViewController.swift */; };
-		F4C28C602747EC1B0014F0CC /* UlsanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C5E2747EC1B0014F0CC /* UlsanViewController.xib */; };
-		F4C28C632747EC320014F0CC /* JejuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C612747EC320014F0CC /* JejuViewController.swift */; };
-		F4C28C642747EC320014F0CC /* JejuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C622747EC320014F0CC /* JejuViewController.xib */; };
-		F4C28C672747EC460014F0CC /* SeJongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C652747EC460014F0CC /* SeJongViewController.swift */; };
-		F4C28C682747EC460014F0CC /* SeJongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C662747EC460014F0CC /* SeJongViewController.xib */; };
-		F4C28C6B2747EC6F0014F0CC /* ChungcheongbukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C692747EC6F0014F0CC /* ChungcheongbukViewController.swift */; };
-		F4C28C6C2747EC6F0014F0CC /* ChungcheongbukViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C6A2747EC6F0014F0CC /* ChungcheongbukViewController.xib */; };
-		F4C28C6F2747EC820014F0CC /* ChungcheongnamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C6D2747EC820014F0CC /* ChungcheongnamViewController.swift */; };
-		F4C28C702747EC820014F0CC /* ChungcheongnamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C6E2747EC820014F0CC /* ChungcheongnamViewController.xib */; };
-		F4C28C732747EC960014F0CC /* GyeongsangbukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C712747EC960014F0CC /* GyeongsangbukViewController.swift */; };
-		F4C28C742747EC960014F0CC /* GyeongsangbukViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C722747EC960014F0CC /* GyeongsangbukViewController.xib */; };
-		F4C28C772747ECAB0014F0CC /* GyeongsangnamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C752747ECAB0014F0CC /* GyeongsangnamViewController.swift */; };
-		F4C28C782747ECAB0014F0CC /* GyeongsangnamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C762747ECAB0014F0CC /* GyeongsangnamViewController.xib */; };
-		F4C28C7B2747ECBE0014F0CC /* JeollabukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C792747ECBE0014F0CC /* JeollabukViewController.swift */; };
-		F4C28C7C2747ECBE0014F0CC /* JeollabukViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C7A2747ECBE0014F0CC /* JeollabukViewController.xib */; };
-		F4C28C7F2747ECD00014F0CC /* JeollanamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C7D2747ECD00014F0CC /* JeollanamViewController.swift */; };
-		F4C28C802747ECD00014F0CC /* JeollanamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4C28C7E2747ECD00014F0CC /* JeollanamViewController.xib */; };
 		F4FC2832274E5B6900106EB2 /* UIScrollView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */; };
 		F4FC2836274E663400106EB2 /* DetailSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */; };
 		F4FC2837274E663400106EB2 /* DetailSocialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FC2835274E663400106EB2 /* DetailSocialTableViewCell.xib */; };
@@ -90,9 +63,13 @@
 		F4665147274B564900227259 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		F4665149274CA17600227259 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 		F471054D274F28D30063756F /* UITextView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView + Extension.swift"; sourceTree = "<group>"; };
-		F4710554274F70730063756F /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		F4710556274F9AE40063756F /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		F4710557274F9AE40063756F /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		F471055B274FDF2C0063756F /* ByKeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByKeywordViewController.swift; sourceTree = "<group>"; };
+		F471055D274FDF440063756F /* ByKeyword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ByKeyword.storyboard; sourceTree = "<group>"; };
+		F471055F274FE3BF0063756F /* MyMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyMenu.storyboard; sourceTree = "<group>"; };
+		F4710561274FE3D30063756F /* MyMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuViewController.swift; sourceTree = "<group>"; };
+		F4710563275090720063756F /* HomeTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabmanViewController.swift; sourceTree = "<group>"; };
 		F4A3A8372744FCC800EC5C7E /* BaseCamping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseCamping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4A3A83C2744FCC800EC5C7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,12 +84,8 @@
 		F4A3A8562744FFB800EC5C7E /* ByRegion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ByRegion.storyboard; sourceTree = "<group>"; };
 		F4A3A8582744FFD000EC5C7E /* ByRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByRegionViewController.swift; sourceTree = "<group>"; };
 		F4B705D22747321D0008A54A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		F4B705D42747594B0008A54A /* GyeonggiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyeonggiViewController.swift; sourceTree = "<group>"; };
-		F4B705D52747594B0008A54A /* GyeonggiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GyeonggiViewController.xib; sourceTree = "<group>"; };
-		F4B705D8274778E10008A54A /* SeoulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulViewController.swift; sourceTree = "<group>"; };
-		F4B705D9274778E10008A54A /* SeoulViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeoulViewController.xib; sourceTree = "<group>"; };
-		F4B705DC274782EA0008A54A /* IncheonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncheonViewController.swift; sourceTree = "<group>"; };
-		F4B705DD274782EB0008A54A /* IncheonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncheonViewController.xib; sourceTree = "<group>"; };
+		F4B705D8274778E10008A54A /* HomeSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubViewController.swift; sourceTree = "<group>"; };
+		F4B705D9274778E10008A54A /* HomeSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSubViewController.xib; sourceTree = "<group>"; };
 		F4B705E4274787DA0008A54A /* HomeViewSubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSubCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4B705E5274787DA0008A54A /* HomeViewSubCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewSubCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4C2695E27450A8B00DA5935 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
@@ -121,34 +94,6 @@
 		F4C28C382747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewWeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4C28C392747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewWeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4C28C452747D8FF0014F0CC /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
-		F4C28C472747EB690014F0CC /* GangwonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GangwonViewController.swift; sourceTree = "<group>"; };
-		F4C28C482747EB690014F0CC /* GangwonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GangwonViewController.xib; sourceTree = "<group>"; };
-		F4C28C4B2747EB9C0014F0CC /* DaejeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaejeonViewController.swift; sourceTree = "<group>"; };
-		F4C28C4C2747EB9C0014F0CC /* DaejeonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaejeonViewController.xib; sourceTree = "<group>"; };
-		F4C28C4F2747EBC70014F0CC /* GwanjuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GwanjuViewController.swift; sourceTree = "<group>"; };
-		F4C28C502747EBC70014F0CC /* GwanjuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GwanjuViewController.xib; sourceTree = "<group>"; };
-		F4C28C552747EBEC0014F0CC /* DaeguViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaeguViewController.swift; sourceTree = "<group>"; };
-		F4C28C562747EBEC0014F0CC /* DaeguViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaeguViewController.xib; sourceTree = "<group>"; };
-		F4C28C592747EC050014F0CC /* BusanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusanViewController.swift; sourceTree = "<group>"; };
-		F4C28C5A2747EC050014F0CC /* BusanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusanViewController.xib; sourceTree = "<group>"; };
-		F4C28C5D2747EC1B0014F0CC /* UlsanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UlsanViewController.swift; sourceTree = "<group>"; };
-		F4C28C5E2747EC1B0014F0CC /* UlsanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UlsanViewController.xib; sourceTree = "<group>"; };
-		F4C28C612747EC320014F0CC /* JejuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JejuViewController.swift; sourceTree = "<group>"; };
-		F4C28C622747EC320014F0CC /* JejuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JejuViewController.xib; sourceTree = "<group>"; };
-		F4C28C652747EC460014F0CC /* SeJongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeJongViewController.swift; sourceTree = "<group>"; };
-		F4C28C662747EC460014F0CC /* SeJongViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeJongViewController.xib; sourceTree = "<group>"; };
-		F4C28C692747EC6F0014F0CC /* ChungcheongbukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChungcheongbukViewController.swift; sourceTree = "<group>"; };
-		F4C28C6A2747EC6F0014F0CC /* ChungcheongbukViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChungcheongbukViewController.xib; sourceTree = "<group>"; };
-		F4C28C6D2747EC820014F0CC /* ChungcheongnamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChungcheongnamViewController.swift; sourceTree = "<group>"; };
-		F4C28C6E2747EC820014F0CC /* ChungcheongnamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChungcheongnamViewController.xib; sourceTree = "<group>"; };
-		F4C28C712747EC960014F0CC /* GyeongsangbukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyeongsangbukViewController.swift; sourceTree = "<group>"; };
-		F4C28C722747EC960014F0CC /* GyeongsangbukViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GyeongsangbukViewController.xib; sourceTree = "<group>"; };
-		F4C28C752747ECAB0014F0CC /* GyeongsangnamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyeongsangnamViewController.swift; sourceTree = "<group>"; };
-		F4C28C762747ECAB0014F0CC /* GyeongsangnamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GyeongsangnamViewController.xib; sourceTree = "<group>"; };
-		F4C28C792747ECBE0014F0CC /* JeollabukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeollabukViewController.swift; sourceTree = "<group>"; };
-		F4C28C7A2747ECBE0014F0CC /* JeollabukViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JeollabukViewController.xib; sourceTree = "<group>"; };
-		F4C28C7D2747ECD00014F0CC /* JeollanamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeollanamViewController.swift; sourceTree = "<group>"; };
-		F4C28C7E2747ECD00014F0CC /* JeollanamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JeollanamViewController.xib; sourceTree = "<group>"; };
 		F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView + Extension.swift"; sourceTree = "<group>"; };
 		F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSocialTableViewCell.swift; sourceTree = "<group>"; };
 		F4FC2835274E663400106EB2 /* DetailSocialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSocialTableViewCell.xib; sourceTree = "<group>"; };
@@ -166,6 +111,7 @@
 			files = (
 				F4665145274B545200227259 /* RealmSwift in Frameworks */,
 				F4C28C412747D5950014F0CC /* Alamofire in Frameworks */,
+				F471056B2750C83C0063756F /* Cosmos in Frameworks */,
 				F4C28C3E2747D5670014F0CC /* Kingfisher in Frameworks */,
 				F4C28C442747D5B70014F0CC /* SwiftyJSON in Frameworks */,
 				CC4EBE664D3BE521E2731C82 /* Pods_BaseCamping.framework in Frameworks */,
@@ -215,7 +161,6 @@
 		F471054F274F683C0063756F /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				F4710554274F70730063756F /* PickerViewController.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -256,7 +201,6 @@
 				F4C26955274508B300DA5935 /* Home */,
 				F466513D274B330F00227259 /* Detail */,
 				F4B705D127472DA20008A54A /* ByRegion */,
-				F4FC283F274EABCC00106EB2 /* ByCurrentLocation */,
 				F4FC2840274EABF700106EB2 /* ByKeyword */,
 				F4FC2841274EADB500106EB2 /* MyMenu */,
 				F4C2695D27450A5900DA5935 /* Extension */,
@@ -288,6 +232,7 @@
 				F4C26956274508C500DA5935 /* SubVC */,
 				F4C26980274540AD00DA5935 /* CellView */,
 				F4A3A84E2744FE4200EC5C7E /* Home.storyboard */,
+				F4710563275090720063756F /* HomeTabmanViewController.swift */,
 				F4A3A8502744FE5200EC5C7E /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -296,40 +241,8 @@
 		F4C26956274508C500DA5935 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
-				F4B705D8274778E10008A54A /* SeoulViewController.swift */,
-				F4B705D9274778E10008A54A /* SeoulViewController.xib */,
-				F4B705D42747594B0008A54A /* GyeonggiViewController.swift */,
-				F4B705D52747594B0008A54A /* GyeonggiViewController.xib */,
-				F4B705DC274782EA0008A54A /* IncheonViewController.swift */,
-				F4B705DD274782EB0008A54A /* IncheonViewController.xib */,
-				F4C28C472747EB690014F0CC /* GangwonViewController.swift */,
-				F4C28C482747EB690014F0CC /* GangwonViewController.xib */,
-				F4C28C4B2747EB9C0014F0CC /* DaejeonViewController.swift */,
-				F4C28C4C2747EB9C0014F0CC /* DaejeonViewController.xib */,
-				F4C28C4F2747EBC70014F0CC /* GwanjuViewController.swift */,
-				F4C28C502747EBC70014F0CC /* GwanjuViewController.xib */,
-				F4C28C552747EBEC0014F0CC /* DaeguViewController.swift */,
-				F4C28C562747EBEC0014F0CC /* DaeguViewController.xib */,
-				F4C28C592747EC050014F0CC /* BusanViewController.swift */,
-				F4C28C5A2747EC050014F0CC /* BusanViewController.xib */,
-				F4C28C5D2747EC1B0014F0CC /* UlsanViewController.swift */,
-				F4C28C5E2747EC1B0014F0CC /* UlsanViewController.xib */,
-				F4C28C612747EC320014F0CC /* JejuViewController.swift */,
-				F4C28C622747EC320014F0CC /* JejuViewController.xib */,
-				F4C28C652747EC460014F0CC /* SeJongViewController.swift */,
-				F4C28C662747EC460014F0CC /* SeJongViewController.xib */,
-				F4C28C692747EC6F0014F0CC /* ChungcheongbukViewController.swift */,
-				F4C28C6A2747EC6F0014F0CC /* ChungcheongbukViewController.xib */,
-				F4C28C6D2747EC820014F0CC /* ChungcheongnamViewController.swift */,
-				F4C28C6E2747EC820014F0CC /* ChungcheongnamViewController.xib */,
-				F4C28C712747EC960014F0CC /* GyeongsangbukViewController.swift */,
-				F4C28C722747EC960014F0CC /* GyeongsangbukViewController.xib */,
-				F4C28C752747ECAB0014F0CC /* GyeongsangnamViewController.swift */,
-				F4C28C762747ECAB0014F0CC /* GyeongsangnamViewController.xib */,
-				F4C28C792747ECBE0014F0CC /* JeollabukViewController.swift */,
-				F4C28C7A2747ECBE0014F0CC /* JeollabukViewController.xib */,
-				F4C28C7D2747ECD00014F0CC /* JeollanamViewController.swift */,
-				F4C28C7E2747ECD00014F0CC /* JeollanamViewController.xib */,
+				F4B705D8274778E10008A54A /* HomeSubViewController.swift */,
+				F4B705D9274778E10008A54A /* HomeSubViewController.xib */,
 			);
 			path = SubVC;
 			sourceTree = "<group>";
@@ -369,16 +282,11 @@
 			path = CellView;
 			sourceTree = "<group>";
 		};
-		F4FC283F274EABCC00106EB2 /* ByCurrentLocation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ByCurrentLocation;
-			sourceTree = "<group>";
-		};
 		F4FC2840274EABF700106EB2 /* ByKeyword */ = {
 			isa = PBXGroup;
 			children = (
+				F471055D274FDF440063756F /* ByKeyword.storyboard */,
+				F471055B274FDF2C0063756F /* ByKeywordViewController.swift */,
 			);
 			path = ByKeyword;
 			sourceTree = "<group>";
@@ -386,6 +294,8 @@
 		F4FC2841274EADB500106EB2 /* MyMenu */ = {
 			isa = PBXGroup;
 			children = (
+				F471055F274FE3BF0063756F /* MyMenu.storyboard */,
+				F4710561274FE3D30063756F /* MyMenuViewController.swift */,
 			);
 			path = MyMenu;
 			sourceTree = "<group>";
@@ -423,6 +333,7 @@
 				F4C28C432747D5B70014F0CC /* SwiftyJSON */,
 				F4665142274B545200227259 /* Realm */,
 				F4665144274B545200227259 /* RealmSwift */,
+				F471056A2750C83C0063756F /* Cosmos */,
 			);
 			productName = BaseCamping;
 			productReference = F4A3A8372744FCC800EC5C7E /* BaseCamping.app */;
@@ -457,6 +368,7 @@
 				F4C28C3F2747D5950014F0CC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F4C28C422747D5B70014F0CC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				F4665141274B545200227259 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				F47105692750C83C0063756F /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = F4A3A8382744FCC800EC5C7E /* Products */;
 			projectDirPath = "";
@@ -472,34 +384,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4C28C5C2747EC050014F0CC /* BusanViewController.xib in Resources */,
-				F4C28C742747EC960014F0CC /* GyeongsangbukViewController.xib in Resources */,
-				F4C28C522747EBC70014F0CC /* GwanjuViewController.xib in Resources */,
+				F4710560274FE3BF0063756F /* MyMenu.storyboard in Resources */,
 				F4665140274B338200227259 /* goCampingData.json in Resources */,
-				F4C28C6C2747EC6F0014F0CC /* ChungcheongbukViewController.xib in Resources */,
 				F4A3A8472744FCC900EC5C7E /* LaunchScreen.storyboard in Resources */,
 				F4A3A8442744FCC900EC5C7E /* Assets.xcassets in Resources */,
-				F4C28C642747EC320014F0CC /* JejuViewController.xib in Resources */,
-				F4C28C4A2747EB690014F0CC /* GangwonViewController.xib in Resources */,
 				F4710559274F9AE40063756F /* SearchResultTableViewCell.xib in Resources */,
-				F4C28C602747EC1B0014F0CC /* UlsanViewController.xib in Resources */,
-				F4B705D72747594B0008A54A /* GyeonggiViewController.xib in Resources */,
 				F4A3A8422744FCC800EC5C7E /* Main.storyboard in Resources */,
-				F4B705DF274782EB0008A54A /* IncheonViewController.xib in Resources */,
-				F4C28C682747EC460014F0CC /* SeJongViewController.xib in Resources */,
+				F471055E274FDF440063756F /* ByKeyword.storyboard in Resources */,
 				F4FC283C274E6A2700106EB2 /* DetailSocialTableViewHeader.xib in Resources */,
-				F4C28C782747ECAB0014F0CC /* GyeongsangnamViewController.xib in Resources */,
 				F4A3A8572744FFB800EC5C7E /* ByRegion.storyboard in Resources */,
-				F4C28C4E2747EB9C0014F0CC /* DaejeonViewController.xib in Resources */,
 				F4A3A8532744FF0900EC5C7E /* Detail.storyboard in Resources */,
-				F4C28C582747EBEC0014F0CC /* DaeguViewController.xib in Resources */,
-				F4C28C802747ECD00014F0CC /* JeollanamViewController.xib in Resources */,
 				F4FC2837274E663400106EB2 /* DetailSocialTableViewCell.xib in Resources */,
 				F4C28C3B2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.xib in Resources */,
 				F4A3A84F2744FE4200EC5C7E /* Home.storyboard in Resources */,
-				F4C28C7C2747ECBE0014F0CC /* JeollabukViewController.xib in Resources */,
-				F4C28C702747EC820014F0CC /* ChungcheongnamViewController.xib in Resources */,
-				F4B705DB274778E10008A54A /* SeoulViewController.xib in Resources */,
+				F4B705DB274778E10008A54A /* HomeSubViewController.xib in Resources */,
 				F4B705E7274787DA0008A54A /* HomeViewSubCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,45 +451,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4C28C512747EBC70014F0CC /* GwanjuViewController.swift in Sources */,
-				F4C28C572747EBEC0014F0CC /* DaeguViewController.swift in Sources */,
 				F4A3A83B2744FCC800EC5C7E /* AppDelegate.swift in Sources */,
-				F4C28C4D2747EB9C0014F0CC /* DaejeonViewController.swift in Sources */,
-				F4C28C772747ECAB0014F0CC /* GyeongsangnamViewController.swift in Sources */,
 				F4B705E6274787DA0008A54A /* HomeViewSubCollectionViewCell.swift in Sources */,
 				F4C28C3A2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift in Sources */,
-				F4C28C7B2747ECBE0014F0CC /* JeollabukViewController.swift in Sources */,
 				F4C269872745590000DA5935 /* UIColor + Extension.swift in Sources */,
 				F4FC2832274E5B6900106EB2 /* UIScrollView + Extension.swift in Sources */,
+				F4710564275090720063756F /* HomeTabmanViewController.swift in Sources */,
 				F4C28C462747D8FF0014F0CC /* InfoModel.swift in Sources */,
 				F4710558274F9AE40063756F /* SearchResultTableViewCell.swift in Sources */,
-				F4C28C672747EC460014F0CC /* SeJongViewController.swift in Sources */,
-				F4C28C5F2747EC1B0014F0CC /* UlsanViewController.swift in Sources */,
 				F4B705D32747321D0008A54A /* Constant.swift in Sources */,
 				F4665148274B564900227259 /* RealmModel.swift in Sources */,
-				F4B705D62747594B0008A54A /* GyeonggiViewController.swift in Sources */,
 				F4A3A8552744FF1F00EC5C7E /* DetailViewController.swift in Sources */,
+				F4710562274FE3D30063756F /* MyMenuViewController.swift in Sources */,
 				F471054E274F28D30063756F /* UITextView + Extension.swift in Sources */,
 				F4A3A83D2744FCC800EC5C7E /* SceneDelegate.swift in Sources */,
 				F4FC283E274E9F2100106EB2 /* WebViewController.swift in Sources */,
-				F4B705DA274778E10008A54A /* SeoulViewController.swift in Sources */,
+				F4B705DA274778E10008A54A /* HomeSubViewController.swift in Sources */,
 				F4FC2843274EAE1A00106EB2 /* CreateViewController.swift in Sources */,
-				F4C28C5B2747EC050014F0CC /* BusanViewController.swift in Sources */,
 				F4C269822745469100DA5935 /* HomeViewCollectionViewCell.swift in Sources */,
-				F4710555274F70730063756F /* PickerViewController.swift in Sources */,
-				F4C28C632747EC320014F0CC /* JejuViewController.swift in Sources */,
 				F4FC2836274E663400106EB2 /* DetailSocialTableViewCell.swift in Sources */,
-				F4C28C6F2747EC820014F0CC /* ChungcheongnamViewController.swift in Sources */,
 				F4A3A8512744FE5300EC5C7E /* HomeViewController.swift in Sources */,
 				F4A3A8592744FFD000EC5C7E /* ByRegionViewController.swift in Sources */,
-				F4B705DE274782EB0008A54A /* IncheonViewController.swift in Sources */,
+				F471055C274FDF2C0063756F /* ByKeywordViewController.swift in Sources */,
 				F466514A274CA17600227259 /* UIImage + Extension.swift in Sources */,
-				F4C28C732747EC960014F0CC /* GyeongsangbukViewController.swift in Sources */,
-				F4C28C492747EB690014F0CC /* GangwonViewController.swift in Sources */,
 				F4C2695F27450A8B00DA5935 /* UIView + Extension.swift in Sources */,
-				F4C28C7F2747ECD00014F0CC /* JeollanamViewController.swift in Sources */,
 				F4FC283A274E69F700106EB2 /* DetailSocialTableViewHeader.swift in Sources */,
-				F4C28C6B2747EC6F0014F0CC /* ChungcheongbukViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,7 +634,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -781,7 +665,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -827,6 +711,14 @@
 				version = 10.18.0;
 			};
 		};
+		F47105692750C83C0063756F /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = exactVersion;
+				version = 23.0.0;
+			};
+		};
 		F4C28C3C2747D5670014F0CC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -863,6 +755,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4665141274B545200227259 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		F471056A2750C83C0063756F /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F47105692750C83C0063756F /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
 		};
 		F4C28C3D2747D5670014F0CC /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

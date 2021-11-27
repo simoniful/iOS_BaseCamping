@@ -1,16 +1,24 @@
 PODS:
   - FSPagerView (0.8.3)
+  - Pageboy (3.6.2)
+  - Tabman (2.11.1):
+    - Pageboy (~> 3.6.0)
 
 DEPENDENCIES:
   - FSPagerView
+  - Tabman (~> 2.11)
 
 SPEC REPOS:
   trunk:
     - FSPagerView
+    - Pageboy
+    - Tabman
 
 SPEC CHECKSUMS:
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
+  Tabman: 792ac76fd1ec95af175c93db880a3c47cabedc91
 
-PODFILE CHECKSUM: a9a9a081500771a1abc68378d18c59ac584b5aec
+PODFILE CHECKSUM: a984b60ee51e365089e81a3b0c38ce89771b5210
 
 COCOAPODS: 1.11.2

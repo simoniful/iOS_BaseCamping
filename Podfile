@@ -5,7 +5,7 @@ target 'BaseCamping' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'FSPagerView'
-
+  pod 'Tabman', '~> 2.11'
   # Pods for BaseCamping
 
 end
