@@ -67,15 +67,16 @@ class Review: Object {
     // (opt) 사진
     
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var facilitySatisfaction: Int
-    @Persisted var serviceSatisfaction: Int
-    @Persisted var accessibility: Int
-    @Persisted var revisitWill: Int
+    @Persisted var facilitySatisfaction: Double
+    @Persisted var serviceSatisfaction: Double
+    @Persisted var accessibility: Double
+    @Persisted var revisitWill: Double
     @Persisted var title: String
     @Persisted var content: String
     @Persisted var regDate: Date
+    @Persisted var placeInfo: PlaceInfo?
     
-    convenience init(facilitySatisfaction: Int, serviceSatisfaction: Int, accessibility: Int, revisitWill: Int, title: String, content: String, regDate: Date) {
+    convenience init(facilitySatisfaction: Double, serviceSatisfaction: Double, accessibility: Double, revisitWill: Double, title: String, content: String, regDate: Date, placeInfo: PlaceInfo) {
         self.init()
         self.facilitySatisfaction = facilitySatisfaction
         self.serviceSatisfaction = serviceSatisfaction
@@ -84,5 +85,6 @@ class Review: Object {
         self.title = title
         self.content = content
         self.regDate = regDate
+        self.placeInfo = placeInfo
     }
 }

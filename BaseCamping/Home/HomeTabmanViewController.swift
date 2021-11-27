@@ -22,7 +22,7 @@ class HomeTabmanViewController: TabmanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadToLocalJson ()
-
+        
         regionList.forEach { place in
             let placeVc = setVC(placeName: place)
             viewControllers.append(placeVc)
@@ -32,7 +32,7 @@ class HomeTabmanViewController: TabmanViewController {
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .snap
         addBar(bar, dataSource: self, at: .top)
-        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
     }
     
     @objc func loadToLocalJson ()  {

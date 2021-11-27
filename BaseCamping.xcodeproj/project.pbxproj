@@ -22,13 +22,14 @@
 		F4710562274FE3D30063756F /* MyMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4710561274FE3D30063756F /* MyMenuViewController.swift */; };
 		F4710564275090720063756F /* HomeTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4710563275090720063756F /* HomeTabmanViewController.swift */; };
 		F471056B2750C83C0063756F /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = F471056A2750C83C0063756F /* Cosmos */; };
+		F4809985275232300071B1F7 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4809984275232300071B1F7 /* IQKeyboardManagerSwift */; };
+		F49F224027520BE50016B20E /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F223F27520BE40016B20E /* UITextField + Extension.swift */; };
 		F4A3A83B2744FCC800EC5C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */; };
 		F4A3A83D2744FCC800EC5C7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A83C2744FCC800EC5C7E /* SceneDelegate.swift */; };
 		F4A3A8422744FCC800EC5C7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8402744FCC800EC5C7E /* Main.storyboard */; };
 		F4A3A8442744FCC900EC5C7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8432744FCC900EC5C7E /* Assets.xcassets */; };
 		F4A3A8472744FCC900EC5C7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8452744FCC900EC5C7E /* LaunchScreen.storyboard */; };
 		F4A3A84F2744FE4200EC5C7E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A84E2744FE4200EC5C7E /* Home.storyboard */; };
-		F4A3A8512744FE5300EC5C7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A8502744FE5200EC5C7E /* HomeViewController.swift */; };
 		F4A3A8532744FF0900EC5C7E /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8522744FF0900EC5C7E /* Detail.storyboard */; };
 		F4A3A8552744FF1F00EC5C7E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A8542744FF1F00EC5C7E /* DetailViewController.swift */; };
 		F4A3A8572744FFB800EC5C7E /* ByRegion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8562744FFB800EC5C7E /* ByRegion.storyboard */; };
@@ -70,6 +71,7 @@
 		F471055F274FE3BF0063756F /* MyMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyMenu.storyboard; sourceTree = "<group>"; };
 		F4710561274FE3D30063756F /* MyMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuViewController.swift; sourceTree = "<group>"; };
 		F4710563275090720063756F /* HomeTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabmanViewController.swift; sourceTree = "<group>"; };
+		F49F223F27520BE40016B20E /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		F4A3A8372744FCC800EC5C7E /* BaseCamping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseCamping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4A3A83C2744FCC800EC5C7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +80,6 @@
 		F4A3A8462744FCC900EC5C7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4A3A8482744FCC900EC5C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4A3A84E2744FE4200EC5C7E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		F4A3A8502744FE5200EC5C7E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F4A3A8522744FF0900EC5C7E /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		F4A3A8542744FF1F00EC5C7E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F4A3A8562744FFB800EC5C7E /* ByRegion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ByRegion.storyboard; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4665145274B545200227259 /* RealmSwift in Frameworks */,
+				F4809985275232300071B1F7 /* IQKeyboardManagerSwift in Frameworks */,
 				F4C28C412747D5950014F0CC /* Alamofire in Frameworks */,
 				F471056B2750C83C0063756F /* Cosmos in Frameworks */,
 				F4C28C3E2747D5670014F0CC /* Kingfisher in Frameworks */,
@@ -233,7 +235,6 @@
 				F4C26980274540AD00DA5935 /* CellView */,
 				F4A3A84E2744FE4200EC5C7E /* Home.storyboard */,
 				F4710563275090720063756F /* HomeTabmanViewController.swift */,
-				F4A3A8502744FE5200EC5C7E /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -255,6 +256,7 @@
 				F4665149274CA17600227259 /* UIImage + Extension.swift */,
 				F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */,
 				F471054D274F28D30063756F /* UITextView + Extension.swift */,
+				F49F223F27520BE40016B20E /* UITextField + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -334,6 +336,7 @@
 				F4665142274B545200227259 /* Realm */,
 				F4665144274B545200227259 /* RealmSwift */,
 				F471056A2750C83C0063756F /* Cosmos */,
+				F4809984275232300071B1F7 /* IQKeyboardManagerSwift */,
 			);
 			productName = BaseCamping;
 			productReference = F4A3A8372744FCC800EC5C7E /* BaseCamping.app */;
@@ -369,6 +372,7 @@
 				F4C28C422747D5B70014F0CC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				F4665141274B545200227259 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				F47105692750C83C0063756F /* XCRemoteSwiftPackageReference "Cosmos" */,
+				F4809983275232300071B1F7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = F4A3A8382744FCC800EC5C7E /* Products */;
 			projectDirPath = "";
@@ -470,12 +474,12 @@
 				F4FC2843274EAE1A00106EB2 /* CreateViewController.swift in Sources */,
 				F4C269822745469100DA5935 /* HomeViewCollectionViewCell.swift in Sources */,
 				F4FC2836274E663400106EB2 /* DetailSocialTableViewCell.swift in Sources */,
-				F4A3A8512744FE5300EC5C7E /* HomeViewController.swift in Sources */,
 				F4A3A8592744FFD000EC5C7E /* ByRegionViewController.swift in Sources */,
 				F471055C274FDF2C0063756F /* ByKeywordViewController.swift in Sources */,
 				F466514A274CA17600227259 /* UIImage + Extension.swift in Sources */,
 				F4C2695F27450A8B00DA5935 /* UIView + Extension.swift in Sources */,
 				F4FC283A274E69F700106EB2 /* DetailSocialTableViewHeader.swift in Sources */,
+				F49F224027520BE50016B20E /* UITextField + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +614,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -640,6 +645,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simon.BaseCamping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -671,6 +677,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simon.BaseCamping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -719,6 +726,14 @@
 				version = 23.0.0;
 			};
 		};
+		F4809983275232300071B1F7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.9;
+			};
+		};
 		F4C28C3C2747D5670014F0CC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -760,6 +775,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F47105692750C83C0063756F /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
+		};
+		F4809984275232300071B1F7 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4809983275232300071B1F7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		F4C28C3D2747D5670014F0CC /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

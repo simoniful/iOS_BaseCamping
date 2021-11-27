@@ -15,6 +15,7 @@ import MapKit
 import simd
 
 class DetailViewController: UIViewController {
+    let localRealm = try! Realm()
     var placeInfo: PlaceInfo?
     var downloadedImageURLs: [String] = [] {
         didSet {
@@ -26,6 +27,7 @@ class DetailViewController: UIViewController {
     var isInfoOpened: Bool = true
     var infoContainerViewHeightAnchor:NSLayoutConstraint!
     var socialTableHeightAnchor:NSLayoutConstraint!
+    var isLiked = false
 
     @IBOutlet weak var pageControl: FSPageControl!
     @IBOutlet weak var pagerView: FSPagerView! {
@@ -57,10 +59,13 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var subAddrLabel: UILabel!
     @IBOutlet weak var socialTableView: UITableView!
+    @IBOutlet weak var likeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "상세정보"
+        guard let likeData = placeInfo?.isLiked else { return }
+        isLiked = likeData
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeBtnClicked))
         
         fetchDetailImages()
@@ -73,12 +78,12 @@ class DetailViewController: UIViewController {
         nameLabel.text = placeInfo?.name
         addressLabel.text = placeInfo?.address
         typeLabel.text = placeInfo?.inDuty
-        telTextView.centerVerticalText()
         telTextView.text = placeInfo?.tel
-        homepageTextView.centerVerticalText()
+        telTextView.centerVertically()
         homepageTextView.text = placeInfo?.homepage
+        homepageTextView.centerVertically()
         
-        infoContainerViewHeightAnchor = infoContainerView.heightAnchor.constraint(equalToConstant: 510)
+        infoContainerViewHeightAnchor = infoContainerView.heightAnchor.constraint(equalToConstant: 500)
         infoContainerViewHeightAnchor.isActive = true
         
         insuranceLabel.text = placeInfo?.insurance == "Y" ? "가입" : "미가입"
@@ -130,7 +135,7 @@ class DetailViewController: UIViewController {
         if isInfoOpened == true {
             toggleBtn.setImage(UIImage(systemName: "arrowtriangle.down.fill"), for: .normal)
             informationStack.isHidden = false
-            infoContainerViewHeightAnchor.constant = 510
+            infoContainerViewHeightAnchor.constant = 500
         } else {
             toggleBtn.setImage(UIImage(systemName: "arrowtriangle.up.fill"), for: .normal)
             informationStack.isHidden = true
@@ -223,7 +228,26 @@ class DetailViewController: UIViewController {
     @IBAction func reviewBtnClicked(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CreateViewController") as! CreateViewController
-        
+        vc.placeInfo = self.placeInfo
+        let nav =  UINavigationController(rootViewController: vc)
+        nav.modalTransitionStyle = .coverVertical
+        nav.modalPresentationStyle = .overFullScreen
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    @IBAction func likeBtnClicked(_ sender: UIButton) {
+        isLiked = !isLiked
+        if isLiked == true {
+            likeBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            try! self.localRealm.write {
+                placeInfo?.isLiked = true
+            }
+        } else {
+            likeBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+            try! self.localRealm.write {
+                placeInfo?.isLiked = false
+            }
+        }
     }
     
     func changeHtmlTag(input: String) -> String {
