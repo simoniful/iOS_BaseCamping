@@ -13,7 +13,6 @@ import Hero
 class ReviewListViewController: UIViewController {
     let localRealm = try! Realm()
     var reviewList: Results<Review>?
-    let sectionInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -23,7 +22,6 @@ class ReviewListViewController: UIViewController {
         collectionView.dataSource = self
         let nibName = UINib(nibName: ReviewCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: ReviewCollectionViewCell.identifier)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,20 +31,16 @@ class ReviewListViewController: UIViewController {
     }
     
     func loadImageFromDocuments(imageName: String) -> UIImage? {
-        // 1. documents 경로 가져오기
         let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
         let path = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
         
         if let directoryPath = path.first {
-            // 2. path 경로 문자열 URL 변환
             let imageURL = URL(fileURLWithPath: directoryPath).appendingPathComponent(imageName)
-            // 3. UIImage 변환
             return UIImage(contentsOfFile: imageURL.path)
         }
         return nil
     }
-
 }
 
 extension ReviewListViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -80,6 +74,9 @@ extension ReviewListViewController : UICollectionViewDelegate, UICollectionViewD
         let vc = storyboard.instantiateViewController(withIdentifier: "ReviewDetailViewController") as! ReviewDetailViewController
         vc.reviewData = row
         vc.reviewImage = loadImageFromDocuments(imageName: "\(row._id).jpg")
+        vc.btnActionHandler = {
+            self.collectionView.reloadData()
+        }
         let nav =  UINavigationController(rootViewController: vc)
         nav.modalTransitionStyle = .coverVertical
         nav.modalPresentationStyle = .overFullScreen
@@ -99,6 +96,4 @@ extension ReviewListViewController : UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2.0
     }
-    
-    
 }

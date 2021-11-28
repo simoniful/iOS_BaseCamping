@@ -377,7 +377,6 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="40"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="closeBtnClicked:" destination="ayB-Zq-HgZ" eventType="touchUpInside" id="RCg-jT-NBq"/>
                                     <action selector="deleteBtnClicked:" destination="ayB-Zq-HgZ" eventType="touchUpInside" id="O5o-Ya-GvL"/>
                                 </connections>
                             </button>

@@ -60,7 +60,9 @@ class CreateViewController: UIViewController {
     }
     
     @IBAction func confirmBtnClicked(_ sender: UIButton) {
-        // alert으로 저장여부 확인 
+        // [To-do] alert으로 저장여부 확인
+        // [To-do] 공백 체크
+        // [To-do] 핸들러 사용 DetailView에 토스트 띄우기
         guard let placeInfo = placeInfo else { return }
         guard let title = titleLabel.text else { return }
         guard let content = contentLabel.text else { return }

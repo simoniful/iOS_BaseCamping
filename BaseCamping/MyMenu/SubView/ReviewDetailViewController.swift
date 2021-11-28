@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 import Cosmos
 
 class ReviewDetailViewController: UIViewController {
 
+    let localRealm = try! Realm()
     var reviewData: Review?
     var reviewImage: UIImage?
+    var btnActionHandler: (() -> ())?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placeNameLabel: UILabel!
@@ -53,15 +56,39 @@ class ReviewDetailViewController: UIViewController {
         reviewContentLabel.text = reviewData.content
     }
     
-
+    func deleteImageInDocuments(imageName: String) {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let imageURL = documentDirectory.appendingPathComponent(imageName)
+        if FileManager.default.fileExists(atPath: imageURL.path) {
+            do {
+                try FileManager.default.removeItem(at: imageURL)
+                print("이미지 삭제 완료")
+            } catch {
+                print("이미지 삭제 실패")
+            }
+        }
+    }
+    
     @IBAction func closeBtnClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func deleteBtnClicked(_ sender: UIButton) {
-        // 얼럿 띄우고
-        // 삭제
+        let alert = UIAlertController(title: "리뷰를 삭제하시겠습니까?", message: "삭제된 리뷰는 복구할 수 없습니다", preferredStyle: .alert)
         
-        self.dismiss(animated: true, completion: nil)
+        let ok = UIAlertAction(title: "확인", style: .default) { (action: UIAlertAction!) in
+            guard let reviewData = self.reviewData else { return }
+            guard let btnActionHandler = self.btnActionHandler else { return }
+            self.deleteImageInDocuments(imageName: "\(reviewData._id).jpg")
+            try! self.localRealm.write {
+                self.localRealm.delete(reviewData)
+            }
+            btnActionHandler()
+            self.dismiss(animated: true, completion: nil)
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler:nil)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
 }

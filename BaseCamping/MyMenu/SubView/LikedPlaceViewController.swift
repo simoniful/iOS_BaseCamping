@@ -22,13 +22,16 @@ class LikedPlaceViewController: UIViewController {
         collectionView.dataSource = self
         let nibName = UINib(nibName: LikedPlaceCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: LikedPlaceCollectionViewCell.identifier)
-        print("viewDA")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         likedPlaceList = localRealm.objects(PlaceInfo.self).filter("isLiked == true")
         collectionView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 }
 
