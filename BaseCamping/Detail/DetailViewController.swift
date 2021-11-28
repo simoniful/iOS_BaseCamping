@@ -65,6 +65,8 @@ class DetailViewController: UIViewController {
         title = "상세정보"
         guard let likeData = placeInfo?.isLiked else { return }
         isLiked = likeData
+        let likeBtnImage = isLiked == true ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        likeBtn.setImage(likeBtnImage, for: .normal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeBtnClicked))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.black
         fetchDetailImages()

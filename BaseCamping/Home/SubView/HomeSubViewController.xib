@@ -93,6 +93,9 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="더 보기"/>
+                                            <connections>
+                                                <action selector="moreBtnClicked:" destination="-1" eventType="touchUpInside" id="hZP-G0-Fwd"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -132,8 +135,8 @@
             <constraints>
                 <constraint firstItem="8be-nu-N3q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7u4-yV-fVW"/>
                 <constraint firstItem="8be-nu-N3q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="muD-ae-2LC"/>
-                <constraint firstAttribute="bottom" secondItem="8be-nu-N3q" secondAttribute="bottom" id="niH-0C-Njk"/>
-                <constraint firstItem="8be-nu-N3q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zQk-Fi-UI4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8be-nu-N3q" secondAttribute="bottom" id="niH-0C-Njk"/>
+                <constraint firstItem="8be-nu-N3q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="zQk-Fi-UI4"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="100.44642857142857"/>
         </view>

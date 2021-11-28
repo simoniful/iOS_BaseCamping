@@ -12,7 +12,7 @@
         <!--By Region View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ByRegion" id="Y6W-OH-hqX" customClass="ByRegionViewController" customModule="BaseCamping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ByRegionViewController" id="Y6W-OH-hqX" customClass="ByRegionViewController" customModule="BaseCamping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,17 +21,17 @@
                                 <rect key="frame" x="20" y="64" width="374" height="44"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CE7-o6-2PT">
-                                        <rect key="frame" x="0.0" y="0.0" width="262" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="44"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="도" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6F-Mj-L1p">
-                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="44"/>
                                                 <color key="backgroundColor" red="0.59215861560000005" green="0.52941071989999999" blue="0.3960816264" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="9ht-xv-GMt"/>
                                                     <constraint firstAttribute="height" constant="44" id="y7s-lH-fcW"/>
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
@@ -46,14 +46,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="시 군 구" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WCd-Dl-giB">
-                                                <rect key="frame" x="90.5" y="0.0" width="81" height="44"/>
+                                                <rect key="frame" x="80" y="0.0" width="70" height="44"/>
                                                 <color key="backgroundColor" red="0.6823564768" green="0.51764374970000004" blue="0.27844002839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="6cj-sl-SMd"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="zL4-ur-zEf"/>
+                                                    <constraint firstAttribute="width" constant="70" id="zL4-ur-zEf"/>
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
@@ -65,14 +65,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="업종" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mwL-bS-uAI">
-                                                <rect key="frame" x="181.5" y="0.0" width="80.5" height="44"/>
+                                                <rect key="frame" x="160" y="0.0" width="70" height="44"/>
                                                 <color key="backgroundColor" red="0.78039747479999999" green="0.48626756669999999" blue="0.21962228419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="0DX-OW-bZc"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="r7f-3w-G8G"/>
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
@@ -86,7 +86,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl4-Rq-k1e">
-                                        <rect key="frame" x="312" y="0.0" width="62" height="44"/>
+                                        <rect key="frame" x="280" y="0.0" width="94" height="44"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="8ar-B6-b0J"/>
@@ -157,7 +157,6 @@
                             <constraint firstItem="adW-bR-TTn" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="sAX-pe-5dZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HN1-IB-tiI" secondAttribute="trailing" constant="20" id="tUC-ZN-NIp"/>
                             <constraint firstItem="adW-bR-TTn" firstAttribute="width" secondItem="adW-bR-TTn" secondAttribute="height" multiplier="1:1" id="v32-aZ-IyZ"/>
-                            <constraint firstItem="Hl4-Rq-k1e" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.15" id="xqF-TH-DaL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bl1-eB-GoC"/>

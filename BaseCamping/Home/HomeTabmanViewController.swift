@@ -21,8 +21,6 @@ class HomeTabmanViewController: TabmanViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadToLocalJson ()
-        
         regionList.forEach { place in
             let placeVc = setVC(placeName: place)
             viewControllers.append(placeVc)
@@ -33,6 +31,14 @@ class HomeTabmanViewController: TabmanViewController {
         bar.layout.transitionStyle = .snap
         addBar(bar, dataSource: self, at: .top)
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
+    }
+    
+    @objc func checkFirstOpen () {
+        print(checkFirstOpen)
+        let ud = UserDefaults.standard
+        if ud.object(forKey: "isFirstOpen") == nil {
+            loadToLocalJson ()
+        }
     }
     
     @objc func loadToLocalJson ()  {
@@ -75,6 +81,9 @@ class HomeTabmanViewController: TabmanViewController {
                         localRealm.add(place)
                     }
                 }
+                let ud = UserDefaults.standard
+                ud.set(false, forKey: "isFirstOpen")
+                ud.synchronize()
             } catch {
                 print("불러오기를 실패했습니다")
             }

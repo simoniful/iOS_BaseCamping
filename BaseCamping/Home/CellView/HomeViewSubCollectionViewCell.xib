@@ -29,14 +29,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0G-pm-O8J">
-                                <rect key="frame" x="10" y="130" width="44.5" height="20.5"/>
+                                <rect key="frame" x="10" y="130" width="199" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcx-7L-8PW">
-                                <rect key="frame" x="10" y="155.5" width="37.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="10" y="155.5" width="199" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -45,11 +45,13 @@
                         <constraints>
                             <constraint firstItem="pcx-7L-8PW" firstAttribute="top" secondItem="d0G-pm-O8J" secondAttribute="bottom" constant="5" id="IVw-AP-tcX"/>
                             <constraint firstAttribute="trailing" secondItem="Sdc-nA-Z7A" secondAttribute="trailing" constant="10" id="Oha-b1-TmB"/>
+                            <constraint firstAttribute="trailing" secondItem="pcx-7L-8PW" secondAttribute="trailing" constant="10" id="SZI-qH-WHi"/>
                             <constraint firstItem="Sdc-nA-Z7A" firstAttribute="leading" secondItem="NMf-fv-8m9" secondAttribute="leading" constant="10" id="b9s-Sg-aZF"/>
                             <constraint firstItem="pcx-7L-8PW" firstAttribute="leading" secondItem="NMf-fv-8m9" secondAttribute="leading" constant="10" id="gOE-U1-yYh"/>
                             <constraint firstItem="d0G-pm-O8J" firstAttribute="top" secondItem="Sdc-nA-Z7A" secondAttribute="bottom" constant="10" id="imI-dH-BLE"/>
                             <constraint firstItem="d0G-pm-O8J" firstAttribute="leading" secondItem="NMf-fv-8m9" secondAttribute="leading" constant="10" id="mMB-zy-8qq"/>
                             <constraint firstItem="Sdc-nA-Z7A" firstAttribute="top" secondItem="NMf-fv-8m9" secondAttribute="top" constant="10" id="vV4-J1-dc8"/>
+                            <constraint firstAttribute="trailing" secondItem="d0G-pm-O8J" secondAttribute="trailing" constant="10" id="zAV-JJ-sGL"/>
                         </constraints>
                     </view>
                 </subviews>

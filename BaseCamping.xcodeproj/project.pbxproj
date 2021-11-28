@@ -34,6 +34,9 @@
 		F4A3A8552744FF1F00EC5C7E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A8542744FF1F00EC5C7E /* DetailViewController.swift */; };
 		F4A3A8572744FFB800EC5C7E /* ByRegion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A3A8562744FFB800EC5C7E /* ByRegion.storyboard */; };
 		F4A3A8592744FFD000EC5C7E /* ByRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A8582744FFD000EC5C7E /* ByRegionViewController.swift */; };
+		F4A6CEC527538C3C0090D014 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A6CEC327538C3C0090D014 /* ReviewCollectionViewCell.swift */; };
+		F4A6CEC627538C3C0090D014 /* ReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A6CEC427538C3C0090D014 /* ReviewCollectionViewCell.xib */; };
+		F4AD24B327539F3600B4C555 /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AD24B227539F3600B4C555 /* ReviewDetailViewController.swift */; };
 		F4B705D32747321D0008A54A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705D22747321D0008A54A /* Constant.swift */; };
 		F4B705DA274778E10008A54A /* HomeSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705D8274778E10008A54A /* HomeSubViewController.swift */; };
 		F4B705DB274778E10008A54A /* HomeSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B705D9274778E10008A54A /* HomeSubViewController.xib */; };
@@ -48,6 +51,10 @@
 		F4C28C412747D5950014F0CC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F4C28C402747D5950014F0CC /* Alamofire */; };
 		F4C28C442747D5B70014F0CC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F4C28C432747D5B70014F0CC /* SwiftyJSON */; };
 		F4C28C462747D8FF0014F0CC /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C28C452747D8FF0014F0CC /* InfoModel.swift */; };
+		F4D9F47B2753280E0091CB64 /* LikedPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F47A2753280E0091CB64 /* LikedPlaceViewController.swift */; };
+		F4D9F47D275328460091CB64 /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F47C275328460091CB64 /* ReviewListViewController.swift */; };
+		F4D9F481275333A80091CB64 /* LikedPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F47F275333A80091CB64 /* LikedPlaceCollectionViewCell.swift */; };
+		F4D9F482275333A80091CB64 /* LikedPlaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F480275333A80091CB64 /* LikedPlaceCollectionViewCell.xib */; };
 		F4FC2832274E5B6900106EB2 /* UIScrollView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */; };
 		F4FC2836274E663400106EB2 /* DetailSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */; };
 		F4FC2837274E663400106EB2 /* DetailSocialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FC2835274E663400106EB2 /* DetailSocialTableViewCell.xib */; };
@@ -84,6 +91,9 @@
 		F4A3A8542744FF1F00EC5C7E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F4A3A8562744FFB800EC5C7E /* ByRegion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ByRegion.storyboard; sourceTree = "<group>"; };
 		F4A3A8582744FFD000EC5C7E /* ByRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByRegionViewController.swift; sourceTree = "<group>"; };
+		F4A6CEC327538C3C0090D014 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4A6CEC427538C3C0090D014 /* ReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCollectionViewCell.xib; sourceTree = "<group>"; };
+		F4AD24B227539F3600B4C555 /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
 		F4B705D22747321D0008A54A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F4B705D8274778E10008A54A /* HomeSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubViewController.swift; sourceTree = "<group>"; };
 		F4B705D9274778E10008A54A /* HomeSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSubViewController.xib; sourceTree = "<group>"; };
@@ -95,6 +105,10 @@
 		F4C28C382747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewWeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4C28C392747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewWeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4C28C452747D8FF0014F0CC /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		F4D9F47A2753280E0091CB64 /* LikedPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPlaceViewController.swift; sourceTree = "<group>"; };
+		F4D9F47C275328460091CB64 /* ReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListViewController.swift; sourceTree = "<group>"; };
+		F4D9F47F275333A80091CB64 /* LikedPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4D9F480275333A80091CB64 /* LikedPlaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikedPlaceCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView + Extension.swift"; sourceTree = "<group>"; };
 		F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSocialTableViewCell.swift; sourceTree = "<group>"; };
 		F4FC2835274E663400106EB2 /* DetailSocialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSocialTableViewCell.xib; sourceTree = "<group>"; };
@@ -273,6 +287,27 @@
 			path = CellView;
 			sourceTree = "<group>";
 		};
+		F4D9F479275327820091CB64 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				F4D9F47A2753280E0091CB64 /* LikedPlaceViewController.swift */,
+				F4AD24B227539F3600B4C555 /* ReviewDetailViewController.swift */,
+				F4D9F47C275328460091CB64 /* ReviewListViewController.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		F4D9F47E275333790091CB64 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				F4D9F480275333A80091CB64 /* LikedPlaceCollectionViewCell.xib */,
+				F4D9F47F275333A80091CB64 /* LikedPlaceCollectionViewCell.swift */,
+				F4A6CEC427538C3C0090D014 /* ReviewCollectionViewCell.xib */,
+				F4A6CEC327538C3C0090D014 /* ReviewCollectionViewCell.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
 		F4FC2833274E660200106EB2 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +331,8 @@
 		F4FC2841274EADB500106EB2 /* MyMenu */ = {
 			isa = PBXGroup;
 			children = (
+				F4D9F479275327820091CB64 /* SubView */,
+				F4D9F47E275333790091CB64 /* CellView */,
 				F471055F274FE3BF0063756F /* MyMenu.storyboard */,
 				F4710561274FE3D30063756F /* MyMenuViewController.swift */,
 			);
@@ -400,9 +437,11 @@
 				F4A3A8532744FF0900EC5C7E /* Detail.storyboard in Resources */,
 				F4FC2837274E663400106EB2 /* DetailSocialTableViewCell.xib in Resources */,
 				F4C28C3B2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.xib in Resources */,
+				F4D9F482275333A80091CB64 /* LikedPlaceCollectionViewCell.xib in Resources */,
 				F4A3A84F2744FE4200EC5C7E /* Home.storyboard in Resources */,
 				F4B705DB274778E10008A54A /* HomeSubViewController.xib in Resources */,
 				F4B705E7274787DA0008A54A /* HomeViewSubCollectionViewCell.xib in Resources */,
+				F4A6CEC627538C3C0090D014 /* ReviewCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,13 +512,18 @@
 				F4B705DA274778E10008A54A /* HomeSubViewController.swift in Sources */,
 				F4FC2843274EAE1A00106EB2 /* CreateViewController.swift in Sources */,
 				F4C269822745469100DA5935 /* HomeViewCollectionViewCell.swift in Sources */,
+				F4D9F47B2753280E0091CB64 /* LikedPlaceViewController.swift in Sources */,
 				F4FC2836274E663400106EB2 /* DetailSocialTableViewCell.swift in Sources */,
 				F4A3A8592744FFD000EC5C7E /* ByRegionViewController.swift in Sources */,
 				F471055C274FDF2C0063756F /* ByKeywordViewController.swift in Sources */,
+				F4D9F481275333A80091CB64 /* LikedPlaceCollectionViewCell.swift in Sources */,
 				F466514A274CA17600227259 /* UIImage + Extension.swift in Sources */,
 				F4C2695F27450A8B00DA5935 /* UIView + Extension.swift in Sources */,
 				F4FC283A274E69F700106EB2 /* DetailSocialTableViewHeader.swift in Sources */,
+				F4AD24B327539F3600B4C555 /* ReviewDetailViewController.swift in Sources */,
 				F49F224027520BE50016B20E /* UITextField + Extension.swift in Sources */,
+				F4A6CEC527538C3C0090D014 /* ReviewCollectionViewCell.swift in Sources */,
+				F4D9F47D275328460091CB64 /* ReviewListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

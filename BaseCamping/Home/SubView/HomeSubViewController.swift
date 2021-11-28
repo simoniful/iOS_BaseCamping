@@ -79,6 +79,11 @@ class HomeSubViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func moreBtnClicked(_ sender: UIButton) {
+        guard let tabBarController = tabBarController else { return }
+        tabBarController.selectedViewController = tabBarController.viewControllers![1]
+    }
 }
 
 extension HomeSubViewController: FSPagerViewDelegate,FSPagerViewDataSource {

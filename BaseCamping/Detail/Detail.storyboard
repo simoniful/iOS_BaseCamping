@@ -795,14 +795,14 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Ld-jA-yEv">
-                                        <rect key="frame" x="15" y="55" width="260" height="195"/>
+                                        <rect key="frame" x="15" y="55.000000000000014" width="260" height="146.33333333333337"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="5Ld-jA-yEv" secondAttribute="height" multiplier="4:3" id="CNw-TT-n59"/>
+                                            <constraint firstAttribute="width" secondItem="5Ld-jA-yEv" secondAttribute="height" multiplier="16:9" id="CNw-TT-n59"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lAq-tI-fo8">
-                                        <rect key="frame" x="15" y="265" width="260" height="144"/>
+                                        <rect key="frame" x="15" y="216.33333333333331" width="260" height="144"/>
                                         <subviews>
                                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="hqF-ok-po6">
                                                 <rect key="frame" x="0.0" y="0.0" width="260" height="36"/>
@@ -821,7 +821,7 @@
                                                         <rect key="frame" x="91" y="0.0" width="169" height="36"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-rW-5pU" customClass="CosmosView" customModule="Cosmos">
-                                                                <rect key="frame" x="15" y="5.6666666666666856" width="139" height="25"/>
+                                                                <rect key="frame" x="15" y="5.3333333333333712" width="139" height="25"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="NRO-Kq-OCw"/>
@@ -874,7 +874,7 @@
                                                         <rect key="frame" x="91" y="0.0" width="169" height="36"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHF-cY-QGl" customClass="CosmosView" customModule="Cosmos">
-                                                                <rect key="frame" x="15" y="5.6666666666666856" width="139" height="25"/>
+                                                                <rect key="frame" x="15" y="5.3333333333333712" width="139" height="25"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="n2f-Ka-fS7"/>
@@ -927,7 +927,7 @@
                                                         <rect key="frame" x="91" y="0.0" width="169" height="36"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQ4-XL-Qw3" customClass="CosmosView" customModule="Cosmos">
-                                                                <rect key="frame" x="15" y="5.6666666666666856" width="139" height="25"/>
+                                                                <rect key="frame" x="15" y="5.3333333333333712" width="139" height="25"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="vAQ-0x-uA3"/>
@@ -980,7 +980,7 @@
                                                         <rect key="frame" x="91" y="0.0" width="169" height="36"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="037-6a-g2Y" customClass="CosmosView" customModule="Cosmos">
-                                                                <rect key="frame" x="15" y="5.6666666666666856" width="139" height="25"/>
+                                                                <rect key="frame" x="15" y="5.3333333333333712" width="139" height="25"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="XZ8-2t-YLG"/>
@@ -1043,7 +1043,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="리뷰 제목을 입력하세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ron-HZ-myu">
-                                        <rect key="frame" x="15" y="424" width="260" height="36"/>
+                                        <rect key="frame" x="15" y="375.33333333333331" width="260" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="nce-8e-xtq"/>
@@ -1063,7 +1063,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L4V-fU-SWc">
-                                        <rect key="frame" x="15" y="475" width="260" height="157"/>
+                                        <rect key="frame" x="15" y="426.33333333333331" width="260" height="205.66666666666669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

@@ -153,6 +153,7 @@ extension ByRegionViewController: UITableViewDelegate, UITableViewDataSource {
         cell.placeImage.kf.setImage(with: url)
         cell.addressLabel.text = row.address
         cell.nameLabel.text = row.name
+        cell.typeLabel.text = row.inDuty
         return cell
     }
     
