@@ -139,7 +139,6 @@ extension HomeSubViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.dayLabel.text = formatter.string(from: convertDate)
             let url = URL(string: "\(Endpoint.weatherIconURL)/\(item.weatherIcon)@2x.png")
             cell.iconImage.kf.setImage(with: url)
-            // cell.tempLabel.text = "\(item.minTemp) / \(item.maxTemp)"
             cell.layer.cornerRadius = 4
             return cell
         }

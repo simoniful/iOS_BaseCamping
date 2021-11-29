@@ -39,6 +39,7 @@ class ByKeywordViewController: UIViewController {
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = UIColor.black
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.obscuresBackgroundDuringPresentation = false
         
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
@@ -100,17 +101,6 @@ extension ByKeywordViewController: UISearchResultsUpdating, UISearchBarDelegate,
         } else {
             self.noResultView.isHidden = true
         }
-    }
-    
-    func willDismissSearchController(_ searchController: UISearchController) {
-        searchController.searchBar.text = nil
-        searchText = nil
-        searchResultTableView.reloadData()
-    }
-    
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        searchResultTableView.reloadData()
-        return true
     }
 }
 

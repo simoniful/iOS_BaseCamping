@@ -27,7 +27,4 @@ class MyMenuViewController: UIViewController {
             reviewListView.alpha = 1
         }
     }
-    
-    
-
 }

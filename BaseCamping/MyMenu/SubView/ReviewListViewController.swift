@@ -81,7 +81,6 @@ extension ReviewListViewController : UICollectionViewDelegate, UICollectionViewD
         let nav =  UINavigationController(rootViewController: vc)
         nav.modalTransitionStyle = .coverVertical
         nav.modalPresentationStyle = .overFullScreen
-        
         self.present(nav, animated: true, completion: nil)
     }
     

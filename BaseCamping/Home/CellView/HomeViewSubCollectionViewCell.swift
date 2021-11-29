@@ -18,5 +18,4 @@ class HomeViewSubCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         itemImageView.layer.cornerRadius = 7.5
     }
-
 }

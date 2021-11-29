@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 struct WeatherInfo {
     let date: Int
     let minTemp: Double
@@ -23,5 +22,3 @@ struct SocialMediaInfo {
     let link: String
     let description: String
 }
-
-

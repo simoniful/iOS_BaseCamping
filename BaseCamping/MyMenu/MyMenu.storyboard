@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -88,16 +87,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Y6L-AX-Ni0">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mkf-dZ-t6t">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6ha-Ug-HH9"/>
@@ -115,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RX2-jf-Pz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="538" y="852"/>
+            <point key="canvasLocation" x="-358" y="904"/>
         </scene>
         <!--Review Detail View Controller-->
         <scene sceneID="mQk-EV-DVQ">
@@ -337,7 +327,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARB-gS-irT">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARB-gS-irT" customClass="BasePaddingLabel" customModule="BaseCamping" customModuleProvider="target">
                                         <rect key="frame" x="15" y="301.5" width="324" height="24"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -349,33 +339,33 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqK-Sh-q4M">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xas-Vi-TlC">
                                         <rect key="frame" x="15" y="340.5" width="324" height="116.5"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.76000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039335009999995" green="0.94117587800000002" blue="0.86666828389999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="ARB-gS-irT" firstAttribute="top" secondItem="Y3K-jD-Vcl" secondAttribute="bottom" constant="25" id="2ky-Lb-q3u"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xas-Vi-TlC" secondAttribute="bottom" constant="15" id="6LX-rv-V9X"/>
+                                    <constraint firstItem="Xas-Vi-TlC" firstAttribute="top" secondItem="ARB-gS-irT" secondAttribute="bottom" constant="15" id="7YF-Cu-kg6"/>
                                     <constraint firstAttribute="trailing" secondItem="Y3K-jD-Vcl" secondAttribute="trailing" constant="15" id="8km-nc-Tta"/>
                                     <constraint firstAttribute="trailing" secondItem="hvB-8l-Amk" secondAttribute="trailing" constant="15" id="B2L-H2-tSk"/>
                                     <constraint firstItem="hvB-8l-Amk" firstAttribute="top" secondItem="icD-CL-0Rn" secondAttribute="top" constant="15" id="BmL-7f-s0i"/>
-                                    <constraint firstAttribute="trailing" secondItem="XqK-Sh-q4M" secondAttribute="trailing" constant="15" id="J1y-9g-WOJ"/>
-                                    <constraint firstItem="XqK-Sh-q4M" firstAttribute="top" secondItem="ARB-gS-irT" secondAttribute="bottom" constant="15" id="WhI-1G-iIj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xas-Vi-TlC" secondAttribute="trailing" constant="15" id="Lft-Sm-2br"/>
                                     <constraint firstItem="Y3K-jD-Vcl" firstAttribute="top" secondItem="hvB-8l-Amk" secondAttribute="bottom" constant="25" id="Ycp-wf-L5p"/>
                                     <constraint firstItem="k5N-6G-kyg" firstAttribute="width" secondItem="icD-CL-0Rn" secondAttribute="width" multiplier="0.4" id="atC-8U-YQX"/>
                                     <constraint firstAttribute="width" secondItem="icD-CL-0Rn" secondAttribute="height" multiplier="3:4" id="fN9-pA-E5j"/>
-                                    <constraint firstItem="XqK-Sh-q4M" firstAttribute="leading" secondItem="icD-CL-0Rn" secondAttribute="leading" constant="15" id="mM2-ai-1c5"/>
+                                    <constraint firstItem="Xas-Vi-TlC" firstAttribute="leading" secondItem="icD-CL-0Rn" secondAttribute="leading" constant="15" id="fSg-Dc-pVh"/>
                                     <constraint firstAttribute="trailing" secondItem="ARB-gS-irT" secondAttribute="trailing" constant="15" id="oBp-xu-sqT"/>
-                                    <constraint firstAttribute="bottom" secondItem="XqK-Sh-q4M" secondAttribute="bottom" constant="15" id="rcW-DB-Mgs"/>
                                     <constraint firstItem="Y3K-jD-Vcl" firstAttribute="leading" secondItem="icD-CL-0Rn" secondAttribute="leading" constant="15" id="t1d-NR-Bwy"/>
                                     <constraint firstItem="ARB-gS-irT" firstAttribute="leading" secondItem="icD-CL-0Rn" secondAttribute="leading" constant="15" id="udl-k5-SYo"/>
                                     <constraint firstItem="hvB-8l-Amk" firstAttribute="leading" secondItem="icD-CL-0Rn" secondAttribute="leading" constant="15" id="zEU-GT-xgV"/>
@@ -424,9 +414,9 @@
                             <constraint firstAttribute="trailing" secondItem="wib-w8-BcU" secondAttribute="trailing" id="3BS-mm-0nr"/>
                             <constraint firstItem="wib-w8-BcU" firstAttribute="leading" secondItem="Nif-4X-ERv" secondAttribute="leading" id="8Wx-Y0-J6z"/>
                             <constraint firstAttribute="bottom" secondItem="wib-w8-BcU" secondAttribute="bottom" id="8wT-ke-oLL"/>
-                            <constraint firstItem="wib-w8-BcU" firstAttribute="top" secondItem="Nif-4X-ERv" secondAttribute="top" id="GsK-xW-5Ks"/>
                             <constraint firstItem="UlX-El-bWZ" firstAttribute="trailing" secondItem="icD-CL-0Rn" secondAttribute="trailing" constant="30" id="KCd-h9-MnB"/>
                             <constraint firstItem="UlX-El-bWZ" firstAttribute="trailing" secondItem="yug-AU-41x" secondAttribute="trailing" constant="30" id="Out-Uz-d6i"/>
+                            <constraint firstItem="wib-w8-BcU" firstAttribute="top" secondItem="Nif-4X-ERv" secondAttribute="top" id="VBC-yD-3tS"/>
                             <constraint firstItem="icD-CL-0Rn" firstAttribute="leading" secondItem="UlX-El-bWZ" secondAttribute="leading" constant="30" id="X5S-Vd-QaG"/>
                             <constraint firstItem="yug-AU-41x" firstAttribute="top" secondItem="icD-CL-0Rn" secondAttribute="bottom" constant="20" id="YU1-aL-Onh"/>
                             <constraint firstItem="frH-jG-Adt" firstAttribute="top" secondItem="icD-CL-0Rn" secondAttribute="bottom" constant="20" id="hDf-K9-d2x"/>
@@ -435,6 +425,8 @@
                             <constraint firstItem="icD-CL-0Rn" firstAttribute="centerY" secondItem="Nif-4X-ERv" secondAttribute="centerY" id="wrg-T5-xvb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="uQh-61-JJZ"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="accessRate" destination="rE8-UL-vmq" id="83b-lg-W3V"/>
                         <outlet property="addressLabel" destination="s4l-fc-ulk" id="Ab3-Ss-MQO"/>
@@ -443,7 +435,7 @@
                         <outlet property="imageView" destination="k5N-6G-kyg" id="FaS-H2-CHc"/>
                         <outlet property="placeNameLabel" destination="phz-uJ-MgB" id="0bg-WF-Vdt"/>
                         <outlet property="placeTypeLabel" destination="944-jf-UpC" id="fGH-RK-JNv"/>
-                        <outlet property="reviewContentLabel" destination="XqK-Sh-q4M" id="hrf-oX-Qit"/>
+                        <outlet property="reviewContentTextView" destination="Xas-Vi-TlC" id="BPW-EK-4FU"/>
                         <outlet property="reviewTitleLabel" destination="ARB-gS-irT" id="Z3Z-GP-mCW"/>
                         <outlet property="revisitRate" destination="HXR-iy-zYY" id="7bF-uQ-LSt"/>
                         <outlet property="serviceRate" destination="Lbc-T8-okQ" id="Xcx-ge-0W1"/>
@@ -451,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzH-7x-6EC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1537.5" y="795.42253521126759"/>
+            <point key="canvasLocation" x="1506" y="903"/>
         </scene>
         <!--Review List View Controller-->
         <scene sceneID="MwQ-R6-dSz">
@@ -470,16 +462,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eEh-gU-yD4">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n4e-RQ-Rre">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vxC-Kz-joB"/>
@@ -497,13 +480,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fpw-WM-I7C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-110" y="852"/>
+            <point key="canvasLocation" x="419" y="903"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <image name="xmark.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

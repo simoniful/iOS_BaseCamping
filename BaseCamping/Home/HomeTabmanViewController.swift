@@ -34,7 +34,6 @@ class HomeTabmanViewController: TabmanViewController {
     }
     
     @objc func checkFirstOpen () {
-        print("checkFirstOpen")
         let ud = UserDefaults.standard
         if ud.object(forKey: "isFirstOpenBaseCamping") == nil {
             loadToLocalJson ()
@@ -127,6 +126,4 @@ extension HomeTabmanViewController: PageboyViewControllerDataSource, TMBarDataSo
         item.title = tabList[index]
         return item
     }
-    
-    
 }

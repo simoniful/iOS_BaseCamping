@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rLW-PH-fKx">
-                                <rect key="frame" x="20" y="44" width="374" height="798"/>
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -27,7 +27,7 @@
                                 </userDefinedRuntimeAttributes>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1u-wP-woW">
-                                <rect key="frame" x="50" y="291" width="314" height="314"/>
+                                <rect key="frame" x="50" y="296" width="314" height="314"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CampIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0Od-qv-pGm">
                                         <rect key="frame" x="20" y="20" width="274" height="205.5"/>
@@ -57,11 +57,11 @@
                         <color key="backgroundColor" red="0.98039335009999995" green="0.94117587800000002" blue="0.86666828389999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rLW-PH-fKx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="81S-wT-swe"/>
-                            <constraint firstItem="d1u-wP-woW" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="KeM-Gm-7LJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rLW-PH-fKx" secondAttribute="trailing" constant="20" id="Vmm-fG-Vq3"/>
                             <constraint firstItem="d1u-wP-woW" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.35" id="aZY-Ru-7uV"/>
-                            <constraint firstItem="rLW-PH-fKx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="dEP-lm-U3i"/>
+                            <constraint firstItem="rLW-PH-fKx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="dEP-lm-U3i"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rLW-PH-fKx" secondAttribute="bottom" constant="20" id="ig1-ck-bf2"/>
+                            <constraint firstItem="d1u-wP-woW" firstAttribute="centerY" secondItem="rLW-PH-fKx" secondAttribute="centerY" id="mIn-fS-kF9"/>
                             <constraint firstItem="d1u-wP-woW" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xIU-Il-9t8"/>
                         </constraints>
                     </view>

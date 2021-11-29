@@ -117,7 +117,7 @@
                                 </userDefinedRuntimeAttributes>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adW-bR-TTn">
-                                <rect key="frame" x="50" y="291" width="314" height="314"/>
+                                <rect key="frame" x="50" y="328" width="314" height="314"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CampIcon" translatesAutoresizingMaskIntoConstraints="NO" id="f8S-zG-Red">
                                         <rect key="frame" x="20" y="20" width="274" height="205.5"/>
@@ -148,7 +148,7 @@
                         <constraints>
                             <constraint firstItem="HN1-IB-tiI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="1Bp-xI-ij9"/>
                             <constraint firstItem="HN1-IB-tiI" firstAttribute="top" secondItem="7Ok-YD-uaZ" secondAttribute="bottom" constant="20" id="2WM-ii-1es"/>
-                            <constraint firstItem="adW-bR-TTn" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Bte-44-uhD"/>
+                            <constraint firstItem="adW-bR-TTn" firstAttribute="centerY" secondItem="HN1-IB-tiI" secondAttribute="centerY" id="Ex9-OZ-vKH"/>
                             <constraint firstItem="7Ok-YD-uaZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="FCq-6a-AFy"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7Ok-YD-uaZ" secondAttribute="trailing" constant="20" id="Lvb-qU-2MX"/>
                             <constraint firstItem="7Ok-YD-uaZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Nxu-08-fgR"/>

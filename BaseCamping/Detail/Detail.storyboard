@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlH-Sj-9zj">
-                                <rect key="frame" x="0.0" y="88" width="390" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="807.99999999999977"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6je-r0-CaN">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1963"/>
@@ -509,12 +509,16 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZp-7z-SlL">
-                                                                <rect key="frame" x="331.33333333333331" y="18" width="38.666666666666686" height="28.333333333333329"/>
+                                                                <rect key="frame" x="326" y="10" width="44" height="44"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="44" id="Rtc-iC-lcO"/>
+                                                                    <constraint firstAttribute="height" constant="44" id="dUn-Xi-PpL"/>
+                                                                </constraints>
                                                                 <color key="tintColor" red="0.51760143039999995" green="0.51767724749999999" blue="0.51757758860000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="arrowtriangle.down.fill" catalog="system" title="">
-                                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="12"/>
-                                                                </buttonConfiguration>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="" image="arrowtriangle.down.fill" catalog="system">
+                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="toggleBtnClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qip-2R-BAJ"/>
                                                                 </connections>
@@ -619,13 +623,10 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="30"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="0.71708443320000004" blue="0.0" alpha="0.99604201160000005" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -649,10 +650,7 @@
                                                 <real key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="0.71708443320000004" blue="0.0" alpha="0.99604201160000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -1086,11 +1084,10 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="fXK-KV-oDx"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="작성하기">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="작성하기"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.0"/>
@@ -1111,7 +1108,7 @@
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGrayColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="photo.artframe" catalog="system">
+                                        <state key="normal" image="photo" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
                                         </state>
                                         <connections>
@@ -1180,10 +1177,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sZt-Zb-eFj">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="standardAppearance"/>
-                        <navigationBarAppearance key="compactAppearance"/>
-                        <navigationBarAppearance key="scrollEdgeAppearance"/>
-                        <navigationBarAppearance key="compactScrollEdgeAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1201,7 +1194,7 @@
         <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="arrowtriangle.down.fill" catalog="system" width="128" height="124"/>
         <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">

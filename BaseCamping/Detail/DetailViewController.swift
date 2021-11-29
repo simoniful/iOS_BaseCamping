@@ -357,11 +357,6 @@ extension DetailViewController : CLLocationManagerDelegate {
     }
 }
 
-extension DetailViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("여기있어요!")
-    }
-}
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

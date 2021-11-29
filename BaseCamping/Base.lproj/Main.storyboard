@@ -128,7 +128,6 @@
         <!--마이메뉴-->
         <scene sceneID="KvV-sJ-HaI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9hD-Y6-gZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="frQ-GT-JBe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="마이메뉴" image="person.circle" catalog="system" id="H3Q-lz-PlO"/>
                     <toolbarItems/>
@@ -140,6 +139,7 @@
                         <segue destination="GJs-WA-5vH" kind="relationship" relationship="rootViewController" id="yGH-Ns-JKi"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hD-Y6-gZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="512" y="1150"/>
         </scene>

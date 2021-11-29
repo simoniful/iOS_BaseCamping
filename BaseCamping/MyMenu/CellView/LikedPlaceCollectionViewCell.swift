@@ -17,5 +17,4 @@ class LikedPlaceCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
 }

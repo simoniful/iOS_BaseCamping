@@ -27,11 +27,19 @@ class ReviewDetailViewController: UIViewController {
     @IBOutlet weak var accessRate: CosmosView!
     @IBOutlet weak var revisitRate: CosmosView!
     @IBOutlet weak var reviewTitleLabel: UILabel!
-    @IBOutlet weak var reviewContentLabel: UILabel!
+    @IBOutlet weak var reviewContentTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setInfoView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+        
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func setInfoView() {
@@ -53,7 +61,8 @@ class ReviewDetailViewController: UIViewController {
         accessRate.rating = reviewData.accessibility
         revisitRate.rating = reviewData.revisitWill
         reviewTitleLabel.text = reviewData.title
-        reviewContentLabel.text = reviewData.content
+        reviewContentTextView.text = reviewData.content
+        reviewContentTextView.textContainerInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4);
     }
     
     func deleteImageInDocuments(imageName: String) {

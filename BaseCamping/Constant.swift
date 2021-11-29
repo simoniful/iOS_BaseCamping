@@ -20,14 +20,14 @@ struct Endpoint {
     // ?lat=37.57150480578691&lon=126.96624778295205&exclude=current,minutely,hourly,alerts&appid=\(APIKey.weather)&units=metric&lang=kr"
     static let weatherIconURL = "https://openweathermap.org/img/wn"
     /* /02d@2x.png */
-    static let goCampingBasedURL = "http://api.visitkorea.or.kr/openapi/service/rest/GoCamping/basedList"
+    static let goCampingBasedURL = "http://api.visitkorea.or.kr/openapi/service/rest/GoCamping"
     // ?ServiceKey=\(APIKey.goCamping)&MobileOS=IOS&MobileApp=BaseCamping&numOfRows=3000&pageNo=1&_type=json"
-    static let goCampingLocationBasedURL = "http://api.visitkorea.or.kr/openapi/service/rest/GoCamping/locationBasedList"
+    static let goCampingLocationBasedURL = "\(goCampingBasedURL)/locationBasedList"
     // ?serviceKey=\(APIKey.goCamping)&pageNo=1&numOfRows=10&MobileOS=IOS&MobileApp=BaseCamping&mapX=128.6142847&mapY=36.0345423&radius=2000
     // 기상관측소 별 위도/경도 활용
-    static let goCampingSearchURL = "http://api.visitkorea.or.kr/openapi/service/rest/GoCamping/searchList"
+    static let goCampingSearchURL = "\(goCampingBasedURL)/searchList"
     // ?serviceKey=\(APIKey.goCamping)&pageNo=1&numOfRows=10&MobileOS=IOS&MobileApp=BaseCamping&keyword=%EC%95%BC%EC%98%81%EC%9E%A5"
-    static let goCampingImageURL = "http://api.visitkorea.or.kr/openapi/service/rest/GoCamping/imageList"
+    static let goCampingImageURL = "\(goCampingBasedURL)/imageList"
     // ?serviceKey=\(APIKey.goCamping)&MobileOS=IOS&MobileApp=BaseCamping&contentId=3429"
     static let naverBlogURL = "https://openapi.naver.com/v1/search/blog.json"
     // ?query=북한산 캠핑장&display=5

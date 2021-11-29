@@ -8,7 +8,6 @@
 import UIKit
 
 class DetailSocialTableViewHeader: UITableViewHeaderFooterView {
-
     static let identifier = "DetailSocialTableViewHeader"
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -16,6 +15,4 @@ class DetailSocialTableViewHeader: UITableViewHeaderFooterView {
     override func awakeFromNib() {
        super.awakeFromNib()
    }
-    
-
 }

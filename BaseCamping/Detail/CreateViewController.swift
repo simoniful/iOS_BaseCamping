@@ -44,6 +44,14 @@ class CreateViewController: UIViewController {
         imagePicker.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+        
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     func cosmosSetting () {
         facilityRate.settings.fillMode = .full
         serviceRate.settings.fillMode = .full
@@ -61,8 +69,6 @@ class CreateViewController: UIViewController {
     }
     
     @IBAction func confirmBtnClicked(_ sender: UIButton) {
-        // [To-do] 공백 체크
-        // [To-do] 이미지 없을 경우 얼럿 혹은 기본 썸네일 이미지 사용 혹은 플레이스 홀더 구성
         
         guard let placeInfo = self.placeInfo else { return }
         guard let title = self.titleLabel.text else { return }

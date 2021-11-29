@@ -55,8 +55,10 @@
 		F4D9F47D275328460091CB64 /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F47C275328460091CB64 /* ReviewListViewController.swift */; };
 		F4D9F481275333A80091CB64 /* LikedPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F47F275333A80091CB64 /* LikedPlaceCollectionViewCell.swift */; };
 		F4D9F482275333A80091CB64 /* LikedPlaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F480275333A80091CB64 /* LikedPlaceCollectionViewCell.xib */; };
+		F4DA27322754D9C2006E3E5C /* BasePaddingUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA27312754D9C2006E3E5C /* BasePaddingUILabel.swift */; };
 		F4F22E3027546DA40060C101 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = F4F22E2F27546DA40060C101 /* Toast */; };
-		F4FC2832274E5B6900106EB2 /* UIScrollView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */; };
+		F4F22E352754C61A0060C101 /* KeywordResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F22E332754C61A0060C101 /* KeywordResultTableViewController.swift */; };
+		F4F22E362754C61A0060C101 /* KeywordResultTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F22E342754C61A0060C101 /* KeywordResultTableViewController.xib */; };
 		F4FC2836274E663400106EB2 /* DetailSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */; };
 		F4FC2837274E663400106EB2 /* DetailSocialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FC2835274E663400106EB2 /* DetailSocialTableViewCell.xib */; };
 		F4FC283A274E69F700106EB2 /* DetailSocialTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2839274E69F700106EB2 /* DetailSocialTableViewHeader.swift */; };
@@ -110,7 +112,9 @@
 		F4D9F47C275328460091CB64 /* ReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListViewController.swift; sourceTree = "<group>"; };
 		F4D9F47F275333A80091CB64 /* LikedPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4D9F480275333A80091CB64 /* LikedPlaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikedPlaceCollectionViewCell.xib; sourceTree = "<group>"; };
-		F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView + Extension.swift"; sourceTree = "<group>"; };
+		F4DA27312754D9C2006E3E5C /* BasePaddingUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePaddingUILabel.swift; sourceTree = "<group>"; };
+		F4F22E332754C61A0060C101 /* KeywordResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordResultTableViewController.swift; sourceTree = "<group>"; };
+		F4F22E342754C61A0060C101 /* KeywordResultTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordResultTableViewController.xib; sourceTree = "<group>"; };
 		F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSocialTableViewCell.swift; sourceTree = "<group>"; };
 		F4FC2835274E663400106EB2 /* DetailSocialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSocialTableViewCell.xib; sourceTree = "<group>"; };
 		F4FC2839274E69F700106EB2 /* DetailSocialTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSocialTableViewHeader.swift; sourceTree = "<group>"; };
@@ -267,10 +271,10 @@
 		F4C2695D27450A5900DA5935 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F4DA27312754D9C2006E3E5C /* BasePaddingUILabel.swift */,
 				F4C2695E27450A8B00DA5935 /* UIView + Extension.swift */,
 				F4C269862745590000DA5935 /* UIColor + Extension.swift */,
 				F4665149274CA17600227259 /* UIImage + Extension.swift */,
-				F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */,
 				F471054D274F28D30063756F /* UITextView + Extension.swift */,
 				F49F223F27520BE40016B20E /* UITextField + Extension.swift */,
 			);
@@ -310,6 +314,15 @@
 			path = CellView;
 			sourceTree = "<group>";
 		};
+		F4F22E312754C5D80060C101 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				F4F22E342754C61A0060C101 /* KeywordResultTableViewController.xib */,
+				F4F22E332754C61A0060C101 /* KeywordResultTableViewController.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
 		F4FC2833274E660200106EB2 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +337,7 @@
 		F4FC2840274EABF700106EB2 /* ByKeyword */ = {
 			isa = PBXGroup;
 			children = (
+				F4F22E312754C5D80060C101 /* SubView */,
 				F471055D274FDF440063756F /* ByKeyword.storyboard */,
 				F471055B274FDF2C0063756F /* ByKeywordViewController.swift */,
 			);
@@ -437,6 +451,7 @@
 				F4A3A8422744FCC800EC5C7E /* Main.storyboard in Resources */,
 				F471055E274FDF440063756F /* ByKeyword.storyboard in Resources */,
 				F4FC283C274E6A2700106EB2 /* DetailSocialTableViewHeader.xib in Resources */,
+				F4F22E362754C61A0060C101 /* KeywordResultTableViewController.xib in Resources */,
 				F4A3A8572744FFB800EC5C7E /* ByRegion.storyboard in Resources */,
 				F4A3A8532744FF0900EC5C7E /* Detail.storyboard in Resources */,
 				F4FC2837274E663400106EB2 /* DetailSocialTableViewCell.xib in Resources */,
@@ -501,14 +516,15 @@
 				F4A3A83B2744FCC800EC5C7E /* AppDelegate.swift in Sources */,
 				F4B705E6274787DA0008A54A /* HomeViewSubCollectionViewCell.swift in Sources */,
 				F4C28C3A2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift in Sources */,
+				F4DA27322754D9C2006E3E5C /* BasePaddingUILabel.swift in Sources */,
 				F4C269872745590000DA5935 /* UIColor + Extension.swift in Sources */,
-				F4FC2832274E5B6900106EB2 /* UIScrollView + Extension.swift in Sources */,
 				F4710564275090720063756F /* HomeTabmanViewController.swift in Sources */,
 				F4C28C462747D8FF0014F0CC /* InfoModel.swift in Sources */,
 				F4710558274F9AE40063756F /* SearchResultTableViewCell.swift in Sources */,
 				F4B705D32747321D0008A54A /* Constant.swift in Sources */,
 				F4665148274B564900227259 /* RealmModel.swift in Sources */,
 				F4A3A8552744FF1F00EC5C7E /* DetailViewController.swift in Sources */,
+				F4F22E352754C61A0060C101 /* KeywordResultTableViewController.swift in Sources */,
 				F4710562274FE3D30063756F /* MyMenuViewController.swift in Sources */,
 				F471054E274F28D30063756F /* UITextView + Extension.swift in Sources */,
 				F4A3A83D2744FCC800EC5C7E /* SceneDelegate.swift in Sources */,
@@ -604,7 +620,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -659,7 +675,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

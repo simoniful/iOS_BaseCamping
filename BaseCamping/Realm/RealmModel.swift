@@ -64,10 +64,6 @@ class PlaceInfo: Object {
 }
 
 class Review: Object {
-    // 재방문 의사, 시설 만족도, 접근성, 서비스 만족도
-    // 콘텐츠 제목, 내용
-    // (opt) 사진
-    
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var facilitySatisfaction: Double
     @Persisted var serviceSatisfaction: Double

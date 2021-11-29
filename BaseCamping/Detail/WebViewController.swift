@@ -37,6 +37,7 @@ class WebViewController: UIViewController {
             webView.goForward()
         }
     }
+    
     @IBAction func cancelBtnClicked(_ sender: UIBarButtonItem) {
         webView.stopLoading()
     }
@@ -49,5 +50,4 @@ class WebViewController: UIViewController {
         let requset = URLRequest(url: url)
         webView.load(requset)
     }
-
 }
