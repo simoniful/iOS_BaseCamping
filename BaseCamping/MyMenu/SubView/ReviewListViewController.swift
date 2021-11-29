@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 import Kingfisher
-import Hero
+import Toast
 
 class ReviewListViewController: UIViewController {
     let localRealm = try! Realm()
@@ -36,7 +36,7 @@ class ReviewListViewController: UIViewController {
         let path = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
         
         if let directoryPath = path.first {
-            let imageURL = URL(fileURLWithPath: directoryPath).appendingPathComponent(imageName)
+            let imageURL = URL(fileURLWithPath: directoryPath).appendingPathComponent("images").appendingPathComponent(imageName)
             return UIImage(contentsOfFile: imageURL.path)
         }
         return nil
@@ -76,6 +76,7 @@ extension ReviewListViewController : UICollectionViewDelegate, UICollectionViewD
         vc.reviewImage = loadImageFromDocuments(imageName: "\(row._id).jpg")
         vc.btnActionHandler = {
             self.collectionView.reloadData()
+            self.view.makeToast("삭제 완료!")
         }
         let nav =  UINavigationController(rootViewController: vc)
         nav.modalTransitionStyle = .coverVertical

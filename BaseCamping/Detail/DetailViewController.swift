@@ -12,6 +12,7 @@ import Kingfisher
 import FSPagerView
 import RealmSwift
 import MapKit
+import Toast
 
 class DetailViewController: UIViewController {
     let localRealm = try! Realm()
@@ -230,6 +231,9 @@ class DetailViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CreateViewController") as! CreateViewController
         vc.placeInfo = self.placeInfo
+        vc.btnActionHandler = {
+            self.view.makeToast("저장 완료!")
+        }
         let nav =  UINavigationController(rootViewController: vc)
         nav.modalTransitionStyle = .coverVertical
         nav.modalPresentationStyle = .overFullScreen
@@ -243,11 +247,13 @@ class DetailViewController: UIViewController {
             try! self.localRealm.write {
                 placeInfo?.isLiked = true
             }
+            self.view.makeToast("Liked!")
         } else {
             likeBtn.setImage(UIImage(systemName: "heart"), for: .normal)
             try! self.localRealm.write {
                 placeInfo?.isLiked = false
             }
+            self.view.makeToast("Unliked!")
         }
     }
     

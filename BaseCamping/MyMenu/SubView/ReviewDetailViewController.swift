@@ -58,7 +58,7 @@ class ReviewDetailViewController: UIViewController {
     
     func deleteImageInDocuments(imageName: String) {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let imageURL = documentDirectory.appendingPathComponent(imageName)
+        let imageURL = documentDirectory.appendingPathComponent("images").appendingPathComponent(imageName)
         if FileManager.default.fileExists(atPath: imageURL.path) {
             do {
                 try FileManager.default.removeItem(at: imageURL)

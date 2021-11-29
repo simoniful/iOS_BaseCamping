@@ -55,6 +55,7 @@
 		F4D9F47D275328460091CB64 /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F47C275328460091CB64 /* ReviewListViewController.swift */; };
 		F4D9F481275333A80091CB64 /* LikedPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F47F275333A80091CB64 /* LikedPlaceCollectionViewCell.swift */; };
 		F4D9F482275333A80091CB64 /* LikedPlaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F480275333A80091CB64 /* LikedPlaceCollectionViewCell.xib */; };
+		F4F22E3027546DA40060C101 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = F4F22E2F27546DA40060C101 /* Toast */; };
 		F4FC2832274E5B6900106EB2 /* UIScrollView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2831274E5B6900106EB2 /* UIScrollView + Extension.swift */; };
 		F4FC2836274E663400106EB2 /* DetailSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */; };
 		F4FC2837274E663400106EB2 /* DetailSocialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FC2835274E663400106EB2 /* DetailSocialTableViewCell.xib */; };
@@ -127,6 +128,7 @@
 				F4665145274B545200227259 /* RealmSwift in Frameworks */,
 				F4809985275232300071B1F7 /* IQKeyboardManagerSwift in Frameworks */,
 				F4C28C412747D5950014F0CC /* Alamofire in Frameworks */,
+				F4F22E3027546DA40060C101 /* Toast in Frameworks */,
 				F471056B2750C83C0063756F /* Cosmos in Frameworks */,
 				F4C28C3E2747D5670014F0CC /* Kingfisher in Frameworks */,
 				F4C28C442747D5B70014F0CC /* SwiftyJSON in Frameworks */,
@@ -374,6 +376,7 @@
 				F4665144274B545200227259 /* RealmSwift */,
 				F471056A2750C83C0063756F /* Cosmos */,
 				F4809984275232300071B1F7 /* IQKeyboardManagerSwift */,
+				F4F22E2F27546DA40060C101 /* Toast */,
 			);
 			productName = BaseCamping;
 			productReference = F4A3A8372744FCC800EC5C7E /* BaseCamping.app */;
@@ -410,6 +413,7 @@
 				F4665141274B545200227259 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				F47105692750C83C0063756F /* XCRemoteSwiftPackageReference "Cosmos" */,
 				F4809983275232300071B1F7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				F4F22E2E27546DA30060C101 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = F4A3A8382744FCC800EC5C7E /* Products */;
 			projectDirPath = "";
@@ -802,6 +806,14 @@
 				version = 5.0.0;
 			};
 		};
+		F4F22E2E27546DA30060C101 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -839,6 +851,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4C28C422747D5B70014F0CC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		F4F22E2F27546DA40060C101 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4F22E2E27546DA30060C101 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

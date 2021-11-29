@@ -21,11 +21,11 @@ class HomeTabmanViewController: TabmanViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkFirstOpen ()
         regionList.forEach { place in
             let placeVc = setVC(placeName: place)
             viewControllers.append(placeVc)
         }
-        
         self.dataSource = self
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .snap
@@ -34,9 +34,9 @@ class HomeTabmanViewController: TabmanViewController {
     }
     
     @objc func checkFirstOpen () {
-        print(checkFirstOpen)
+        print("checkFirstOpen")
         let ud = UserDefaults.standard
-        if ud.object(forKey: "isFirstOpen") == nil {
+        if ud.object(forKey: "isFirstOpenBaseCamping") == nil {
             loadToLocalJson ()
         }
     }
@@ -82,7 +82,7 @@ class HomeTabmanViewController: TabmanViewController {
                     }
                 }
                 let ud = UserDefaults.standard
-                ud.set(false, forKey: "isFirstOpen")
+                ud.set(false, forKey: "isFirstOpenBaseCamping")
                 ud.synchronize()
             } catch {
                 print("불러오기를 실패했습니다")

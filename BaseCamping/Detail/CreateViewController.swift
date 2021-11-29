@@ -11,6 +11,7 @@ import RealmSwift
 
 class CreateViewController: UIViewController {
     var placeInfo: PlaceInfo?
+    var btnActionHandler: (() -> ())?
     let localRealm = try! Realm()
     let imagePicker = UIImagePickerController()
     
@@ -60,21 +61,33 @@ class CreateViewController: UIViewController {
     }
     
     @IBAction func confirmBtnClicked(_ sender: UIButton) {
-        // [To-do] alert으로 저장여부 확인
         // [To-do] 공백 체크
-        // [To-do] 핸들러 사용 DetailView에 토스트 띄우기
-        guard let placeInfo = placeInfo else { return }
-        guard let title = titleLabel.text else { return }
-        guard let content = contentLabel.text else { return }
+        // [To-do] 이미지 없을 경우 얼럿 혹은 기본 썸네일 이미지 사용 혹은 플레이스 홀더 구성
+        // [To-do] 이미지 리사이징,
         
-        let review = Review(facilitySatisfaction: facilityRateValue, serviceSatisfaction: serviceRateValue, accessibility: accessRateValue, revisitWill: revisitWillRateValue, title: title, content: content, regDate: Date(), placeInfo: placeInfo)
-        try! localRealm.write {
-            localRealm.add(review)
-            if let checkedImage = selectedImage.image {
-                saveImageToDocuments(imageName: "\(review._id).jpg", image: checkedImage)
+        let alert = UIAlertController(title: "리뷰를 저장하시겠습니까?", message: "저장된 리뷰는 마이메뉴에서 확인할 수 있습니다", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "확인", style: .default) { (action: UIAlertAction!) in
+            guard let placeInfo = self.placeInfo else { return }
+            guard let title = self.titleLabel.text else { return }
+            guard let content = self.contentLabel.text else { return }
+            
+            
+            guard let btnActionHandler = self.btnActionHandler else { return }
+            let review = Review(facilitySatisfaction: self.facilityRateValue, serviceSatisfaction: self.serviceRateValue, accessibility: self.accessRateValue, revisitWill: self.revisitWillRateValue, title: title, content: content, regDate: Date(), placeInfo: placeInfo)
+            try! self.localRealm.write {
+                self.localRealm.add(review)
+                if let checkedImage = self.selectedImage.image {
+                    self.saveImageToDocuments(imageName: "\(review._id).jpg", image: checkedImage)
+                }
             }
+            btnActionHandler()
+            self.dismiss(animated: true, completion: nil)
         }
-        self.dismiss(animated: true, completion: nil)
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler:nil)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func selectImageBtnClicked(_ sender: UIButton) {
@@ -91,7 +104,16 @@ class CreateViewController: UIViewController {
     
     func saveImageToDocuments(imageName: String, image: UIImage) {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let imageURL = documentDirectory.appendingPathComponent(imageName)
+        let imagesDirectoryURL = documentDirectory.appendingPathComponent("images")
+        if !(FileManager.default.fileExists(atPath: imagesDirectoryURL.path)) {
+            do {
+                try FileManager.default.createDirectory(atPath: imagesDirectoryURL.path, withIntermediateDirectories: false, attributes: nil)
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+        let imageURL = imagesDirectoryURL.appendingPathComponent(imageName)
+        let image = image.resize(newWidth: UIScreen.main.bounds.width * 2)
         guard let data = image.jpegData(compressionQuality: 0.3) else { return }
         if FileManager.default.fileExists(atPath: imageURL.path) {
             do {
@@ -106,7 +128,6 @@ class CreateViewController: UIViewController {
         } catch {
             print("이미지 저장 실패")
         }
- 
     }
 }
 

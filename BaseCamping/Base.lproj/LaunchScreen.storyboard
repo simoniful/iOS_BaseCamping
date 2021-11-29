@@ -23,12 +23,20 @@
                                     <constraint firstAttribute="width" secondItem="rnb-dL-Tny" secondAttribute="height" multiplier="1:1" id="neK-BE-gX2"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright ©2021 by Simoniful" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huL-Xo-bdo">
+                                <rect key="frame" x="123.33333333333333" y="852.66666666666663" width="181.66666666666669" height="14.333333333333371"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.98033708330000002" green="0.73838579597774434" blue="0.54424941135875593" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.98033708330000002" green="0.86865958288166456" blue="0.61845338878922795" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="huL-Xo-bdo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3fP-ma-Jf3"/>
                             <constraint firstItem="rnb-dL-Tny" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dls-W0-GL1"/>
                             <constraint firstItem="rnb-dL-Tny" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="y1U-fc-9js"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="huL-Xo-bdo" secondAttribute="bottom" constant="25" id="yHt-EG-wYt"/>
                         </constraints>
                     </view>
                 </viewController>
