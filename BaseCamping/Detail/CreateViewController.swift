@@ -63,18 +63,38 @@ class CreateViewController: UIViewController {
     @IBAction func confirmBtnClicked(_ sender: UIButton) {
         // [To-do] 공백 체크
         // [To-do] 이미지 없을 경우 얼럿 혹은 기본 썸네일 이미지 사용 혹은 플레이스 홀더 구성
-        // [To-do] 이미지 리사이징,
+        
+        guard let placeInfo = self.placeInfo else { return }
+        guard let title = self.titleLabel.text else { return }
+        guard let content = self.contentLabel.text else { return }
+        guard let btnActionHandler = self.btnActionHandler else { return }
+        
+        if self.selectedImage.image == nil {
+            let alert = UIAlertController(title: "사진이 첨부되지 않았네요", message: "기록할만한 사진을 첨부해 주세요", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .cancel, handler:nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+        }
+        
+        if title.trimmingCharacters(in: .whitespaces) == "" {
+            let alert = UIAlertController(title: "제목이 비었네요", message: "리뷰 제목을 작성해주세요", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .cancel, handler:nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+        }
+        
+        if (content == "리뷰 내용을 입력하세요" || content.trimmingCharacters(in: .whitespaces) == "") {
+            let alert = UIAlertController(title: "내용이 비었네요", message: "리뷰 내용을 작성해주세요", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .cancel, handler:nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+        }
         
         let alert = UIAlertController(title: "리뷰를 저장하시겠습니까?", message: "저장된 리뷰는 마이메뉴에서 확인할 수 있습니다", preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "확인", style: .default) { (action: UIAlertAction!) in
-            guard let placeInfo = self.placeInfo else { return }
-            guard let title = self.titleLabel.text else { return }
-            guard let content = self.contentLabel.text else { return }
-            
-            
-            guard let btnActionHandler = self.btnActionHandler else { return }
             let review = Review(facilitySatisfaction: self.facilityRateValue, serviceSatisfaction: self.serviceRateValue, accessibility: self.accessRateValue, revisitWill: self.revisitWillRateValue, title: title, content: content, regDate: Date(), placeInfo: placeInfo)
+        
             try! self.localRealm.write {
                 self.localRealm.add(review)
                 if let checkedImage = self.selectedImage.image {
