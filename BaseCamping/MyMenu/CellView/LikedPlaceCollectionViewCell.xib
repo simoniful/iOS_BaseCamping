@@ -33,31 +33,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx4-sW-llO">
-                                <rect key="frame" x="10" y="130" width="146" height="25"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx4-sW-llO">
+                                <rect key="frame" x="10" y="125" width="146" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqD-OF-FNQ">
-                                <rect key="frame" x="10" y="160" width="146" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqD-OF-FNQ">
+                                <rect key="frame" x="10" y="146.5" width="146" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.98039335009999995" green="0.94117587800000002" blue="0.86666828389999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.98039335009999995" green="0.94117587800000002" blue="0.86666828389999995" alpha="0.34954470198675497" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NqD-OF-FNQ" firstAttribute="top" secondItem="bx4-sW-llO" secondAttribute="bottom" constant="5" id="Paj-CB-OAc"/>
+                            <constraint firstItem="NqD-OF-FNQ" firstAttribute="top" secondItem="bx4-sW-llO" secondAttribute="bottom" constant="2" id="Paj-CB-OAc"/>
                             <constraint firstAttribute="trailing" secondItem="NqD-OF-FNQ" secondAttribute="trailing" constant="10" id="T1N-I9-EFk"/>
                             <constraint firstItem="R74-2Z-Va9" firstAttribute="leading" secondItem="SuQ-5J-byq" secondAttribute="leading" constant="10" id="UGP-kB-kiV"/>
-                            <constraint firstAttribute="bottom" secondItem="NqD-OF-FNQ" secondAttribute="bottom" constant="10" id="WoQ-I3-Ied"/>
                             <constraint firstAttribute="trailing" secondItem="R74-2Z-Va9" secondAttribute="trailing" constant="10" id="edY-Fh-6n7"/>
                             <constraint firstAttribute="trailing" secondItem="bx4-sW-llO" secondAttribute="trailing" constant="10" id="l5E-AH-zft"/>
                             <constraint firstItem="NqD-OF-FNQ" firstAttribute="leading" secondItem="SuQ-5J-byq" secondAttribute="leading" constant="10" id="sH6-PB-aqb"/>
                             <constraint firstItem="R74-2Z-Va9" firstAttribute="top" secondItem="SuQ-5J-byq" secondAttribute="top" constant="10" id="sul-lb-CJ8"/>
                             <constraint firstItem="bx4-sW-llO" firstAttribute="leading" secondItem="SuQ-5J-byq" secondAttribute="leading" constant="10" id="uti-gx-5gH"/>
-                            <constraint firstItem="bx4-sW-llO" firstAttribute="top" secondItem="R74-2Z-Va9" secondAttribute="bottom" constant="10" id="xOK-Pv-rXG"/>
+                            <constraint firstItem="bx4-sW-llO" firstAttribute="top" secondItem="R74-2Z-Va9" secondAttribute="bottom" constant="5" id="xOK-Pv-rXG"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

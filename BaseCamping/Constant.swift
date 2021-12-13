@@ -13,6 +13,7 @@ struct APIKey {
     static let navetBlogId = "wE5Nze7qwvLYACNQw8FX"
     static let naverBlogSecret = "tebcgxqL8e"
     static let youtube = "AIzaSyAwPMjR_6Hv-5fb8cSYBAMGuEE78h9T0a0"
+    static let attraction = "VhQyqmJBTI5OHaBSbycNhPjv08lRiZsXpooOaou5AXJR%2F9lcCfqnGuYzsja6C9XuSkUUPRBH7ghkRPn5gSL9Yw%3D%3D"
 }
 
 struct Endpoint {
@@ -33,6 +34,8 @@ struct Endpoint {
     // ?query=북한산 캠핑장&display=5
     static let youtubeURL = "https://www.googleapis.com/youtube/v3/search"
     // ?part=snippet&key=AIzaSyAwPMjR_6Hv-5fb8cSYBAMGuEE78h9T0a0&q=%EB%B6%81%ED%95%9C%EC%82%B0%20%EC%BA%A0%ED%95%91%EC%9E%A5&maxResults=5&type=video&videoEmbeddable=true
+    static let attractionURL = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/locationBasedList"
+    // ?serviceKey=\(APIKey.attraction)&numOfRows=12&pageNo=1&MobileOS=IOS&MobileApp=BaseCamping&arrange=B&contentTypeId=15&mapX=126.981611&mapY=37.568477&radius=1000&listYN=Y&_type=json
 }
 
 struct WeatherStation {
@@ -76,5 +79,16 @@ struct Region {
         "경상남도" : [ "전체", "창원시", "진주시", "통영시", "사천시", "김해시", "밀양시", "거제시", "양산시", "의령군", "함안군", "창녕군", "고성군", "남해군", "하동군", "산청군", "함양군", "거창군", "합천군" ],
         "전라북도" : [ "전체", "전주시", "군산시", "익산시", "정읍시", "남원시", "김제시", "완주군", "진안군", "무주군", "장수군", "임실군", "순창군", "고창군", "부안군" ],
         "전라남도" : [ "전체", "목포시", "여수시", "순천시", "나주시", "광양시", "담양군", "곡성군", "구례군", "고흥군", "보성군", "화순군", "장흥군", "강진군", "해남군", "영암군", "무안군", "함평군", "영광군", "장성군", "완도군", "진도군", "신안군" ]
+    ]
+}
+
+struct AttractionType {
+    static let attrationTypeDic: [String : Int] = [
+        "관광지": 12,
+        "문화시설": 14,
+        "축제/행사": 15,
+        "레져": 28,
+        "맛집": 39,
+        "쇼핑": 38
     ]
 }

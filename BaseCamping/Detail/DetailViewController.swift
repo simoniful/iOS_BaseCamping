@@ -19,16 +19,28 @@ class DetailViewController: UIViewController {
     var placeInfo: PlaceInfo?
     var downloadedImageURLs: [String] = [] {
         didSet {
+            if downloadedImageURLs.count == 0 {
+                pagerView.isHidden = true
+                bannerPlaceholderImageView.isHidden = false
+            } else {
+                pagerView.isHidden = false
+                bannerPlaceholderImageView.isHidden = true
+            }
             pagerView.reloadData()
         }
     }
     var socialMediaDataList: [SocialMediaInfo] = []
     let locationManager = CLLocationManager()
+    var weatherInFoData: [WeatherInfo] = [] {
+        didSet {
+            weatherTableView.reloadData()
+        }
+    }
     var isInfoOpened: Bool = true
-    var infoContainerViewHeightAnchor:NSLayoutConstraint!
     var socialTableHeightAnchor:NSLayoutConstraint!
     var isLiked = false
 
+    @IBOutlet weak var bannerPlaceholderImageView: UIImageView!
     @IBOutlet weak var pageControl: FSPageControl!
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
@@ -38,15 +50,13 @@ class DetailViewController: UIViewController {
             self.pagerView.automaticSlidingInterval = 6.0
         }
     }
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var telTextView: UITextView!
     @IBOutlet weak var homepageTextView: UITextView!
-    @IBOutlet weak var infoContainerView: UIView!
-    @IBOutlet weak var toggleBtn: UIButton!
-    @IBOutlet weak var informationStack: UIStackView!
     @IBOutlet weak var insuranceLabel: UILabel!
     @IBOutlet weak var petLabel: UILabel!
     @IBOutlet weak var operatingPeriod: UILabel!
@@ -56,13 +66,25 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var showerCountLabel: UILabel!
     @IBOutlet weak var toiletCountLabel: UILabel!
     
+    @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var weatherTableView: UITableView!
     @IBOutlet weak var subAddrLabel: UILabel!
     @IBOutlet weak var socialTableView: UITableView!
+    @IBOutlet weak var attractionView: UIView!
     @IBOutlet weak var likeBtn: UIButton!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "attractionContainer" {
+            let containerVC = segue.destination as! DetailAttractionTabmanViewController
+            containerVC.placeInfo = self.placeInfo
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchDetailImages()
+        
         title = "상세정보"
         guard let likeData = placeInfo?.isLiked else { return }
         isLiked = likeData
@@ -70,23 +92,19 @@ class DetailViewController: UIViewController {
         likeBtn.setImage(likeBtnImage, for: .normal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeBtnClicked))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.black
-        fetchDetailImages()
-        
         pagerView.delegate = self
         pagerView.dataSource = self
         pageControl.hidesForSinglePage = true
+        pageControl.contentHorizontalAlignment = .right
         locationManager.delegate = self
         
         nameLabel.text = placeInfo?.name
         addressLabel.text = placeInfo?.address
         typeLabel.text = placeInfo?.inDuty
-        telTextView.text = placeInfo?.tel
-        telTextView.centerVertically()
-        homepageTextView.text = placeInfo?.homepage
-        homepageTextView.centerVertically()
-        
-        infoContainerViewHeightAnchor = infoContainerView.heightAnchor.constraint(equalToConstant: 500)
-        infoContainerViewHeightAnchor.isActive = true
+        telTextView.text = placeInfo?.tel == "" ? "검색필요" : placeInfo?.tel
+        telTextView.textContainerInset = UIEdgeInsets(top: 7, left: 5, bottom: 4, right: 4)
+        homepageTextView.text = placeInfo?.homepage == "" ? "검색필요" : placeInfo?.homepage
+        homepageTextView.textContainerInset = UIEdgeInsets(top: 6, left: 5, bottom: 4, right: 4)
         
         insuranceLabel.text = placeInfo?.insurance == "Y" ? "가입" : "미가입"
         petLabel.text = placeInfo?.petAccess
@@ -94,9 +112,9 @@ class DetailViewController: UIViewController {
         operatingDayLabel.text = placeInfo?.operatingDay
         showerCountLabel.text = "\(String(describing: placeInfo!.showerCount))개"
         toiletCountLabel.text = "\(String(describing: placeInfo!.toiletCount))개"
-        facilityLabel.text = placeInfo?.facility
+        facilityLabel.text = placeInfo?.facility == "" ? "연락문의" : placeInfo?.facility
         primsnDeLabel.text = placeInfo?.prmisnDe
-        
+   
         let location = CLLocationCoordinate2D(latitude: placeInfo!.latitude, longitude: placeInfo!.longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: location, span: span)
@@ -108,20 +126,22 @@ class DetailViewController: UIViewController {
         mapView.addAnnotation(annotation)
         subAddrLabel.text = placeInfo?.address
         
-        fetchNaverBlogData()
-        fetchYoutubeData()
-
+        weatherTableView.delegate = self
+        weatherTableView.dataSource = self
+        let weatherNibName = UINib(nibName: DetailWeatherTableViewCell.identifier, bundle: nil)
+        weatherTableView.register(weatherNibName, forCellReuseIdentifier: DetailWeatherTableViewCell.identifier)
+    
         socialTableView.delegate = self
         socialTableView.dataSource = self
-        
-        socialTableHeightAnchor = socialTableView.heightAnchor.constraint(equalToConstant: 352)
-        socialTableHeightAnchor.isActive = true
         
         let nibName = UINib(nibName: DetailSocialTableViewCell.identifier, bundle: nil)
         socialTableView.register(nibName, forCellReuseIdentifier: DetailSocialTableViewCell.identifier)
         
         let headerNibName = UINib(nibName: DetailSocialTableViewHeader.identifier, bundle: nil)
         socialTableView.register(headerNibName, forHeaderFooterViewReuseIdentifier: DetailSocialTableViewHeader.identifier)
+        socialTableHeightAnchor = socialTableView.constraints.filter({
+            $0.identifier == "socialTableViewHeight"
+        }).first
         
         if #available(iOS 15.0, *) {
             socialTableView.sectionHeaderTopPadding = 0
@@ -132,19 +152,28 @@ class DetailViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func toggleBtnClicked(_ sender: UIButton) {
-        isInfoOpened = !isInfoOpened
-        if isInfoOpened == true {
-            toggleBtn.setImage(UIImage(systemName: "arrowtriangle.down.fill"), for: .normal)
-            informationStack.isHidden = false
-            infoContainerViewHeightAnchor.constant = 500
-        } else {
-            toggleBtn.setImage(UIImage(systemName: "arrowtriangle.up.fill"), for: .normal)
-            informationStack.isHidden = true
-            infoContainerViewHeightAnchor.constant = 80
+    @objc func fetchWeatherInfo() {
+        guard let placeInfo = placeInfo else { return }
+        let url = "\(Endpoint.weatherURL)?lat=\(placeInfo.latitude)&lon=\(placeInfo.longitude)&exclude=current,minutely,hourly,alerts&appid=\(APIKey.weather)&units=metric&lang=kr"
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                let data = json["daily"].arrayValue.map({
+                    WeatherInfo(
+                        date: $0["dt"].intValue,
+                        minTemp: $0["temp"]["min"].doubleValue,
+                        maxTemp: $0["temp"]["max"].doubleValue,
+                        weatherIcon: $0["weather"].arrayValue[0]["icon"].stringValue,
+                        weather: $0["weather"].arrayValue[0]["description"].stringValue)
+                })
+                self.weatherInFoData = data
+                self.fetchNaverBlogData()
+            case .failure(let error):
+                print(error)
+            }
         }
     }
-    
     
     @objc func fetchDetailImages() {
         guard let placeInfo = placeInfo else {return}
@@ -157,6 +186,7 @@ class DetailViewController: UIViewController {
                     $0["imageUrl"].stringValue
                 })
                 self.downloadedImageURLs = data
+                self.fetchWeatherInfo()
             case .failure(let error):
                 print(error)
             }
@@ -169,7 +199,6 @@ class DetailViewController: UIViewController {
             "X-Naver-Client-Id": APIKey.navetBlogId,
             "X-Naver-Client-Secret": APIKey.naverBlogSecret
         ]
-        
         let urlString = "\(Endpoint.naverBlogURL)?query=\(placeInfo.name)&display=3"
         let encodedURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         AF.request(encodedURL, method: .get, headers: headers).validate().responseJSON { response in
@@ -179,10 +208,19 @@ class DetailViewController: UIViewController {
                 let data = json["items"].arrayValue.map({
                     SocialMediaInfo(type: "naverBlog", title: self.changeHtmlTag(input: $0["title"].stringValue), link: $0["link"].stringValue, description: self.changeHtmlTag(input: $0["description"].stringValue))
                 })
-                
-                self.socialMediaDataList = self.socialMediaDataList + data
+                let newData = self.socialMediaDataList + data
+                self.socialMediaDataList = newData
+                self.fetchYoutubeData()
             case .failure(let error):
                 print(error)
+                let urlString = "https://section.blog.naver.com/Search/Post.naver?pageNo=1&rangeType=ALL&orderBy=sim&keyword=\(self.placeInfo!.name)"
+                let encodedURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                let data = [SocialMediaInfo(type: "youtube", title: "\(self.placeInfo!.name)", link: encodedURL, description: "블로그 검색 결과창으로 이동")]
+                self.socialMediaDataList = self.socialMediaDataList + data
+                self.socialTableHeightAnchor.constant = 240
+                self.socialTableView.reloadData()
+                self.fetchYoutubeData()
+                // GCD, dispatch group
             }
         }
     }
@@ -205,8 +243,9 @@ class DetailViewController: UIViewController {
                 let urlString = "https://www.youtube.com/results?search_query=\(self.placeInfo!.name)"
                 let encodedURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
                 let data = [SocialMediaInfo(type: "youtube", title: "\(self.placeInfo!.name)", link: encodedURL, description: "YouTube 검색 결과창으로 이동")]
-                self.socialMediaDataList = self.socialMediaDataList + data
-                self.socialTableHeightAnchor.constant = 264
+                let newData = self.socialMediaDataList + data
+                self.socialMediaDataList = newData
+                self.socialTableHeightAnchor.constant = 240
                 self.socialTableView.reloadData()
             }
         }
@@ -270,7 +309,6 @@ class DetailViewController: UIViewController {
             .replacingOccurrences(of: "&#039;", with: "\'")
         return convertStr
     }
-    
 }
 
 extension DetailViewController: FSPagerViewDelegate,FSPagerViewDataSource {
@@ -360,55 +398,97 @@ extension DetailViewController : CLLocationManagerDelegate {
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        if tableView == socialTableView {
+            return 2
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: DetailSocialTableViewHeader.identifier) as? DetailSocialTableViewHeader else { return UITableViewHeaderFooterView() }
-        header.titleLabel.text = section == 0 ? "네이버 블로그" : "YouTube"
-        return header
+        if tableView == socialTableView {
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: DetailSocialTableViewHeader.identifier) as? DetailSocialTableViewHeader else { return UITableViewHeaderFooterView() }
+            header.titleLabel.text = section == 0 ? "네이버 블로그" : "YouTube"
+            return header
+        } else {
+            return UITableViewHeaderFooterView()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44
+        if tableView == socialTableView {
+            return 32
+        } else {
+            return 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? socialMediaDataList.filter{$0.type == "naverBlog"}.count : socialMediaDataList.filter{$0.type == "youtube"}.count
+        if tableView == socialTableView {
+            return section == 0 ? socialMediaDataList.filter{$0.type == "naverBlog"}.count : socialMediaDataList.filter{$0.type == "youtube"}.count
+        } else {
+            return weatherInFoData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        if tableView == socialTableView {
+            return 44
+        } else {
+            return 75
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailSocialTableViewCell.identifier, for: indexPath) as? DetailSocialTableViewCell else {
-            return UITableViewCell()}
-        let blog = socialMediaDataList.filter{$0.type == "naverBlog"}[indexPath.row]
-        let youtube = socialMediaDataList.filter{$0.type == "youtube"}.count == 1 ? socialMediaDataList.filter{$0.type == "youtube"}[0] : socialMediaDataList.filter{$0.type == "youtube"}[indexPath.row]
-        
-        if indexPath.section == 0 {
-            cell.logoImage.image = UIImage(named: "blogLogo")
-            cell.titleLabel.text = blog.title
-            cell.descLabel.text = blog.description
-        } else if indexPath.section == 1 {
-            cell.logoImage.image = UIImage(named: "youtube")
-            cell.titleLabel.text = youtube.title
-            cell.descLabel.text = youtube.description
+        if tableView == socialTableView {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailSocialTableViewCell.identifier, for: indexPath) as? DetailSocialTableViewCell else {
+                return UITableViewCell()}
+            let blog = socialMediaDataList.filter{$0.type == "naverBlog"}.count == 1 ? socialMediaDataList.filter{$0.type == "naverBlog"}[0] : socialMediaDataList.filter{$0.type == "naverBlog"}[indexPath.row]
+            let youtube = socialMediaDataList.filter{$0.type == "youtube"}.count == 1 ? socialMediaDataList.filter{$0.type == "youtube"}[0] : socialMediaDataList.filter{$0.type == "youtube"}[indexPath.row]
+            
+            if indexPath.section == 0 {
+                cell.logoImage.image = UIImage(named: "blogLogo")
+                cell.titleLabel.text = blog.title
+                cell.descLabel.text = blog.description
+            } else if indexPath.section == 1 {
+                cell.logoImage.image = UIImage(named: "youtube")
+                cell.titleLabel.text = youtube.title
+                cell.descLabel.text = youtube.description
+            }
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailWeatherTableViewCell.identifier, for: indexPath) as? DetailWeatherTableViewCell else {
+                return UITableViewCell()}
+            let row = weatherInFoData[indexPath.row]
+            let convertDate = Date(timeIntervalSince1970: TimeInterval(row.date))
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM.dd"
+            formatter.locale = Locale(identifier: "ko")
+            cell.dateLabel.text = formatter.string(from: convertDate)
+            let url = URL(string: "\(Endpoint.weatherIconURL)/\(row.weatherIcon)@2x.png")
+            cell.iconImage.kf.setImage(with: url)
+            cell.layer.cornerRadius = 4
+            cell.maxTempLabel.text = "최대: \(row.maxTemp)℃"
+            cell.minTempLabel.text = "최소: \(row.minTemp)℃"
+            return cell
         }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let blog = socialMediaDataList.filter{$0.type == "naverBlog"}[indexPath.row]
-        let youtube = socialMediaDataList.filter{$0.type == "youtube"}[indexPath.row]
-        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-        vc.mediaData = indexPath.section == 0 ? blog : youtube
-        self.navigationController?.pushViewController(vc, animated: true)
-        tableView.deselectRow(at: indexPath, animated: false)
+        if tableView == socialTableView {
+            let blog = socialMediaDataList.filter{$0.type == "naverBlog"}[indexPath.row]
+            let youtube = socialMediaDataList.filter{$0.type == "youtube"}[indexPath.row]
+            let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+            vc.mediaData = indexPath.section == 0 ? blog : youtube
+            self.navigationController?.pushViewController(vc, animated: true)
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
     }
 }
+
+
 
 
 

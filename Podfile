@@ -6,6 +6,9 @@ target 'BaseCamping' do
   use_frameworks!
   pod 'FSPagerView'
   pod 'Tabman', '~> 2.11'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Messaging'
   # Pods for BaseCamping
 
 end

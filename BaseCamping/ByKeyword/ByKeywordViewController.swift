@@ -34,7 +34,7 @@ class ByKeywordViewController: UIViewController {
     
     func setupSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "Search Keyword"
+        searchController.searchBar.placeholder = "검색할 키워드를 입력하세요"
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "취소"
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = UIColor.black
         self.navigationItem.searchController = searchController
@@ -66,7 +66,11 @@ extension ByKeywordViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as? SearchResultTableViewCell else {
             return UITableViewCell()}
         let url = URL(string: row.imageURL!)
-        cell.placeImage.kf.setImage(with: url)
+        if row.imageURL! != "" {
+            cell.placeImage.kf.setImage(with: url)
+        } else {
+            cell.placeImage.image = UIImage(named: "placeHolder")
+        }
         cell.addressLabel.text = row.address
         cell.nameLabel.text = row.name
         cell.typeLabel.text = row.inDuty

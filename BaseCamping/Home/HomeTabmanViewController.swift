@@ -31,6 +31,10 @@ class HomeTabmanViewController: TabmanViewController {
         bar.layout.transitionStyle = .snap
         addBar(bar, dataSource: self, at: .top)
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
+        bar.buttons.customize { (button) in
+            button.selectedTintColor =  UIColor(red: 241, green: 136, blue: 17)
+        }
+        bar.indicator.tintColor = UIColor(red: 255, green: 179, blue: 150)
     }
     
     @objc func checkFirstOpen () {

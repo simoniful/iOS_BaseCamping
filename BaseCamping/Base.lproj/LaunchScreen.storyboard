@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="fireIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rnb-dL-Tny">
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logoNoback" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnb-dL-Tny">
                                 <rect key="frame" x="114" y="363" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="QAs-s3-KfD"/>
@@ -31,7 +31,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.98033708330000002" green="0.86865958288166456" blue="0.61845338878922795" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.98929383835050511" green="0.91447718729990335" blue="0.773156994055058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="huL-Xo-bdo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3fP-ma-Jf3"/>
                             <constraint firstItem="rnb-dL-Tny" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dls-W0-GL1"/>
@@ -46,6 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fireIcon" width="600" height="600"/>
+        <image name="logoNoback" width="1024" height="1024"/>
     </resources>
 </document>

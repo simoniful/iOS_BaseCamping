@@ -31,8 +31,11 @@ class CreateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Realm is located at", localRealm.configuration.fileURL!)
+        // print("Realm is located at", localRealm.configuration.fileURL!)
+        
+        titleLabel.delegate = self
         titleLabel.addLeftPadding()
+        
         contentLabel.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 0)
         contentLabel.delegate = self
         contentLabel.text = "리뷰 내용을 입력하세요"
@@ -183,6 +186,12 @@ extension CreateViewController: UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CreateViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
 }
 

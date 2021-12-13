@@ -16,6 +16,9 @@ class ByRegionViewController: UIViewController {
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var noResultView: UIView!
     
+    var didSelectRowIndex: Int = 0
+    var donePickerIndex: Int = 0
+    
     let localRealm = try! Realm()
     var searchResultList: Results<PlaceInfo>?
     
@@ -92,18 +95,41 @@ class ByRegionViewController: UIViewController {
         if let tag = sender.tag {
             if tag == 0 {
                 let row = doNamePickerView.selectedRow(inComponent: 0)
+                selectedDo = doPickerList[row]
+                sigunguPickerList = Region.regionDic[selectedDo!]!
                 doNamePickerView.selectRow(row, inComponent: 0, animated: false)
-                doNameTextField.text = doPickerList[row]
+                doNameTextField.text = "\(selectedDo!) ▼"
+                doQuery = "doName == '\(selectedDo!)'"
+                searchStart()
                 doNameTextField.resignFirstResponder()
             } else if tag ==  1 {
-                let row = sigunguPickerView.selectedRow(inComponent: 0)
-                sigunguPickerView.selectRow(row, inComponent: 0, animated: false)
-                sigunguTextField.text = sigunguPickerList[row]
-                sigunguTextField.resignFirstResponder()
+                if sigunguPickerList.count == 0 {
+                    let alert = UIAlertController(title: "광역자치단체 선택안함", message: "먼저 광역자치단체를 선택해주세요", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "확인", style: .cancel) { _ in
+                        self.sigunguTextField.resignFirstResponder()
+                    }
+                    alert.addAction(ok)
+                    present(alert, animated: true, completion: nil)
+                } else if sigunguPickerList.count > 0 {
+                    let row = sigunguPickerView.selectedRow(inComponent: 0)
+                    selectedSigungu = sigunguPickerList[row]
+                    sigunguPickerView.selectRow(row, inComponent: 0, animated: false)
+                    sigunguTextField.text = "\(selectedSigungu!) ▼"
+                    if selectedSigungu == "전체" {
+                        self.sigunguQuery = ""
+                    } else {
+                        self.sigunguQuery = "AND sigunguName == '\(selectedSigungu!)'"
+                    }
+                    searchStart()
+                    sigunguTextField.resignFirstResponder()
+                }
             } else {
                 let row = typePickerView.selectedRow(inComponent: 0)
+                selectedType = typePickerList[row]
                 typePickerView.selectRow(row, inComponent: 0, animated: false)
-                typeTextField.text = typePickerList[row]
+                typeTextField.text = "\(selectedType!) ▼"
+                typeQuery =  "AND inDuty CONTAINS '\(selectedType!)'"
+                searchStart()
                 typeTextField.resignFirstResponder()
             }
         }
@@ -114,6 +140,7 @@ class ByRegionViewController: UIViewController {
             if tag == 0 {
                 doNameTextField.text = nil
                 sigunguPickerList = []
+                sigunguTextField.text = nil
                 doNameTextField.resignFirstResponder()
             } else if tag ==  1 {
                 sigunguTextField.text = nil
@@ -123,10 +150,9 @@ class ByRegionViewController: UIViewController {
                 typeTextField.resignFirstResponder()
             }
         }
-        
     }
 
-    @IBAction func searchBtnClicked(_ sender: UIButton) {
+    @objc func searchStart() {
         searchResultList = localRealm.objects(PlaceInfo.self).filter("\(doQuery) \(sigunguQuery) \(typeQuery)")
         self.resultTableView.reloadData()
         guard let searchResultList = searchResultList else { return }
@@ -150,7 +176,11 @@ extension ByRegionViewController: UITableViewDelegate, UITableViewDataSource {
         guard let searchResultList = self.searchResultList else { return UITableViewCell() }
         let row = searchResultList[indexPath.row]
         let url = URL(string: row.imageURL!)
-        cell.placeImage.kf.setImage(with: url)
+        if row.imageURL! != "" {
+            cell.placeImage.kf.setImage(with: url)
+        } else {
+            cell.placeImage.image = UIImage(named: "placeHolder")
+        }
         cell.addressLabel.text = row.address
         cell.nameLabel.text = row.name
         cell.typeLabel.text = row.inDuty
@@ -200,27 +230,6 @@ extension ByRegionViewController: UITextFieldDelegate, UIPickerViewDelegate, UIP
             return typePickerList[row]
         }
         return nil
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == doNamePickerView {
-            selectedDo = doPickerList[row]
-            doNameTextField.text = selectedDo
-            sigunguPickerList = Region.regionDic[selectedDo!]!
-            doQuery = "doName == '\(selectedDo!)'"
-        } else if pickerView == sigunguPickerView {
-            selectedSigungu = sigunguPickerList[row]
-            sigunguTextField.text = selectedSigungu
-            if selectedSigungu == "전체" {
-                self.sigunguQuery = ""
-            } else {
-                self.sigunguQuery = "AND sigunguName == '\(selectedSigungu!)'"
-            }
-        } else if pickerView == typePickerView {
-            selectedType = typePickerList[row]
-            typeTextField.text = selectedType
-            typeQuery =  "AND inDuty CONTAINS '\(selectedType!)'"
-        }
     }
 }
 

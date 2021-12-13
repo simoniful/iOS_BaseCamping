@@ -19,7 +19,7 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K01-8A-jnq">
                                 <rect key="frame" x="20" y="64" width="374" height="45"/>
-                                <color key="backgroundColor" red="0.64705973859999999" green="0.62745070459999996" blue="0.4745129347" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.93334007259999996" green="0.55293184520000005" blue="0.1216109321" alpha="0.75010347682119205" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="nGO-OQ-KRC"/>
                                 </constraints>

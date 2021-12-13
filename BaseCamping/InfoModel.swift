@@ -22,3 +22,11 @@ struct SocialMediaInfo {
     let link: String
     let description: String
 }
+
+struct AttractionInfo {
+    let contentTypeId: Int
+    let contentId: Int
+    let title: String
+    let thumbImgUrl: String
+    let distance: Int
+}

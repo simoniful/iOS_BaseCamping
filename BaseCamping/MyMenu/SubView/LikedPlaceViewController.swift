@@ -74,7 +74,7 @@ extension LikedPlaceViewController: UICollectionViewDelegate, UICollectionViewDa
         let itemsPerRow: CGFloat = 2
         let widthPadding = sectionInsets.left * (itemsPerRow + 1)
         let cellWidth = (width - widthPadding) / itemsPerRow
-        let cellHeight: CGFloat = 180
+        let cellHeight: CGFloat = 170
         return CGSize(width: cellWidth, height: cellHeight)
     }
     

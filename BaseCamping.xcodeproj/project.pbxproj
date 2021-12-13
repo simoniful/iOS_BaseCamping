@@ -13,7 +13,6 @@
 		F4665145274B545200227259 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4665144274B545200227259 /* RealmSwift */; };
 		F4665148274B564900227259 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4665147274B564900227259 /* RealmModel.swift */; };
 		F466514A274CA17600227259 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4665149274CA17600227259 /* UIImage + Extension.swift */; };
-		F471054E274F28D30063756F /* UITextView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471054D274F28D30063756F /* UITextView + Extension.swift */; };
 		F4710558274F9AE40063756F /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4710556274F9AE40063756F /* SearchResultTableViewCell.swift */; };
 		F4710559274F9AE40063756F /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4710557274F9AE40063756F /* SearchResultTableViewCell.xib */; };
 		F471055C274FDF2C0063756F /* ByKeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471055B274FDF2C0063756F /* ByKeywordViewController.swift */; };
@@ -23,6 +22,13 @@
 		F4710564275090720063756F /* HomeTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4710563275090720063756F /* HomeTabmanViewController.swift */; };
 		F471056B2750C83C0063756F /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = F471056A2750C83C0063756F /* Cosmos */; };
 		F4809985275232300071B1F7 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F4809984275232300071B1F7 /* IQKeyboardManagerSwift */; };
+		F48AECE72760BF9000EEF562 /* DetailAttractionTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48AECE62760BF9000EEF562 /* DetailAttractionTabmanViewController.swift */; };
+		F48AECEA2760C25F00EEF562 /* DetailAttractionSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48AECE82760C25F00EEF562 /* DetailAttractionSubViewController.swift */; };
+		F48AECEB2760C25F00EEF562 /* DetailAttractionSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48AECE92760C25F00EEF562 /* DetailAttractionSubViewController.xib */; };
+		F49018AD27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49018AB27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.swift */; };
+		F49018AE27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49018AC27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.xib */; };
+		F49018B027664A2D001EF5F1 /* AttractionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49018AF27664A2D001EF5F1 /* AttractionDetailViewController.swift */; };
+		F49018DC27673CA7001EF5F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F49018DB27673CA7001EF5F1 /* GoogleService-Info.plist */; };
 		F49F224027520BE50016B20E /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F223F27520BE40016B20E /* UITextField + Extension.swift */; };
 		F4A3A83B2744FCC800EC5C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */; };
 		F4A3A83D2744FCC800EC5C7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A83C2744FCC800EC5C7E /* SceneDelegate.swift */; };
@@ -56,9 +62,10 @@
 		F4D9F481275333A80091CB64 /* LikedPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F47F275333A80091CB64 /* LikedPlaceCollectionViewCell.swift */; };
 		F4D9F482275333A80091CB64 /* LikedPlaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F480275333A80091CB64 /* LikedPlaceCollectionViewCell.xib */; };
 		F4DA27322754D9C2006E3E5C /* BasePaddingUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA27312754D9C2006E3E5C /* BasePaddingUILabel.swift */; };
+		F4DA27342755D595006E3E5C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA27332755D595006E3E5C /* CustomTextField.swift */; };
+		F4DA273B2758BAAA006E3E5C /* DetailWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA27392758BAAA006E3E5C /* DetailWeatherTableViewCell.swift */; };
+		F4DA273C2758BAAA006E3E5C /* DetailWeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DA273A2758BAAA006E3E5C /* DetailWeatherTableViewCell.xib */; };
 		F4F22E3027546DA40060C101 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = F4F22E2F27546DA40060C101 /* Toast */; };
-		F4F22E352754C61A0060C101 /* KeywordResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F22E332754C61A0060C101 /* KeywordResultTableViewController.swift */; };
-		F4F22E362754C61A0060C101 /* KeywordResultTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F22E342754C61A0060C101 /* KeywordResultTableViewController.xib */; };
 		F4FC2836274E663400106EB2 /* DetailSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */; };
 		F4FC2837274E663400106EB2 /* DetailSocialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4FC2835274E663400106EB2 /* DetailSocialTableViewCell.xib */; };
 		F4FC283A274E69F700106EB2 /* DetailSocialTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC2839274E69F700106EB2 /* DetailSocialTableViewHeader.swift */; };
@@ -73,7 +80,6 @@
 		F466513F274B338200227259 /* goCampingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goCampingData.json; sourceTree = "<group>"; };
 		F4665147274B564900227259 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		F4665149274CA17600227259 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
-		F471054D274F28D30063756F /* UITextView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView + Extension.swift"; sourceTree = "<group>"; };
 		F4710556274F9AE40063756F /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		F4710557274F9AE40063756F /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		F471055B274FDF2C0063756F /* ByKeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByKeywordViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +87,13 @@
 		F471055F274FE3BF0063756F /* MyMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyMenu.storyboard; sourceTree = "<group>"; };
 		F4710561274FE3D30063756F /* MyMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuViewController.swift; sourceTree = "<group>"; };
 		F4710563275090720063756F /* HomeTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabmanViewController.swift; sourceTree = "<group>"; };
+		F48AECE62760BF9000EEF562 /* DetailAttractionTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttractionTabmanViewController.swift; sourceTree = "<group>"; };
+		F48AECE82760C25F00EEF562 /* DetailAttractionSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttractionSubViewController.swift; sourceTree = "<group>"; };
+		F48AECE92760C25F00EEF562 /* DetailAttractionSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailAttractionSubViewController.xib; sourceTree = "<group>"; };
+		F49018AB27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttractionCollectionViewCell.swift; sourceTree = "<group>"; };
+		F49018AC27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailAttractionCollectionViewCell.xib; sourceTree = "<group>"; };
+		F49018AF27664A2D001EF5F1 /* AttractionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailViewController.swift; sourceTree = "<group>"; };
+		F49018DB27673CA7001EF5F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F49F223F27520BE40016B20E /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		F4A3A8372744FCC800EC5C7E /* BaseCamping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseCamping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,8 +126,9 @@
 		F4D9F47F275333A80091CB64 /* LikedPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4D9F480275333A80091CB64 /* LikedPlaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikedPlaceCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4DA27312754D9C2006E3E5C /* BasePaddingUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePaddingUILabel.swift; sourceTree = "<group>"; };
-		F4F22E332754C61A0060C101 /* KeywordResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordResultTableViewController.swift; sourceTree = "<group>"; };
-		F4F22E342754C61A0060C101 /* KeywordResultTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordResultTableViewController.xib; sourceTree = "<group>"; };
+		F4DA27332755D595006E3E5C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F4DA27392758BAAA006E3E5C /* DetailWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		F4DA273A2758BAAA006E3E5C /* DetailWeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailWeatherTableViewCell.xib; sourceTree = "<group>"; };
 		F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSocialTableViewCell.swift; sourceTree = "<group>"; };
 		F4FC2835274E663400106EB2 /* DetailSocialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSocialTableViewCell.xib; sourceTree = "<group>"; };
 		F4FC2839274E69F700106EB2 /* DetailSocialTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSocialTableViewHeader.swift; sourceTree = "<group>"; };
@@ -155,8 +169,10 @@
 		F466513D274B330F00227259 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				F48AECE52760BF1C00EEF562 /* SubView */,
 				F4FC2833274E660200106EB2 /* CellView */,
 				F4A3A8522744FF0900EC5C7E /* Detail.storyboard */,
+				F49018AF27664A2D001EF5F1 /* AttractionDetailViewController.swift */,
 				F4FC283D274E9F2100106EB2 /* WebViewController.swift */,
 				F4FC2842274EAE1A00106EB2 /* CreateViewController.swift */,
 				F4A3A8542744FF1F00EC5C7E /* DetailViewController.swift */,
@@ -196,6 +212,16 @@
 			path = CellView;
 			sourceTree = "<group>";
 		};
+		F48AECE52760BF1C00EEF562 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				F48AECE62760BF9000EEF562 /* DetailAttractionTabmanViewController.swift */,
+				F48AECE92760C25F00EEF562 /* DetailAttractionSubViewController.xib */,
+				F48AECE82760C25F00EEF562 /* DetailAttractionSubViewController.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
 		F4A3A82E2744FCC800EC5C7E = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +259,7 @@
 				F4A3A8432744FCC900EC5C7E /* Assets.xcassets */,
 				F4A3A8452744FCC900EC5C7E /* LaunchScreen.storyboard */,
 				F4A3A8482744FCC900EC5C7E /* Info.plist */,
+				F49018DB27673CA7001EF5F1 /* GoogleService-Info.plist */,
 			);
 			path = BaseCamping;
 			sourceTree = "<group>";
@@ -272,10 +299,10 @@
 			isa = PBXGroup;
 			children = (
 				F4DA27312754D9C2006E3E5C /* BasePaddingUILabel.swift */,
+				F4DA27332755D595006E3E5C /* CustomTextField.swift */,
 				F4C2695E27450A8B00DA5935 /* UIView + Extension.swift */,
 				F4C269862745590000DA5935 /* UIColor + Extension.swift */,
 				F4665149274CA17600227259 /* UIImage + Extension.swift */,
-				F471054D274F28D30063756F /* UITextView + Extension.swift */,
 				F49F223F27520BE40016B20E /* UITextField + Extension.swift */,
 			);
 			path = Extension;
@@ -314,15 +341,6 @@
 			path = CellView;
 			sourceTree = "<group>";
 		};
-		F4F22E312754C5D80060C101 /* SubView */ = {
-			isa = PBXGroup;
-			children = (
-				F4F22E342754C61A0060C101 /* KeywordResultTableViewController.xib */,
-				F4F22E332754C61A0060C101 /* KeywordResultTableViewController.swift */,
-			);
-			path = SubView;
-			sourceTree = "<group>";
-		};
 		F4FC2833274E660200106EB2 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +348,10 @@
 				F4FC2834274E663400106EB2 /* DetailSocialTableViewCell.swift */,
 				F4FC283B274E6A2700106EB2 /* DetailSocialTableViewHeader.xib */,
 				F4FC2839274E69F700106EB2 /* DetailSocialTableViewHeader.swift */,
+				F4DA273A2758BAAA006E3E5C /* DetailWeatherTableViewCell.xib */,
+				F4DA27392758BAAA006E3E5C /* DetailWeatherTableViewCell.swift */,
+				F49018AB27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.swift */,
+				F49018AC27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.xib */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -337,7 +359,6 @@
 		F4FC2840274EABF700106EB2 /* ByKeyword */ = {
 			isa = PBXGroup;
 			children = (
-				F4F22E312754C5D80060C101 /* SubView */,
 				F471055D274FDF440063756F /* ByKeyword.storyboard */,
 				F471055B274FDF2C0063756F /* ByKeywordViewController.swift */,
 			);
@@ -376,6 +397,7 @@
 				F4A3A8342744FCC800EC5C7E /* Frameworks */,
 				F4A3A8352744FCC800EC5C7E /* Resources */,
 				87CFB0EEE12F7B5B16803B8D /* [CP] Embed Pods Frameworks */,
+				F49018DD27673DA4001EF5F1 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -450,9 +472,11 @@
 				F4710559274F9AE40063756F /* SearchResultTableViewCell.xib in Resources */,
 				F4A3A8422744FCC800EC5C7E /* Main.storyboard in Resources */,
 				F471055E274FDF440063756F /* ByKeyword.storyboard in Resources */,
+				F48AECEB2760C25F00EEF562 /* DetailAttractionSubViewController.xib in Resources */,
 				F4FC283C274E6A2700106EB2 /* DetailSocialTableViewHeader.xib in Resources */,
-				F4F22E362754C61A0060C101 /* KeywordResultTableViewController.xib in Resources */,
 				F4A3A8572744FFB800EC5C7E /* ByRegion.storyboard in Resources */,
+				F49018AE27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.xib in Resources */,
+				F4DA273C2758BAAA006E3E5C /* DetailWeatherTableViewCell.xib in Resources */,
 				F4A3A8532744FF0900EC5C7E /* Detail.storyboard in Resources */,
 				F4FC2837274E663400106EB2 /* DetailSocialTableViewCell.xib in Resources */,
 				F4C28C3B2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.xib in Resources */,
@@ -461,6 +485,7 @@
 				F4B705DB274778E10008A54A /* HomeSubViewController.xib in Resources */,
 				F4B705E7274787DA0008A54A /* HomeViewSubCollectionViewCell.xib in Resources */,
 				F4A6CEC627538C3C0090D014 /* ReviewCollectionViewCell.xib in Resources */,
+				F49018DC27673CA7001EF5F1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +531,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F49018DD27673DA4001EF5F1 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -513,7 +558,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F49018AD27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.swift in Sources */,
 				F4A3A83B2744FCC800EC5C7E /* AppDelegate.swift in Sources */,
+				F49018B027664A2D001EF5F1 /* AttractionDetailViewController.swift in Sources */,
 				F4B705E6274787DA0008A54A /* HomeViewSubCollectionViewCell.swift in Sources */,
 				F4C28C3A2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift in Sources */,
 				F4DA27322754D9C2006E3E5C /* BasePaddingUILabel.swift in Sources */,
@@ -521,18 +568,19 @@
 				F4710564275090720063756F /* HomeTabmanViewController.swift in Sources */,
 				F4C28C462747D8FF0014F0CC /* InfoModel.swift in Sources */,
 				F4710558274F9AE40063756F /* SearchResultTableViewCell.swift in Sources */,
+				F48AECE72760BF9000EEF562 /* DetailAttractionTabmanViewController.swift in Sources */,
 				F4B705D32747321D0008A54A /* Constant.swift in Sources */,
 				F4665148274B564900227259 /* RealmModel.swift in Sources */,
 				F4A3A8552744FF1F00EC5C7E /* DetailViewController.swift in Sources */,
-				F4F22E352754C61A0060C101 /* KeywordResultTableViewController.swift in Sources */,
 				F4710562274FE3D30063756F /* MyMenuViewController.swift in Sources */,
-				F471054E274F28D30063756F /* UITextView + Extension.swift in Sources */,
 				F4A3A83D2744FCC800EC5C7E /* SceneDelegate.swift in Sources */,
 				F4FC283E274E9F2100106EB2 /* WebViewController.swift in Sources */,
 				F4B705DA274778E10008A54A /* HomeSubViewController.swift in Sources */,
 				F4FC2843274EAE1A00106EB2 /* CreateViewController.swift in Sources */,
 				F4C269822745469100DA5935 /* HomeViewCollectionViewCell.swift in Sources */,
 				F4D9F47B2753280E0091CB64 /* LikedPlaceViewController.swift in Sources */,
+				F4DA273B2758BAAA006E3E5C /* DetailWeatherTableViewCell.swift in Sources */,
+				F4DA27342755D595006E3E5C /* CustomTextField.swift in Sources */,
 				F4FC2836274E663400106EB2 /* DetailSocialTableViewCell.swift in Sources */,
 				F4A3A8592744FFD000EC5C7E /* ByRegionViewController.swift in Sources */,
 				F471055C274FDF2C0063756F /* ByKeywordViewController.swift in Sources */,
@@ -540,6 +588,7 @@
 				F466514A274CA17600227259 /* UIImage + Extension.swift in Sources */,
 				F4C2695F27450A8B00DA5935 /* UIView + Extension.swift in Sources */,
 				F4FC283A274E69F700106EB2 /* DetailSocialTableViewHeader.swift in Sources */,
+				F48AECEA2760C25F00EEF562 /* DetailAttractionSubViewController.swift in Sources */,
 				F4AD24B327539F3600B4C555 /* ReviewDetailViewController.swift in Sources */,
 				F49F224027520BE50016B20E /* UITextField + Extension.swift in Sources */,
 				F4A6CEC527538C3C0090D014 /* ReviewCollectionViewCell.swift in Sources */,
@@ -603,7 +652,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -693,22 +742,27 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AT2N75TMZD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BaseCamping/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "현재 위치 주변에 캠핑장 탐색을 위해서 해당 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "현재 위치 주변에 캠핑장 탐색을 위해서 해당 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 위치 주변에 캠핑장 탐색을 위해서 해당 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simon.BaseCamping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -725,22 +779,27 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AT2N75TMZD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BaseCamping/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "현재 위치 주변에 캠핑장 탐색을 위해서 해당 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "현재 위치 주변에 캠핑장 탐색을 위해서 해당 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 위치 주변에 캠핑장 탐색을 위해서 해당 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simon.BaseCamping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
