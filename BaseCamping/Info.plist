@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>위치에 기반한 주변 캠핑장을 검색하기 위해서 해당 권한이 필요합니다.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>앱의 성능 향상 및 최적화를 위한 정보 수집을 위해서 해당 권한이 필요합니다.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>위치에 기반한 주변 캠핑장을 검색하기 위해서 해당 권한이 필요합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>사진을 활용한 리뷰 작성을 위해 사진첩 접근에 대한 권한이 필요합니다.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
