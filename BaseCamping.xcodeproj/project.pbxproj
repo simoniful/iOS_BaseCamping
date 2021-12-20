@@ -29,6 +29,8 @@
 		F49018AE27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49018AC27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.xib */; };
 		F49018B027664A2D001EF5F1 /* AttractionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49018AF27664A2D001EF5F1 /* AttractionDetailViewController.swift */; };
 		F49018DC27673CA7001EF5F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F49018DB27673CA7001EF5F1 /* GoogleService-Info.plist */; };
+		F49018DF27675407001EF5F1 /* ZoomPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49018DE27675407001EF5F1 /* ZoomPictureViewController.swift */; };
+		F49018E62768B73B001EF5F1 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49018E52768B73B001EF5F1 /* String + Extension.swift */; };
 		F49F224027520BE50016B20E /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F223F27520BE40016B20E /* UITextField + Extension.swift */; };
 		F4A3A83B2744FCC800EC5C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */; };
 		F4A3A83D2744FCC800EC5C7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3A83C2744FCC800EC5C7E /* SceneDelegate.swift */; };
@@ -94,6 +96,8 @@
 		F49018AC27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailAttractionCollectionViewCell.xib; sourceTree = "<group>"; };
 		F49018AF27664A2D001EF5F1 /* AttractionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailViewController.swift; sourceTree = "<group>"; };
 		F49018DB27673CA7001EF5F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F49018DE27675407001EF5F1 /* ZoomPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomPictureViewController.swift; sourceTree = "<group>"; };
+		F49018E52768B73B001EF5F1 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		F49F223F27520BE40016B20E /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		F4A3A8372744FCC800EC5C7E /* BaseCamping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseCamping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A3A83A2744FCC800EC5C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				F4FC2833274E660200106EB2 /* CellView */,
 				F4A3A8522744FF0900EC5C7E /* Detail.storyboard */,
 				F49018AF27664A2D001EF5F1 /* AttractionDetailViewController.swift */,
+				F49018DE27675407001EF5F1 /* ZoomPictureViewController.swift */,
 				F4FC283D274E9F2100106EB2 /* WebViewController.swift */,
 				F4FC2842274EAE1A00106EB2 /* CreateViewController.swift */,
 				F4A3A8542744FF1F00EC5C7E /* DetailViewController.swift */,
@@ -304,6 +309,7 @@
 				F4C269862745590000DA5935 /* UIColor + Extension.swift */,
 				F4665149274CA17600227259 /* UIImage + Extension.swift */,
 				F49F223F27520BE40016B20E /* UITextField + Extension.swift */,
+				F49018E52768B73B001EF5F1 /* String + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 			files = (
 				F49018AD27663A5A001EF5F1 /* DetailAttractionCollectionViewCell.swift in Sources */,
 				F4A3A83B2744FCC800EC5C7E /* AppDelegate.swift in Sources */,
+				F49018DF27675407001EF5F1 /* ZoomPictureViewController.swift in Sources */,
 				F49018B027664A2D001EF5F1 /* AttractionDetailViewController.swift in Sources */,
 				F4B705E6274787DA0008A54A /* HomeViewSubCollectionViewCell.swift in Sources */,
 				F4C28C3A2747CE3F0014F0CC /* HomeViewWeatherCollectionViewCell.swift in Sources */,
@@ -569,6 +576,7 @@
 				F4C28C462747D8FF0014F0CC /* InfoModel.swift in Sources */,
 				F4710558274F9AE40063756F /* SearchResultTableViewCell.swift in Sources */,
 				F48AECE72760BF9000EEF562 /* DetailAttractionTabmanViewController.swift in Sources */,
+				F49018E62768B73B001EF5F1 /* String + Extension.swift in Sources */,
 				F4B705D32747321D0008A54A /* Constant.swift in Sources */,
 				F4665148274B564900227259 /* RealmModel.swift in Sources */,
 				F4A3A8552744FF1F00EC5C7E /* DetailViewController.swift in Sources */,

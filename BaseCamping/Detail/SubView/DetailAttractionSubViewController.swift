@@ -36,7 +36,7 @@ class DetailAttractionSubViewController: UIViewController {
         
         guard let placeInfo = placeInfo else { return }
         guard let typeNum = AttractionType.attrationTypeDic[attractionType] else { return }
-        let url = "\(Endpoint.attractionURL)?serviceKey=\(APIKey.attraction)&numOfRows=10&pageNo=1&MobileOS=IOS&MobileApp=BaseCamping&arrange=E&contentTypeId=\(typeNum)&mapX=\(placeInfo.longitude)&mapY=\(placeInfo.latitude)&radius=10000&listYN=Y&_type=json"
+        let url = "\(Endpoint.attractionURL)?serviceKey=\(APIKey.attraction)&numOfRows=15&pageNo=1&MobileOS=IOS&MobileApp=BaseCamping&arrange=E&contentTypeId=\(typeNum)&mapX=\(placeInfo.longitude)&mapY=\(placeInfo.latitude)&radius=10000&listYN=Y&_type=json"
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -92,10 +92,12 @@ extension DetailAttractionSubViewController: UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let typeName = typeName else { return }
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         let item = attractionData[indexPath.row]
         let vc = storyboard.instantiateViewController(withIdentifier: "AttractionDetailViewController") as! AttractionDetailViewController
         vc.attractionInfo = item
+        vc.typeName = typeName
         let nav =  UINavigationController(rootViewController: vc)
         nav.modalTransitionStyle = .coverVertical
         nav.modalPresentationStyle = .overFullScreen

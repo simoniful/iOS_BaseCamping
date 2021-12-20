@@ -331,6 +331,15 @@ extension DetailViewController: FSPagerViewDelegate,FSPagerViewDataSource {
         let page = scrollView.contentOffset.x / scrollView.frame.width
         pageControl.currentPage = Int(page)
     }
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        let item =  downloadedImageURLs[index]
+        let url = URL(string: item)
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ZoomPictureViewController") as! ZoomPictureViewController
+        vc.pictureURL = url
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension DetailViewController : CLLocationManagerDelegate {
